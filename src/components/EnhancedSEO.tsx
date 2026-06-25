@@ -188,7 +188,7 @@ export default function EnhancedSEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="pt_BR" />
-      <meta property="og:image" content={LOJAS[0].foto} />
+      <meta property="og:image" content={`${appUrl}/og-banner.svg`} />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
@@ -196,7 +196,7 @@ export default function EnhancedSEO({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDesc} />
-      <meta name="twitter:image" content={LOJAS[0].foto} />
+      <meta name="twitter:image" content={`${appUrl}/og-banner.svg`} />
 
       {/* JSON-LD Schemas de forma unificada */}
       {schemas.map((schema, index) => (

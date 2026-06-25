@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FFFFFF" />
+      <stop offset="60%" stop-color="#F5F5F7" />
+      <stop offset="100%" stop-color="#E5E7EB" />
+    </linearGradient>
+
+    <!-- Orange Gradient -->
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#FF9E00" />
+      <stop offset="100%" stop-color="#FF6B00" />
+    </linearGradient>
+
+    <!-- Dark Phone Body Gradient -->
+    <linearGradient id="phoneBodyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1E24" />
+      <stop offset="100%" stop-color="#0D0D0D" />
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="12" result="blur" />
+      <feComposite in="SourceGraphic" in2="blur" operator="over" />
+    </filter>
+  </defs>
+
+  <!-- 1. Background -->
+  <rect width="1200" height="630" fill="url(#bgGrad)" />
+
+  <!-- Technical Tech-Grid & Geometric Lines -->
+  <g stroke="#E5E7EB" stroke-width="1" opacity="0.6">
+    <!-- Grid lines -->
+    <line x1="100" y1="0" x2="100" y2="630" />
+    <line x1="200" y1="0" x2="200" y2="630" />
+    <line x1="300" y1="0" x2="300" y2="630" />
+    <line x1="400" y1="0" x2="400" y2="630" />
+    <line x1="500" y1="0" x2="500" y2="630" />
+    <line x1="600" y1="0" x2="600" y2="630" />
+    <line x1="700" y1="0" x2="700" y2="630" />
+    <line x1="800" y1="0" x2="800" y2="630" />
+    <line x1="900" y1="0" x2="900" y2="630" />
+    <line x1="1000" y1="0" x2="1000" y2="630" />
+    <line x1="1100" y1="0" x2="1100" y2="630" />
+
+    <line x1="0" y1="100" x2="1200" y2="100" />
+    <line x1="0" y1="200" x2="1200" y2="200" />
+    <line x1="0" y1="300" x2="1200" y2="300" />
+    <line x1="0" y1="400" x2="1200" y2="400" />
+    <line x1="0" y1="500" x2="1200" y2="500" />
+    <line x1="0" y1="600" x2="1200" y2="600" />
+  </g>
+
+  <!-- Tech Circles for depth -->
+  <circle cx="950" cy="315" r="320" fill="none" stroke="#FF6B00" stroke-width="1.5" opacity="0.1" />
+  <circle cx="950" cy="315" r="220" fill="none" stroke="#FF6B00" stroke-width="1" stroke-dasharray="10 10" opacity="0.15" />
+  <circle cx="950" cy="315" r="120" fill="none" stroke="#FF6B00" stroke-width="2" opacity="0.08" />
+
+  <!-- Decorative Corner Elements -->
+  <path d="M 40,60 L 40,40 L 60,40" fill="none" stroke="#FF6B00" stroke-width="4" stroke-linecap="round" />
+  <path d="M 1160,60 L 1160,40 L 1140,40" fill="none" stroke="#FF6B00" stroke-width="4" stroke-linecap="round" />
+  <path d="M 40,570 L 40,590 L 60,590" fill="none" stroke="#FF6B00" stroke-width="4" stroke-linecap="round" />
+  <path d="M 1160,570 L 1160,590 L 1140,590" fill="none" stroke="#FF6B00" stroke-width="4" stroke-linecap="round" />
+
+  <!-- 2. Brand Identity & Typography (Left Area) -->
+  <g transform="translate(100, 120)">
+    <!-- Main Headline - Brand Name -->
+    <text x="0" y="40" font-family="'Inter', system-ui, sans-serif" font-size="28" font-weight="800" fill="#FF6B00" letter-spacing="4">SUNCELL</text>
+    <text x="0" y="105" font-family="'Inter', system-ui, sans-serif" font-size="54" font-weight="900" fill="#0D0D0D" letter-spacing="-1">ASSISTÊNCIA TÉCNICA</text>
+    
+    <!-- Subtitle Tagline -->
+    <text x="0" y="155" font-family="'Inter', system-ui, sans-serif" font-size="22" font-weight="600" fill="#4B5563">Conserto Especializado de Celulares em Curitiba</text>
+
+    <!-- Brand focus badge -->
+    <rect x="0" y="190" width="560" height="42" rx="10" fill="#0D0D0D" />
+    <text x="20" y="217" font-family="'Inter', system-ui, sans-serif" font-size="16" font-weight="800" fill="#FFFFFF" letter-spacing="1">
+      IPHONE • XIAOMI • SAMSUNG • MOTOROLA
+    </text>
+
+    <!-- Key value propositions -->
+    <g transform="translate(0, 270)">
+      <!-- Item 1 -->
+      <g transform="translate(0, 0)">
+        <circle cx="16" cy="12" r="12" fill="#FF6B00" />
+        <!-- Checkmark path -->
+        <path d="M 10,12 L 14,16 L 22,8" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+        <text x="40" y="19" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="700" fill="#0D0D0D">Peças de Qualidade Premium</text>
+      </g>
+      
+      <!-- Item 2 -->
+      <g transform="translate(0, 45)">
+        <circle cx="16" cy="12" r="12" fill="#FF6B00" />
+        <path d="M 10,12 L 14,16 L 22,8" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+        <text x="40" y="19" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="700" fill="#0D0D0D">Diagnóstico 100% Gratuito</text>
+      </g>
+
+      <!-- Item 3 -->
+      <g transform="translate(0, 90)">
+        <circle cx="16" cy="12" r="12" fill="#FF6B00" />
+        <path d="M 10,12 L 14,16 L 22,8" fill="none" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" />
+        <text x="40" y="19" font-family="'Inter', system-ui, sans-serif" font-size="18" font-weight="700" fill="#0D0D0D">Reparo Rápido na Hora com Garantia</text>
+      </g>
+    </g>
+
+    <!-- Location & Store Badge -->
+    <g transform="translate(0, 410)">
+      <rect x="0" y="0" width="460" height="48" rx="14" fill="#FF6B00" opacity="0.1" />
+      <rect x="0" y="0" width="460" height="48" rx="14" fill="none" stroke="#FF6B00" stroke-width="1.5" />
+      <text x="20" y="30" font-family="'Inter', system-ui, sans-serif" font-size="15" font-weight="700" fill="#E05300">
+        Duas Lojas em Curitiba: Guaíra e Alto Boqueirão
+      </text>
+    </g>
+  </g>
+
+  <!-- 3. High-Tech Visual Illustration of the Smartphone Icon (Right Area) -->
+  <g transform="translate(930, 315)">
+    <!-- High-End Outer Glowing Hexagon Aura -->
+    <polygon points="0,-160 138.5,-80 138.5,80 0,160 -138.5,80 -138.5,-80" fill="url(#orangeGrad)" opacity="0.06" filter="url(#glow)" />
+
+    <!-- Smartphone Mockup -->
+    <g transform="translate(-105, -155)">
+      <rect x="0" y="0" width="210" height="310" rx="36" fill="url(#phoneBodyGrad)" stroke="#E5E7EB" stroke-width="4" />
+      <rect x="75" y="12" width="60" height="6" rx="3" fill="#374151" />
+      <rect x="70" y="294" width="70" height="5" rx="2.5" fill="#4B5563" />
+
+      <!-- Glowing Brand Logo Inside phone screen -->
+      <g transform="translate(105, 150)">
+        <!-- Sun concentric lines -->
+        <circle cx="0" cy="0" r="60" fill="none" stroke="#FF6B00" stroke-width="1.5" stroke-dasharray="10 10" opacity="0.4" />
+        
+        <!-- Hexagon Core -->
+        <polygon points="0,-36 31.2,-18 31.2,18 0,36 -31.2,18 -31.2,-18" fill="url(#orangeGrad)" filter="url(#glow)" />
+        
+        <!-- Cross lines inside logo -->
+        <path d="M 0,-30 L 0,30 M -26,-15 L 26,15 M -26,15 L 26,-15" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" opacity="0.4" />
+        <circle cx="0" cy="0" r="12" fill="#FFFFFF" />
+        <circle cx="0" cy="0" r="6" fill="#FF6B00" />
+      </g>
+
+      <!-- Lightning bolt overlay -->
+      <path d="M 180,50 L 165,75 L 182,75 L 170,105 L 198,70 L 180,70 Z" fill="#FF6B00" filter="url(#glow)" />
+      
+      <!-- Wrench overlay -->
+      <path d="M 30,240 L 45,255" stroke="#FF6B00" stroke-width="5" stroke-linecap="round" />
+      <circle cx="26" cy="236" r="10" fill="none" stroke="#FF6B00" stroke-width="5" />
+    </g>
+  </g>
+</svg>
