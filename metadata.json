@@ -1,0 +1,6 @@
+{
+  "name": "SUNCELL Assistência Técnica",
+  "description": "Assistência técnica especializada em celulares e smartphones em Curitiba - Lojas no Guaíra e Alto Boqueirão.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

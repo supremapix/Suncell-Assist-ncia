@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+
+  /* Custom palette colors */
+  --color-suncell-orange: #FF6B00;
+  --color-suncell-orange-light: #FF8533;
+  --color-suncell-orange-dark: #CC5500;
+  --color-suncell-black: #0D0D0D;
+  --color-suncell-dark-gray: #1A1A1A;
+  --color-suncell-medium-gray: #2A2A2A;
+  --color-suncell-light-gray: #F5F5F7;
+  --color-suncell-text-muted: #6B7280;
+}
+
+/* Base style adjustments */
+html {
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  background-color: #F5F5F7; /* Default light gray background */
+  color: #0D0D0D;
+}
+
+/* Custom scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0D0D0D;
+}
+::-webkit-scrollbar-thumb {
+  background: #2A2A2A;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-suncell-orange);
+}
+
+/* Premium gradient animations */
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+.animate-gradient-shift {
+  background-size: 200% 200%;
+  animation: gradient-shift 6s ease infinite;
+}
+
+/* Elder accessibility focus styles */
+:focus-visible {
+  outline: 3px solid var(--color-suncell-orange);
+  outline-offset: 2px;
+}
