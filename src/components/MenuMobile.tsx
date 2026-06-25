@@ -2,6 +2,7 @@ import { motion } from "motion/react";
 import { Link } from "react-router-dom";
 import { X, Home, MapPin, ShieldAlert, Smartphone, Phone, HelpCircle, Instagram } from "lucide-react";
 import { LOJAS } from "../siteData";
+import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 
 interface MenuMobileProps {
   onClose: () => void;
@@ -111,25 +112,25 @@ export default function MenuMobile({ onClose }: MenuMobileProps) {
           {/* Botão Loja Guaíra */}
           <a
             id="mobile-whats-guaira"
-            href={LOJAS[0].linkWhats}
+            href={getWhatsAppLink("5541999176640", "Menu Mobile - Unidade Guaíra", typeof window !== "undefined" ? window.location.href : "")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white text-center font-sans font-black text-base flex items-center justify-center gap-3 shadow-lg hover:shadow-[0_0_15px_rgba(255,107,0,0.3)] active:scale-[0.98] transition-all cursor-pointer focus:outline-none"
+            className="w-full py-2.5 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white text-center font-sans font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-[0_4px_12px_rgba(255,107,0,0.2)] active:scale-[0.98] transition-all cursor-pointer focus:outline-none"
           >
-            <Phone size={20} className="shrink-0" />
-            <span>Falar com Loja Guaíra</span>
+            <Phone size={16} className="shrink-0" />
+            <span>WhatsApp Guaíra</span>
           </a>
 
           {/* Botão Loja Alto Boqueirão */}
           <a
             id="mobile-whats-boqueirao"
-            href={LOJAS[1].linkWhats}
+            href={getWhatsAppLink("5541997501961", "Menu Mobile - Unidade Alto Boqueirão", typeof window !== "undefined" ? window.location.href : "")}
             target="_blank"
             rel="noopener noreferrer"
-            className="w-full py-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white text-center font-sans font-black text-base flex items-center justify-center gap-3 shadow-lg hover:shadow-[0_0_15px_rgba(255,107,0,0.3)] active:scale-[0.98] transition-all cursor-pointer focus:outline-none"
+            className="w-full py-2.5 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white text-center font-sans font-bold text-sm flex items-center justify-center gap-2 shadow-md hover:shadow-[0_4px_12px_rgba(255,107,0,0.2)] active:scale-[0.98] transition-all cursor-pointer focus:outline-none"
           >
-            <Phone size={20} className="shrink-0" />
-            <span>Falar com Loja Boqueirão</span>
+            <Phone size={16} className="shrink-0" />
+            <span>WhatsApp Boqueirão</span>
           </a>
 
           <div className="flex items-center justify-center gap-2 pt-2 text-xs text-suncell-text-muted">

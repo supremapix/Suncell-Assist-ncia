@@ -12,6 +12,7 @@ import {
   rotaDe, 
   PageData 
 } from "../siteData";
+import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import NossasLojas from "./NossasLojas";
 import InstagramFeed from "./InstagramFeed";
 import FAQAccordion from "./FAQAccordion";
@@ -185,26 +186,26 @@ export default function Home() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 max-w-md mx-auto lg:mx-0 w-full"
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3 pt-2 max-w-md mx-auto lg:mx-0 w-full"
               >
                 <a
                   id="hero-whats-btn"
-                  href={LOJAS[0].linkWhats}
+                  href={getWhatsAppLink("5541999176640", "Botão Principal Hero (Guaíra)", typeof window !== "undefined" ? window.location.href : "")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="px-8 py-4.5 rounded-2xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-black text-base sm:text-lg flex items-center justify-center gap-2.5 shadow-xl hover:shadow-[0_8px_25px_rgba(255,107,0,0.35)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer"
+                  className="px-5 py-3 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm sm:text-base flex items-center justify-center gap-2 shadow-md hover:shadow-[0_4px_15px_rgba(255,107,0,0.25)] hover:scale-[1.01] active:scale-[0.99] transition-all cursor-pointer"
                 >
-                  <Phone size={22} className="shrink-0" />
-                  <span>Chamar no WhatsApp</span>
+                  <Phone size={18} className="shrink-0" />
+                  <span>WhatsApp Guaíra</span>
                 </a>
 
                 <a
                   id="hero-lojas-btn"
                   href="#lojas-section"
-                  className="px-8 py-4.5 rounded-2xl bg-white hover:bg-gray-50 text-gray-800 hover:text-[#0D0D0D] border border-gray-200 font-sans font-bold text-base flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
+                  className="px-5 py-3 rounded-xl bg-white hover:bg-gray-50 text-gray-700 hover:text-[#0D0D0D] border border-gray-200 font-sans font-bold text-sm sm:text-base flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-sm active:scale-[0.99]"
                 >
-                  <span>Conhecer Nossas Lojas</span>
-                  <ArrowRight size={18} />
+                  <span>Ver Lojas</span>
+                  <ArrowRight size={16} />
                 </a>
               </motion.div>
 

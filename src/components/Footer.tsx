@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Phone, MapPin, Smartphone, ShieldCheck, Mail, ArrowUpRight, HelpCircle } from "lucide-react";
 import { LOJAS, getBairrosPages, getCidadesPages, getAparelhosPages, getServicosPages, rotaDe } from "../siteData";
+import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import { SupremaCredit } from "./SupremaCredit";
 
 export default function Footer() {
@@ -58,12 +59,12 @@ export default function Footer() {
               
               <a
                 id="footer-call-guaira"
-                href={LOJAS[0].linkWhats}
+                href={getWhatsAppLink("5541999176640", "Rodapé - Unidade Guaíra", typeof window !== "undefined" ? window.location.href : "")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-black text-base flex items-center justify-center gap-2.5 hover:shadow-[0_4px_15px_rgba(255,107,0,0.3)] transition-all cursor-pointer"
+                className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-md transition-all cursor-pointer"
               >
-                <Phone size={18} />
+                <Phone size={16} />
                 <span>WhatsApp Guaíra</span>
               </a>
             </div>
@@ -82,12 +83,12 @@ export default function Footer() {
 
               <a
                 id="footer-call-boqueirao"
-                href={LOJAS[1].linkWhats}
+                href={getWhatsAppLink("5541997501961", "Rodapé - Unidade Alto Boqueirão", typeof window !== "undefined" ? window.location.href : "")}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="w-full py-3.5 px-5 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-black text-base flex items-center justify-center gap-2.5 hover:shadow-[0_4px_15px_rgba(255,107,0,0.3)] transition-all cursor-pointer"
+                className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-md transition-all cursor-pointer"
               >
-                <Phone size={18} />
+                <Phone size={16} />
                 <span>WhatsApp Boqueirão</span>
               </a>
             </div>

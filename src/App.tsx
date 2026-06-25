@@ -11,6 +11,7 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import ProgrammaticPage from "./components/ProgrammaticPage";
 import NotFound from "./components/NotFound";
+import SuncellInteractionWidgets from "./components/SuncellInteractionWidgets";
 
 // Componente utilitário para garantir scroll-to-top automático em cada mudança de rota
 function ScrollToTop() {
@@ -76,6 +77,9 @@ export default function App() {
           
           {/* Footer Elder-Friendly com SupremaCredit */}
           <Footer />
+
+          {/* Floating Share and WhatsApp Widgets */}
+          <SuncellInteractionWidgets />
         </div>
       </BrowserRouter>
     </HelmetProvider>

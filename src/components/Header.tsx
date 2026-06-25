@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
 import { Phone, Menu, X, Smartphone, MapPin, Award } from "lucide-react";
 import { LOJAS } from "../siteData";
+import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import MenuMobile from "./MenuMobile";
 
 export default function Header() {
@@ -113,12 +114,12 @@ export default function Header() {
           <div className="hidden md:flex items-center gap-3">
             <a
               id="header-whats-btn"
-              href={LOJAS[0].linkWhats}
+              href={getWhatsAppLink("5541999176640", "Menu Superior - Orçamento Grátis", typeof window !== "undefined" ? window.location.href : "")}
               target="_blank"
               rel="noopener noreferrer"
-              className="bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm px-5 py-2.5 rounded-full flex items-center gap-2 hover:shadow-[0_0_20px_rgba(255,107,0,0.45)] hover:scale-[1.02] active:scale-[0.98] transition-all cursor-pointer focus:outline-none shadow-md"
+              className="bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-xs sm:text-sm px-4.5 py-2 rounded-xl flex items-center gap-1.5 hover:shadow-md active:scale-[0.99] transition-all cursor-pointer focus:outline-none"
             >
-              <Phone size={16} className="shrink-0" />
+              <Phone size={14} className="shrink-0" />
               <span>Orçamento Grátis</span>
             </a>
           </div>

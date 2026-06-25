@@ -1,6 +1,7 @@
 import { motion } from "motion/react";
 import { MapPin, Phone, ExternalLink, Navigation, Clock } from "lucide-react";
 import { LOJAS } from "../siteData";
+import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 
 export default function NossasLojas() {
   return (
@@ -102,18 +103,18 @@ export default function NossasLojas() {
                   </div>
                 </div>
 
-                {/* Botões de Ação Grandes (Foco em Idosos, Toques Grandes) */}
-                <div className="mt-8 space-y-3">
+                 {/* Botões de Ação */}
+                <div className="mt-6 space-y-2">
                   {/* WhatsApp Botão Principal */}
                   <a
                     id={`loja-whats-btn-${loja.id}`}
-                    href={loja.linkWhats}
+                    href={getWhatsAppLink(loja.whatsapp, `Seção Lojas - Unidade ${loja.nome}`, typeof window !== "undefined" ? window.location.href : "")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-4 px-6 rounded-2xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light hover:from-suncell-orange-light hover:to-suncell-orange text-white text-center font-sans font-black text-base sm:text-lg flex items-center justify-center gap-2.5 shadow-md active:scale-[0.99] transition-all cursor-pointer focus:outline-none"
+                    className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light hover:from-suncell-orange-light hover:to-suncell-orange text-white text-center font-sans font-bold text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-[0_4px_12px_rgba(255,107,0,0.15)] active:scale-[0.99] transition-all cursor-pointer focus:outline-none"
                   >
-                    <Phone size={22} className="shrink-0" />
-                    <span>Falar no WhatsApp da Loja</span>
+                    <Phone size={16} className="shrink-0" />
+                    <span>WhatsApp Loja</span>
                   </a>
 
                   {/* Ver no mapa Botão Secundário */}
@@ -122,11 +123,11 @@ export default function NossasLojas() {
                     href={loja.maps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 px-6 rounded-2xl bg-white hover:bg-gray-50 text-gray-800 hover:text-[#0D0D0D] border border-gray-200 text-center font-sans font-bold text-sm sm:text-base flex items-center justify-center gap-2 transition-colors duration-200 cursor-pointer focus:outline-none shadow-sm"
+                    className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-gray-50 text-gray-700 hover:text-[#0D0D0D] border border-gray-200 text-center font-sans font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer focus:outline-none shadow-sm active:scale-[0.99]"
                   >
-                    <Navigation size={18} className="text-suncell-orange shrink-0" />
-                    <span>Ver no Mapa do Google</span>
-                    <ExternalLink size={14} className="opacity-60 shrink-0" />
+                    <Navigation size={14} className="text-suncell-orange shrink-0" />
+                    <span>Ver no Google Maps</span>
+                    <ExternalLink size={12} className="opacity-60 shrink-0" />
                   </a>
                 </div>
 

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { motion } from "motion/react";
 import { Smartphone, Phone, Home, ArrowLeft, ShieldAlert, MapPin, Navigation } from "lucide-react";
 import { LOJAS } from "../siteData";
+import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import EnhancedSEO from "./EnhancedSEO";
 import FAQAccordion from "./FAQAccordion";
 
@@ -40,20 +41,20 @@ export default function NotFound() {
           </p>
 
           {/* Botões rápidos de navegação */}
-          <div className="mt-8 flex flex-wrap items-center justify-center gap-4">
+          <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
             <Link
               id="notfound-home-btn"
               to="/"
-              className="px-6 py-3.5 bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white text-center font-sans font-black text-sm rounded-xl flex items-center justify-center gap-2 hover:shadow-[0_4px_15px_rgba(255,107,0,0.3)] transition-all cursor-pointer"
+              className="px-5 py-2.5 bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white text-center font-sans font-bold text-xs sm:text-sm rounded-xl flex items-center justify-center gap-1.5 hover:shadow-md transition-all cursor-pointer active:scale-[0.99]"
             >
-              <Home size={16} />
+              <Home size={14} />
               <span>Voltar para Home</span>
             </Link>
 
             <a
               id="notfound-services-btn"
               href="/#servicos-section"
-              className="px-6 py-3.5 bg-white hover:bg-gray-50 text-gray-800 text-center font-sans font-bold text-sm border border-gray-200 rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
+              className="px-5 py-2.5 bg-white hover:bg-gray-50 text-gray-700 text-center font-sans font-bold text-xs sm:text-sm border border-gray-200 rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-sm active:scale-[0.99]"
             >
               <span>Ver Serviços</span>
             </a>
@@ -79,13 +80,13 @@ export default function NotFound() {
                 
                 <a
                   id="notfound-whats-guaira"
-                  href={LOJAS[0].linkWhats}
+                  href={getWhatsAppLink("5541999176640", "Pág 404 - Unidade Guaíra", typeof window !== "undefined" ? window.location.href : "")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-black text-sm rounded-lg flex items-center justify-center gap-2 shadow hover:shadow-lg transition-all"
+                  className="w-full py-2.5 bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-sm hover:shadow-[0_4px_12px_rgba(255,107,0,0.15)] transition-all cursor-pointer active:scale-[0.99]"
                 >
-                  <Phone size={16} />
-                  <span>Chamar Guaíra</span>
+                  <Phone size={14} />
+                  <span>WhatsApp Guaíra</span>
                 </a>
               </div>
 
@@ -101,13 +102,13 @@ export default function NotFound() {
 
                 <a
                   id="notfound-whats-boqueirao"
-                  href={LOJAS[1].linkWhats}
+                  href={getWhatsAppLink("5541997501961", "Pág 404 - Unidade Alto Boqueirão", typeof window !== "undefined" ? window.location.href : "")}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-full py-3 bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-black text-sm rounded-lg flex items-center justify-center gap-2 shadow hover:shadow-lg transition-all"
+                  className="w-full py-2.5 bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm rounded-xl flex items-center justify-center gap-2 shadow-sm hover:shadow-[0_4px_12px_rgba(255,107,0,0.15)] transition-all cursor-pointer active:scale-[0.99]"
                 >
-                  <Phone size={16} />
-                  <span>Chamar Alto Boqueirão</span>
+                  <Phone size={14} />
+                  <span>WhatsApp Boqueirão</span>
                 </a>
               </div>
 

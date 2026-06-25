@@ -2,6 +2,7 @@ import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { MapPin, Phone, ChevronRight, CheckCircle, Navigation, ShieldCheck, Heart, ArrowLeft, AlertCircle } from "lucide-react";
 import { findPageBySlug, LOJAS, getBairrosPages, getCidadesPages, getAparelhosPages, getServicosPages, rotaDe, PageData } from "../siteData";
+import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import EnhancedSEO from "./EnhancedSEO";
 import FAQAccordion from "./FAQAccordion";
 
@@ -194,12 +195,12 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
 
                   <a
                     id="programmatic-whats-btn-primary"
-                    href={lojaProxima.linkWhats}
+                    href={getWhatsAppLink(lojaProxima.whatsapp, `Pág SEO - Recomendado ${lojaProxima.nome}`, typeof window !== "undefined" ? window.location.href : "")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light hover:from-suncell-orange-light hover:to-suncell-orange text-white text-center font-sans font-black text-base flex items-center justify-center gap-2.5 shadow-md transition-all cursor-pointer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light hover:from-suncell-orange-light hover:to-suncell-orange text-white text-center font-sans font-bold text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-[0_4px_12px_rgba(255,107,0,0.15)] active:scale-[0.99] transition-all cursor-pointer"
                   >
-                    <Phone size={18} />
+                    <Phone size={16} />
                     <span>Falar no WhatsApp</span>
                   </a>
 
@@ -208,25 +209,25 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
                     href={lojaProxima.maps}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-3 bg-[#F5F5F7] hover:bg-gray-100 border border-gray-200 text-gray-800 text-center font-sans font-bold text-xs flex items-center justify-center gap-1.5 rounded-xl transition-colors cursor-pointer shadow-sm"
+                    className="w-full py-2.5 bg-[#F5F5F7] hover:bg-gray-100 border border-gray-200 text-gray-700 text-center font-sans font-bold text-xs flex items-center justify-center gap-1.5 rounded-xl transition-all cursor-pointer shadow-sm active:scale-[0.99]"
                   >
-                    <Navigation size={14} className="text-suncell-orange" />
+                    <Navigation size={12} className="text-suncell-orange" />
                     <span>Ver no Google Maps</span>
                   </a>
                 </div>
 
                 {/* Loja Secundária Alternativa */}
-                <div className="mt-8 pt-6 border-t border-gray-100">
-                  <p className="text-xs text-gray-400 mb-2">Quer falar com a outra unidade?</p>
+                <div className="mt-6 pt-5 border-t border-gray-100">
+                  <p className="text-[11px] text-gray-400 mb-2">Quer falar com a outra unidade?</p>
                   <a
                     id="programmatic-whats-btn-secondary"
-                    href={lojaSecundaria.linkWhats}
+                    href={getWhatsAppLink(lojaSecundaria.whatsapp, `Pág SEO - Alternativo ${lojaSecundaria.nome}`, typeof window !== "undefined" ? window.location.href : "")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2.5 px-4 bg-[#F5F5F7] hover:bg-gray-100 border border-gray-200 text-gray-800 text-center font-sans font-bold text-xs rounded-xl flex items-center justify-center gap-2 transition-colors cursor-pointer shadow-sm"
+                    className="w-full py-2 px-4 bg-[#F5F5F7] hover:bg-gray-100 border border-gray-200 text-gray-600 text-center font-sans font-bold text-xs rounded-xl flex items-center justify-center gap-1.5 transition-all cursor-pointer shadow-sm active:scale-[0.99]"
                   >
-                    <Phone size={14} />
-                    <span>Chamar Unidade {lojaSecundaria.id === "guaira" ? "Guaíra" : "Alto Boqueirão"}</span>
+                    <Phone size={12} />
+                    <span>Unidade {lojaSecundaria.id === "guaira" ? "Guaíra" : "Alto Boqueirão"}</span>
                   </a>
                 </div>
 
