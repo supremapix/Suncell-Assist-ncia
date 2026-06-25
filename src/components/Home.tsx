@@ -76,7 +76,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             {/* Bloco de Texto Principal */}
-            <div className="lg:col-span-7 space-y-8 text-left">
+            <div className="lg:col-span-7 space-y-8 text-center lg:text-left">
               <motion.div
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -91,7 +91,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.1 }}
-                className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0D0D0D] tracking-tight leading-none"
+                className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-[#0D0D0D] tracking-tight leading-tight sm:leading-none"
               >
                 Assistência Técnica de Celular em <span className="text-transparent bg-clip-text bg-gradient-to-r from-suncell-orange to-suncell-orange-light">Curitiba</span>
               </motion.h1>
@@ -100,7 +100,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="font-sans text-lg sm:text-xl text-gray-600 leading-relaxed max-w-xl"
+                className="font-sans text-lg sm:text-xl text-gray-600 leading-relaxed max-w-xl mx-auto lg:mx-0"
               >
                 Conserto especializado de iPhone, Xiaomi, Samsung e Motorola. Diagnóstico 100% gratuito, peças premium, garantia e duas lojas para te atender.
               </motion.p>
@@ -110,7 +110,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.3 }}
-                className="relative max-w-md"
+                className="relative max-w-md mx-auto lg:mx-0"
               >
                 <div className="relative">
                   <div className="absolute inset-y-0 left-0 pl-4 flex items-center pointer-events-none text-gray-400">
@@ -147,7 +147,7 @@ export default function Home() {
                         id={`search-res-bairro-${b.slug}`}
                         key={b.slug}
                         to={rotaDe(b)}
-                        className="flex items-center justify-between p-3 rounded-xl hover:bg-suncell-orange/10 hover:text-suncell-orange text-gray-700 transition-colors cursor-pointer"
+                        className="flex items-center justify-between p-3 rounded-xl hover:bg-suncell-orange/10 hover:text-suncell-orange text-gray-700 transition-colors cursor-pointer text-left"
                       >
                         <div className="flex items-center gap-2">
                           <MapPin size={16} className="text-suncell-orange" />
@@ -165,7 +165,7 @@ export default function Home() {
                         id={`search-res-cidade-${c.slug}`}
                         key={c.slug}
                         to={rotaDe(c)}
-                        className="flex items-center justify-between p-3 rounded-xl hover:bg-suncell-orange/10 hover:text-suncell-orange text-gray-700 transition-colors cursor-pointer"
+                        className="flex items-center justify-between p-3 rounded-xl hover:bg-suncell-orange/10 hover:text-suncell-orange text-gray-700 transition-colors cursor-pointer text-left"
                       >
                         <div className="flex items-center gap-2">
                           <MapPin size={16} className="text-suncell-orange" />
@@ -185,7 +185,7 @@ export default function Home() {
                 initial={{ opacity: 0, y: 15 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.4 }}
-                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2"
+                className="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-2 max-w-md mx-auto lg:mx-0 w-full"
               >
                 <a
                   id="hero-whats-btn"
