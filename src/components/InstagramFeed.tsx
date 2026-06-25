@@ -50,14 +50,14 @@ export default function InstagramFeed() {
           className="relative bg-white border border-gray-100 rounded-3xl overflow-hidden shadow-xl p-4 sm:p-6"
         >
           {/* Iframe Embed */}
-          <div className="relative w-full rounded-2xl overflow-hidden bg-white border border-gray-100 h-[480px] md:h-[750px]">
+          <div className="relative w-full rounded-2xl overflow-hidden bg-white border border-gray-100 h-[390px] sm:h-[450px] md:h-[750px]">
             <iframe
               id="instagram-embed-iframe"
               src={INSTAGRAM_EMBED_URL}
               className="absolute inset-0 w-full h-full"
               loading="lazy"
               scrolling="no"
-              allowTransparency
+              allowtransparency="true"
               title="Instagram Feed @suncell.brasil"
               style={{ border: 0 }}
             />
