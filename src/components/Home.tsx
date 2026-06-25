@@ -162,13 +162,13 @@ export default function Home() {
               <div className="absolute inset-0 bg-gradient-to-t from-black/95 via-black/65 to-black/30 md:bg-gradient-to-r md:from-black/95 md:via-black/60 md:to-transparent z-10" />
 
               {/* Crédito da Imagem da Loja / Foto Real */}
-              <div className="absolute bottom-6 right-6 md:bottom-8 md:right-12 z-20 flex items-center gap-1.5 bg-black/45 border border-white/10 px-2.5 py-1 rounded-md text-[10px] font-mono text-gray-300 backdrop-blur-sm shadow-sm select-none">
+              <div className="absolute top-4 right-4 sm:top-auto sm:bottom-8 sm:right-12 z-20 flex items-center gap-1.5 bg-black/45 border border-white/10 px-2.5 py-1 rounded-md text-[10px] font-mono text-gray-300 backdrop-blur-sm shadow-sm select-none">
                 <span className="w-1.5 h-1.5 rounded-full bg-suncell-orange animate-pulse" />
                 <span>{slides[currentSlide].credit}</span>
               </div>
 
               {/* Bloco de Informações Sobrepostos */}
-              <div className="absolute inset-0 z-20 flex flex-col justify-end md:justify-center p-6 sm:p-10 md:p-16 max-w-2xl text-left text-white space-y-4 sm:space-y-5">
+              <div className="absolute inset-0 z-20 flex flex-col justify-end md:justify-center p-6 pb-16 sm:p-10 sm:pb-10 md:p-16 max-w-2xl text-left text-white space-y-3.5 sm:space-y-5">
                 <motion.div
                   initial={{ opacity: 0, y: 10 }}
                   animate={{ opacity: 1, y: 0 }}
