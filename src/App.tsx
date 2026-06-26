@@ -68,6 +68,12 @@ export default function App() {
                 element={<ProgrammaticPage type="servico" />} 
               />
               
+              {/* Programmatic SEO: Unidades de Lojas Físicas */}
+              <Route 
+                path="/loja/:slug" 
+                element={<ProgrammaticPage type="loja" />} 
+              />
+              
               {/* Página 404 Customizada */}
               <Route path="/404" element={<NotFound />} />
               

@@ -27,7 +27,8 @@ export default function Home() {
     if (url.includes("lg.mp4")) return "LG";
     if (url.includes("motorola.mp4")) return "Motorola";
     if (url.includes("idem_Xiaomi_Xiaomi_Redmi_") || url.includes("Xiaomi")) return "Xiaomi";
-    if (url.includes("mixkit") || url.includes("samsung")) return "Samsung";
+    if (url.includes("mixkit") || url.includes("samsung") || url.includes("sansung")) return "Samsung";
+    if (url.includes("apple.mp4") || url.includes("iphone")) return "Apple";
     return "Celular";
   };
 
@@ -482,7 +483,7 @@ export default function Home() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
             {aparelhos.map((ap, idx) => {
-              const hasVideo = ap.slug === "lg" || ap.slug === "motorola" || ap.slug === "xiaomi-redmi-poco" || ap.slug === "samsung-galaxy";
+              const hasVideo = ap.slug === "lg" || ap.slug === "motorola" || ap.slug === "xiaomi-redmi-poco" || ap.slug === "samsung-galaxy" || ap.slug === "iphone";
               const videoSrc = ap.slug === "lg" 
                 ? "https://img.suncellassistencia.com.br/lg.mp4" 
                 : ap.slug === "motorola" 
@@ -490,8 +491,10 @@ export default function Home() {
                   : ap.slug === "xiaomi-redmi-poco"
                     ? "https://img.suncellassistencia.com.br/idem_Xiaomi_Xiaomi_Redmi_.mp4"
                     : ap.slug === "samsung-galaxy"
-                      ? "https://assets.mixkit.co/videos/preview/mixkit-technician-repairing-a-mobile-phone-40019-large.mp4"
-                      : "";
+                      ? "https://img.suncellassistencia.com.br/sansung.mp4"
+                      : ap.slug === "iphone"
+                        ? "https://img.suncellassistencia.com.br/apple.mp4"
+                        : "";
               return (
                 <motion.div
                   key={ap.slug}
@@ -544,10 +547,10 @@ export default function Home() {
                     <Link
                       id={`ap-card-link-${ap.slug}`}
                       to={rotaDe(ap)}
-                      className="pt-4 border-t border-zinc-800/80 font-sans font-bold text-xs text-suncell-orange flex items-center justify-between group-hover:text-suncell-orange-light focus:outline-none"
+                      className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light hover:from-suncell-orange-light hover:to-suncell-orange text-white text-center font-sans font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 shadow-[0_4px_12px_rgba(255,107,0,0.15)] hover:shadow-[0_4px_20px_rgba(255,107,0,0.3)] active:scale-[0.98] transition-all duration-300 focus:outline-none"
                     >
-                      <span>Orçamento especializado</span>
-                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                      <span>Orçamento Especializado</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-300" />
                     </Link>
                   </div>
                 </motion.div>

@@ -14,7 +14,7 @@ export interface Loja {
 }
 
 export interface PageData {
-  type: "bairro" | "cidade" | "aparelho" | "servico";
+  type: "bairro" | "cidade" | "aparelho" | "servico" | "loja";
   slug: string;
   nome: string;
   regiao?: string;
@@ -398,18 +398,88 @@ export function getServicosPages(): PageData[] {
   });
 }
 
+export function getLojasPages(): PageData[] {
+  return [
+    {
+      type: "loja",
+      slug: "guaira",
+      nome: "Guaíra (Mercado Goes)",
+      lojaMaisProxima: "guaira",
+      h1: "Assistência Técnica de Celular no Guaíra | SUNCELL Curitiba",
+      title: "Conserto de Celular no Guaíra Curitiba (Mercado Goes) - SUNCELL PRO",
+      description: "Precisando consertar seu celular no Guaíra, Portão ou Lindóia? A SUNCELL oferece troca de tela, bateria e placa com orçamento rápido e garantia no Mercado Goes!",
+      intro: "A unidade SUNCELL Guaíra está estrategicamente localizada dentro do Mercado Goes (Rua Maria Moscardi Fanini, 261), oferecendo o mais alto padrão de qualidade em conserto de celulares para as regiões do Guaíra, Portão, Lindóia, Fanny, Parolin e Água Verde. Com estacionamento gratuito e segurança privada do supermercado, você pode fazer suas compras enquanto nossa equipe de técnicos especializados realiza a substituição de telas de alta resolução, baterias certificadas pela Anatel, conectores de carga e reparo avançado de placa-mãe. Dominamos o conserto de aparelhos das marcas Apple (iPhone), Samsung Galaxy, Motorola, Xiaomi (Redmi e Poco) e LG. Venha tomar um café conosco e faça uma avaliação gratuita na hora!",
+      faq: [
+        {
+          q: "Onde fica exatamente a loja SUNCELL no Guaíra?",
+          a: "Nossa unidade fica convenientemente dentro do Mercado Goes, na Rua Maria Moscardi Fanini, 261. É uma localização de fácil acesso com amplo estacionamento grátis e segurança para você consertar seu aparelho sem preocupações."
+        },
+        {
+          q: "Vocês consertam celulares na hora na unidade Guaíra?",
+          a: "Sim! A maioria dos serviços mais comuns, como troca de tela e troca de bateria, são finalizados em menos de 1 hora. Enquanto você faz suas compras no Mercado Goes, nós consertamos o seu smartphone!"
+        },
+        {
+          q: "Quais bairros são atendidos de forma expressa pela unidade Guaíra?",
+          a: "Atendemos diretamente moradores dos bairros Guaíra, Portão, Lindóia, Fanny, Água Verde, Parolin, Prado Velho, Batel, Rebouças e Centro. Oferecemos também coleta via motoboy parceiro caso você não possa vir até a loja."
+        },
+        {
+          q: "O diagnóstico do celular na SUNCELL Guaíra é gratuito?",
+          a: "Sim, o orçamento é 100% gratuito e feito sem compromisso! Testamos as correntes, conectores, bateria e placa do seu celular na hora para apresentar a melhor solução."
+        },
+        {
+          q: "Qual a garantia oferecida nos serviços da loja do Guaíra?",
+          a: "Damos garantia completa de 90 dias (3 meses) em toda a mão de obra e peças aplicadas, cobrindo qualquer defeito de fabricação ou funcionamento pós-reparo."
+        }
+      ]
+    },
+    {
+      type: "loja",
+      slug: "boqueirao",
+      nome: "Alto Boqueirão (Mercado Goes)",
+      lojaMaisProxima: "boqueirao",
+      h1: "Assistência Técnica de Celular no Alto Boqueirão | SUNCELL Curitiba",
+      title: "Conserto de Celular no Alto Boqueirão (Mercado Goes) - SUNCELL PRO",
+      description: "Procurando assistência de celular no Alto Boqueirão, Sítio Cercado ou Boqueirão? Troca de tela, bateria e reparo de placa expresso dentro do Mercado Goes!",
+      intro: "A unidade SUNCELL Alto Boqueirão está sediada de forma segura e confortável dentro do Mercado Goes (Rua Pastor Antônio Polito, 1805), sendo o ponto de referência definitivo em conserto e manutenção de celulares para moradores do Alto Boqueirão, Sítio Cercado, Boqueirão, Pinheirinho, Xaxim, Ganchinho, Umbará e também para a cidade vizinha de São José dos Pinhais. Usufrua de toda a infraestrutura com estacionamento coberto e vigilância integrada do supermercado para deixar seu celular em mãos altamente qualificadas. Realizamos diagnósticos minuciosos e consertos em tempo recorde para marcas consagradas como Samsung, Motorola, Xiaomi, LG e Apple iPhones. Traga seu aparelho e tenha um atendimento humano e especializado!",
+      faq: [
+        {
+          q: "Como encontrar a SUNCELL no Alto Boqueirão?",
+          a: "Nossa assistência técnica de celulares está instalada dentro do Mercado Goes da Rua Pastor Antônio Polito, 1805, no Alto Boqueirão. Você pode estacionar gratuitamente no pátio do supermercado e nos visitar com toda a segurança."
+        },
+        {
+          q: "Vocês fazem reparo de placa-mãe na unidade Alto Boqueirão?",
+          a: "Sim! Somos especialistas em microssoldagem e reparo avançado de placas para celulares que não ligam, não carregam ou sofreram contato com água. Dispomos de laboratório próprio de última geração para esses procedimentos."
+        },
+        {
+          q: "A loja do Alto Boqueirão atende moradores do Sítio Cercado e Xaxim?",
+          a: "Com certeza! Por estarmos em uma avenida de grande circulação na divisa de bairros, somos a opção mais rápida e cômoda para quem mora no Sítio Cercado, Xaxim, Boqueirão, Pinheirinho e Uberaba."
+        },
+        {
+          q: "Quais são as formas de pagamento aceitas no Alto Boqueirão?",
+          a: "Aceitamos cartões de crédito e débito com parcelamento facilitado em até 12x, PIX, dinheiro e link de pagamento. Facilitamos ao máximo para que você possa reaver seu celular funcionando sem estourar o orçamento."
+        },
+        {
+          q: "Como funciona o serviço de coleta via motoboy para o Boqueirão?",
+          a: "Caso você esteja ocupado ou no trabalho, basta entrar em contato com nossa equipe no WhatsApp. Nós agendamos a coleta do seu smartphone via motoboy de confiança e, após o reparo na loja, entregamos de volta no mesmo dia!"
+        }
+      ]
+    }
+  ];
+}
+
 // Retorna todas as páginas possíveis de SEO programático
 export function getTodasPaginas(): PageData[] {
   return [
     ...getBairrosPages(),
     ...getCidadesPages(),
     ...getAparelhosPages(),
-    ...getServicosPages()
+    ...getServicosPages(),
+    ...getLojasPages()
   ];
 }
 
 // Retorna a página pelo slug e pelo tipo de página
-export function findPageBySlug(type: "bairro" | "cidade" | "aparelho" | "servico", slug: string): PageData | undefined {
+export function findPageBySlug(type: "bairro" | "cidade" | "aparelho" | "servico" | "loja", slug: string): PageData | undefined {
   const pages = getTodasPaginas();
   return pages.find((p) => p.type === type && p.slug === slug);
 }
@@ -421,5 +491,6 @@ export function rotaDe(p: PageData): string {
     case "cidade":   return `/assistencia-tecnica-cidade/${p.slug}`;
     case "aparelho": return `/assistencia-tecnica-aparelho/${p.slug}`;
     case "servico":  return `/servico/${p.slug}`;
+    case "loja":     return `/loja/${p.slug}`;
   }
 }

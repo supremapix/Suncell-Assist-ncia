@@ -1,13 +1,13 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { MapPin, Phone, ChevronRight, CheckCircle, Navigation, ShieldCheck, Heart, ArrowLeft, AlertCircle } from "lucide-react";
-import { findPageBySlug, LOJAS, getBairrosPages, getCidadesPages, getAparelhosPages, getServicosPages, rotaDe, PageData } from "../siteData";
+import { findPageBySlug, LOJAS, getBairrosPages, getCidadesPages, getAparelhosPages, getServicosPages, rotaDe, PageData, getLojasPages } from "../siteData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import EnhancedSEO from "./EnhancedSEO";
 import FAQAccordion from "./FAQAccordion";
 
 interface ProgrammaticPageProps {
-  type: "bairro" | "cidade" | "aparelho" | "servico";
+  type: "bairro" | "cidade" | "aparelho" | "servico" | "loja";
 }
 
 export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
@@ -28,6 +28,7 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
   const todosBairros = getBairrosPages();
   const todosAparelhos = getAparelhosPages();
   const todosServicos = getServicosPages();
+  const todasLojas = getLojasPages();
 
   let linkSugestoes: PageData[] = [];
   if (type === "bairro") {
@@ -41,6 +42,8 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
     linkSugestoes = todosAparelhos.filter((a) => a.slug !== page.slug);
   } else if (type === "servico") {
     linkSugestoes = todosServicos.filter((s) => s.slug !== page.slug);
+  } else if (type === "loja") {
+    linkSugestoes = todasLojas.filter((l) => l.slug !== page.slug);
   }
 
   // Lista de serviços oferecidos na página

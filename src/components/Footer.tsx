@@ -23,40 +23,51 @@ export default function Footer() {
           
           {/* Apresentação da Marca */}
           <div className="space-y-6 flex flex-col items-center text-center lg:items-start lg:text-left">
-            <Link
-              id="footer-logo-link"
-              to="/"
-              className="group cursor-pointer focus:outline-none flex items-center justify-center"
-              aria-label="SUNCELL Home"
-            >
-              <div className="relative flex items-center justify-center">
-                {/* Efeito de fundo laranja premium para sensação de profundidade e brilho neon */}
-                <div className="absolute w-28 h-12 bg-suncell-orange/20 rounded-full blur-xl opacity-75 group-hover:bg-suncell-orange/35 group-hover:scale-110 transition-all duration-300 pointer-events-none" />
-                
-                <motion.img
-                  src="https://img.suncellassistencia.com.br/logo-suncell-assistencia-de-celulares.webp"
-                  alt="SUNCELL Assistência de Celulares"
-                  className="h-10 sm:h-12 w-auto object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,107,0,0.5)]"
-                  whileHover={{ 
-                    scale: 1.07,
-                    rotateY: 12,
-                    rotateX: -10,
-                    filter: "drop-shadow(0px 0px 18px rgba(255,107,0,0.85))"
-                  }}
-                  whileTap={{ 
-                    scale: 0.94,
-                    rotateZ: -2.5,
-                    filter: "drop-shadow(0px 0px 10px rgba(255,107,0,0.95))"
-                  }}
-                  transition={{ 
-                    type: "spring", 
-                    stiffness: 400, 
-                    damping: 14 
-                  }}
-                  referrerPolicy="no-referrer"
-                />
+            <div className="flex flex-col items-center lg:items-start space-y-4">
+              <Link
+                id="footer-logo-link"
+                to="/"
+                className="group cursor-pointer focus:outline-none flex items-center justify-center relative p-3 rounded-2xl bg-suncell-dark-gray/30 border border-suncell-orange/30 shadow-[0_0_20px_rgba(255,107,0,0.15)] hover:border-suncell-orange transition-all duration-300"
+                aria-label="SUNCELL Home"
+              >
+                {/* Radar/Ping alert effect for easy tracking */}
+                <span className="absolute inset-0 rounded-2xl bg-suncell-orange/15 animate-ping pointer-events-none scale-105" />
+                <span className="absolute -inset-0.5 rounded-2xl border border-suncell-orange/20 animate-pulse pointer-events-none" />
+
+                <div className="relative flex items-center justify-center">
+                  {/* Premium glowing background */}
+                  <div className="absolute w-36 h-16 bg-suncell-orange/20 rounded-full blur-xl opacity-80 group-hover:bg-suncell-orange/35 group-hover:scale-110 transition-all duration-300 pointer-events-none" />
+                  
+                  <motion.img
+                    src="https://img.suncellassistencia.com.br/logo-suncell-assistencia-de-celulares.webp"
+                    alt="SUNCELL Assistência de Celulares"
+                    className="h-14 sm:h-16 w-auto object-contain relative z-10 drop-shadow-[0_0_12px_rgba(255,107,0,0.7)]"
+                    animate={{
+                      scale: [1, 1.03, 1, 1.03, 1],
+                    }}
+                    transition={{
+                      duration: 3,
+                      repeat: Infinity,
+                      ease: "easeInOut"
+                    }}
+                    whileHover={{ 
+                      scale: 1.08,
+                      filter: "drop-shadow(0px 0px 22px rgba(255,107,0,0.95))"
+                    }}
+                    whileTap={{ 
+                      scale: 0.95,
+                    }}
+                    referrerPolicy="no-referrer"
+                  />
+                </div>
+              </Link>
+
+              {/* High visibility alert badge for seniors */}
+              <div className="flex items-center gap-2 bg-suncell-orange text-white font-sans font-extrabold text-xs px-3.5 py-1.5 rounded-full uppercase tracking-wider animate-[pulse_2s_infinite] shadow-lg shadow-suncell-orange/20">
+                <span className="w-2 h-2 rounded-full bg-white animate-ping" />
+                <span>Atendimento Especial 60+</span>
               </div>
-            </Link>
+            </div>
             
             <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed max-w-sm">
               Sua assistência técnica definitiva em Curitiba. Especialistas em consertos rápidos de celulares de todas as marcas com honestidade e transparência.

@@ -119,6 +119,13 @@ export default function EnhancedSEO({
         "name": pageData.nome,
         "item": `${appUrl}${rotaDe(pageData)}`
       });
+    } else if (pageData.type === "loja") {
+      breadcrumbItems.push({
+        "@type": "ListItem",
+        "position": 2,
+        "name": `Loja ${pageData.nome}`,
+        "item": `${appUrl}${rotaDe(pageData)}`
+      });
     }
 
     schemas.push({

@@ -1,5 +1,6 @@
 import { motion } from "motion/react";
-import { MapPin, Phone, ExternalLink, Navigation, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
+import { MapPin, Phone, ExternalLink, Navigation, Clock, ChevronRight } from "lucide-react";
 import { LOJAS } from "../siteData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 
@@ -104,31 +105,43 @@ export default function NossasLojas() {
                 </div>
 
                  {/* Botões de Ação */}
-                <div className="mt-6 space-y-2">
+                <div className="mt-6 space-y-2.5">
                   {/* WhatsApp Botão Principal */}
                   <a
                     id={`loja-whats-btn-${loja.id}`}
                     href={getWhatsAppLink(loja.whatsapp, `Seção Lojas - Unidade ${loja.nome}`, typeof window !== "undefined" ? window.location.href : "")}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light hover:from-suncell-orange-light hover:to-suncell-orange text-white text-center font-sans font-bold text-sm flex items-center justify-center gap-2 shadow-sm hover:shadow-[0_4px_12px_rgba(255,107,0,0.15)] active:scale-[0.99] transition-all cursor-pointer focus:outline-none"
+                    className="w-full py-3 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light hover:from-suncell-orange-light hover:to-suncell-orange text-white text-center font-sans font-bold text-sm flex items-center justify-center gap-2 shadow-md shadow-suncell-orange/10 hover:shadow-lg hover:shadow-suncell-orange/20 active:scale-[0.99] transition-all duration-300 cursor-pointer focus:outline-none"
                   >
                     <Phone size={16} className="shrink-0" />
                     <span>WhatsApp Loja</span>
                   </a>
 
-                  {/* Ver no mapa Botão Secundário */}
-                  <a
-                    id={`loja-maps-btn-${loja.id}`}
-                    href={loja.maps}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-2.5 px-4 rounded-xl bg-white hover:bg-gray-50 text-gray-700 hover:text-[#0D0D0D] border border-gray-200 text-center font-sans font-bold text-xs sm:text-sm flex items-center justify-center gap-1.5 transition-all duration-200 cursor-pointer focus:outline-none shadow-sm active:scale-[0.99]"
-                  >
-                    <Navigation size={14} className="text-suncell-orange shrink-0" />
-                    <span>Ver no Google Maps</span>
-                    <ExternalLink size={12} className="opacity-60 shrink-0" />
-                  </a>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-2">
+                    {/* Página Local Detalhada */}
+                    <Link
+                      id={`loja-page-btn-${loja.id}`}
+                      to={`/loja/${loja.id}`}
+                      className="py-2.5 px-3 rounded-xl bg-suncell-orange/10 hover:bg-suncell-orange text-suncell-orange hover:text-white border border-suncell-orange/30 text-center font-sans font-bold text-xs flex items-center justify-center gap-1 transition-all duration-300 cursor-pointer focus:outline-none"
+                    >
+                      <span>Ver Unidade</span>
+                      <ChevronRight size={14} className="shrink-0" />
+                    </Link>
+
+                    {/* Ver no mapa Botão Secundário */}
+                    <a
+                      id={`loja-maps-btn-${loja.id}`}
+                      href={loja.maps}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="py-2.5 px-3 rounded-xl bg-white hover:bg-gray-50 text-gray-700 hover:text-[#0D0D0D] border border-gray-200 text-center font-sans font-bold text-xs flex items-center justify-center gap-1 transition-all duration-200 cursor-pointer focus:outline-none shadow-sm active:scale-[0.99]"
+                    >
+                      <Navigation size={13} className="text-suncell-orange shrink-0" />
+                      <span>Google Maps</span>
+                      <ExternalLink size={11} className="opacity-60 shrink-0" />
+                    </a>
+                  </div>
                 </div>
 
               </div>
