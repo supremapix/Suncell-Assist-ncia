@@ -45,7 +45,7 @@ export default function Header() {
           <Link
             id="logo-link"
             to="/"
-            className="flex items-center justify-center group cursor-pointer focus:outline-none absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:left-auto z-20"
+            className="flex items-center justify-start group cursor-pointer focus:outline-none z-20"
             aria-label="SUNCELL Home"
           >
             <div className="relative flex items-center justify-center">
@@ -55,7 +55,7 @@ export default function Header() {
               <motion.img
                 src="https://img.suncellassistencia.com.br/logo-suncell-assistencia-de-celulares.webp"
                 alt="SUNCELL Assistência de Celulares"
-                className="h-8 sm:h-10 md:h-11 w-auto object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,107,0,0.5)]"
+                className="h-11 sm:h-12 md:h-11 w-auto object-contain relative z-10 drop-shadow-[0_0_10px_rgba(255,107,0,0.6)]"
                 whileHover={{ 
                   scale: 1.07,
                   rotateY: 12,
@@ -136,16 +136,39 @@ export default function Header() {
             </a>
           </div>
 
-          {/* HAMBURGER BUTTON (MOBILE) - ESPECIFICAMENTE GRANDE PARA IDOSOS */}
-          <button
-            id="mobile-menu-hamburger"
-            onClick={() => setMobileMenuOpen(true)}
-            className="md:hidden w-12 h-12 flex items-center justify-center bg-suncell-dark-gray hover:bg-suncell-medium-gray text-white rounded-xl border border-suncell-medium-gray focus:outline-none transition-colors"
-            aria-label="Abrir Menu Principal"
-            aria-expanded={mobileMenuOpen}
-          >
-            <Menu size={28} />
-          </button>
+          {/* HAMBURGER BUTTON (MOBILE) - COM ALERTA E ATENÇÃO PREMIUM */}
+          <div className="relative md:hidden z-20">
+            {/* Anéis de pulso de radar neon para atrair o olhar */}
+            <span className="absolute inset-0 rounded-xl bg-suncell-orange/20 animate-ping pointer-events-none scale-110" />
+            <span className="absolute -inset-0.5 rounded-xl border-2 border-suncell-orange/30 animate-pulse pointer-events-none" />
+            
+            <motion.button
+              id="mobile-menu-hamburger"
+              onClick={() => setMobileMenuOpen(true)}
+              className="relative w-12 h-12 flex items-center justify-center bg-suncell-dark-gray hover:bg-suncell-medium-gray text-white rounded-xl border border-suncell-orange/40 shadow-[0_0_15px_rgba(255,107,0,0.25)] focus:outline-none transition-colors cursor-pointer group"
+              aria-label="Abrir Menu Principal"
+              aria-expanded={mobileMenuOpen}
+              animate={{
+                scale: [1, 1.07, 1, 1.07, 1],
+                rotate: [0, -4, 4, -4, 4, 0],
+              }}
+              transition={{
+                duration: 2.2,
+                repeat: Infinity,
+                repeatDelay: 3.5,
+                ease: "easeInOut"
+              }}
+              whileTap={{ scale: 0.9 }}
+            >
+              <Menu size={28} className="text-suncell-orange group-hover:text-white transition-colors duration-200" />
+              
+              {/* Ponto indicador de atenção piscante/saltitante no canto superior */}
+              <span className="absolute -top-0.5 -right-0.5 flex h-3 w-3">
+                <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-suncell-orange opacity-75"></span>
+                <span className="relative inline-flex rounded-full h-3 w-3 bg-suncell-orange"></span>
+              </span>
+            </motion.button>
+          </div>
 
         </div>
       </header>
