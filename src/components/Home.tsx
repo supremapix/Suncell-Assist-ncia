@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "motion/react";
-import { Smartphone, ShieldCheck, MapPin, ArrowRight, HelpCircle, Phone, Sparkles, Star, Award, ChevronLeft, ChevronRight } from "lucide-react";
+import { Smartphone, ShieldCheck, MapPin, ArrowRight, HelpCircle, Phone, Sparkles, Star, Award, ChevronLeft, ChevronRight, Play, X } from "lucide-react";
 import { 
   LOJAS, 
   getBairrosPages, 
@@ -20,6 +20,16 @@ import EnhancedSEO from "./EnhancedSEO";
 
 export default function Home() {
   const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeVideoUrl, setActiveVideoUrl] = useState<string | null>(null);
+
+  const getBrandNameFromUrl = (url: string | null) => {
+    if (!url) return "Celular";
+    if (url.includes("lg.mp4")) return "LG";
+    if (url.includes("motorola.mp4")) return "Motorola";
+    if (url.includes("idem_Xiaomi_Xiaomi_Redmi_") || url.includes("Xiaomi")) return "Xiaomi";
+    if (url.includes("mixkit") || url.includes("samsung")) return "Samsung";
+    return "Celular";
+  };
 
   const slides = [
     {
@@ -471,37 +481,78 @@ export default function Home() {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6">
-            {aparelhos.map((ap, idx) => (
-              <motion.div
-                key={ap.slug}
-                initial={{ opacity: 0, scale: 0.98 }}
-                whileInView={{ opacity: 1, scale: 1 }}
-                viewport={{ once: true, margin: "-100px" }}
-                transition={{ duration: 0.4, delay: idx * 0.08 }}
-                className="bg-[#F5F5F7] border border-gray-100/80 rounded-2xl p-6 flex flex-col justify-between hover:border-suncell-orange/30 group hover:shadow-md transition-all"
-              >
-                <div>
-                  <span className="text-[10px] font-mono text-suncell-orange font-bold uppercase tracking-wider">
-                    {ap.marca}
-                  </span>
-                  <h3 className="font-display font-extrabold text-lg text-[#0D0D0D] mt-1 group-hover:text-suncell-orange transition-colors">
-                    {ap.nome}
-                  </h3>
-                  <p className="font-sans text-xs text-gray-500 mt-3 leading-relaxed">
-                    Troca de tela, bateria, conector e reparo de placa-mãe.
-                  </p>
-                </div>
-
-                <Link
-                  id={`ap-card-link-${ap.slug}`}
-                  to={rotaDe(ap)}
-                  className="mt-6 pt-4 border-t border-gray-200 font-sans font-bold text-xs text-suncell-orange flex items-center justify-between group-hover:text-suncell-orange-light focus:outline-none"
+            {aparelhos.map((ap, idx) => {
+              const hasVideo = ap.slug === "lg" || ap.slug === "motorola" || ap.slug === "xiaomi-redmi-poco" || ap.slug === "samsung-galaxy";
+              const videoSrc = ap.slug === "lg" 
+                ? "https://img.suncellassistencia.com.br/lg.mp4" 
+                : ap.slug === "motorola" 
+                  ? "https://img.suncellassistencia.com.br/motorola.mp4" 
+                  : ap.slug === "xiaomi-redmi-poco"
+                    ? "https://img.suncellassistencia.com.br/idem_Xiaomi_Xiaomi_Redmi_.mp4"
+                    : ap.slug === "samsung-galaxy"
+                      ? "https://assets.mixkit.co/videos/preview/mixkit-technician-repairing-a-mobile-phone-40019-large.mp4"
+                      : "";
+              return (
+                <motion.div
+                  key={ap.slug}
+                  initial={{ opacity: 0, scale: 0.98 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true, margin: "-100px" }}
+                  transition={{ duration: 0.4, delay: idx * 0.08 }}
+                  className="bg-[#09090B] border border-zinc-800 rounded-2xl overflow-hidden flex flex-col justify-between hover:border-suncell-orange/40 group hover:shadow-[0_0_30px_rgba(255,107,0,0.15)] transition-all duration-300"
                 >
-                  <span>Orçamento especializado</span>
-                  <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </motion.div>
-            ))}
+                  <div>
+                    {/* Top integrated borderless video */}
+                    {hasVideo && (
+                      <div 
+                        className="w-full aspect-video bg-[#000000] cursor-pointer overflow-hidden relative select-none"
+                        onClick={() => setActiveVideoUrl(videoSrc)}
+                      >
+                        <video
+                          className="w-full h-full object-cover opacity-80 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"
+                          src={videoSrc}
+                          autoPlay
+                          muted
+                          loop
+                          playsInline
+                        />
+                      </div>
+                    )}
+
+                    <div className="p-5">
+                      <div className="flex items-center justify-between">
+                        <span className="text-[10px] font-mono text-suncell-orange font-bold uppercase tracking-wider">
+                          {ap.marca}
+                        </span>
+                        {hasVideo && (
+                          <span className="flex items-center gap-1 bg-suncell-orange/15 text-suncell-orange text-[9px] font-mono font-bold px-2 py-0.5 rounded-full uppercase tracking-wider animate-[pulse_3s_infinite]">
+                            <span className="w-1.2 h-1.2 rounded-full bg-suncell-orange" />
+                            Vídeo
+                          </span>
+                        )}
+                      </div>
+                      <h3 className="font-display font-extrabold text-lg text-white mt-1 group-hover:text-suncell-orange transition-colors duration-300">
+                        {ap.nome}
+                      </h3>
+                      <p className="font-sans text-xs text-zinc-400 mt-2.5 leading-relaxed">
+                        Troca de tela, bateria, conector e reparo de placa-mãe.
+                      </p>
+                    </div>
+                  </div>
+
+                  <div className="px-5 pb-5 pt-0">
+                    <Link
+                      id={`ap-card-link-${ap.slug}`}
+                      to={rotaDe(ap)}
+                      className="pt-4 border-t border-zinc-800/80 font-sans font-bold text-xs text-suncell-orange flex items-center justify-between group-hover:text-suncell-orange-light focus:outline-none"
+                    >
+                      <span>Orçamento especializado</span>
+                      <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform" />
+                    </Link>
+                  </div>
+                </motion.div>
+              );
+            })}
           </div>
 
         </div>
@@ -592,6 +643,81 @@ export default function Home() {
 
         </div>
       </section>
+
+      {/* Video Modal with sound and custom controls */}
+      <AnimatePresence>
+        {activeVideoUrl && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            className="fixed inset-0 z-50 bg-black/95 backdrop-blur-md flex items-center justify-center p-4 sm:p-6 md:p-10"
+            onClick={() => setActiveVideoUrl(null)}
+          >
+            <motion.div
+              initial={{ scale: 0.9, y: 20 }}
+              animate={{ scale: 1, y: 0 }}
+              exit={{ scale: 0.9, y: 20 }}
+              transition={{ type: "spring", stiffness: 300, damping: 25 }}
+              className="relative w-full max-w-4xl bg-[#0D0D0D] border border-white/10 rounded-3xl overflow-hidden shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            >
+              {/* Header inside modal */}
+              <div className="absolute top-4 left-4 right-4 z-10 flex items-center justify-between mix-blend-difference">
+                <span className="text-[10px] sm:text-xs font-mono text-suncell-orange font-bold uppercase tracking-wider">
+                  Reparo Especializado {getBrandNameFromUrl(activeVideoUrl)} • SUNCELL PRO
+                </span>
+                <button
+                  onClick={() => setActiveVideoUrl(null)}
+                  className="w-8 h-8 rounded-full bg-white/10 hover:bg-white/20 text-white flex items-center justify-center backdrop-blur-sm transition-colors cursor-pointer focus:outline-none border border-white/5"
+                  aria-label="Fechar"
+                >
+                  <X size={16} />
+                </button>
+              </div>
+
+              {/* Video Player */}
+              <div className="aspect-video w-full relative bg-black">
+                <video
+                  className="w-full h-full object-contain"
+                  src={activeVideoUrl}
+                  autoPlay
+                  controls
+                  playsInline
+                />
+              </div>
+
+              {/* Call to action bar in modal */}
+              <div className="p-5 sm:p-6 bg-gradient-to-b from-[#141414] to-[#0D0D0D] border-t border-white/5 flex flex-col sm:flex-row items-center justify-between gap-4">
+                <div className="text-left">
+                  <h4 className="font-display font-extrabold text-sm sm:text-base text-white">
+                    Precisando consertar seu celular {getBrandNameFromUrl(activeVideoUrl)} em Curitiba?
+                  </h4>
+                  <p className="font-sans text-xs text-slate-400 mt-1">
+                    Fazemos reparo de placa-mãe, troca de tela, bateria e conector de carga com garantia!
+                  </p>
+                </div>
+                <div className="flex items-center gap-3 w-full sm:w-auto shrink-0">
+                  <a
+                    href={getWhatsAppLink("5541999176640", `Modal Video ${getBrandNameFromUrl(activeVideoUrl)} - Home`, typeof window !== "undefined" ? window.location.href : "")}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="flex-1 sm:flex-initial bg-suncell-orange hover:bg-suncell-orange-light text-white font-sans font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl text-center shadow-lg shadow-suncell-orange/20 transition-all focus:outline-none"
+                  >
+                    Orçamento pelo WhatsApp
+                  </a>
+                  <button
+                    onClick={() => setActiveVideoUrl(null)}
+                    className="flex-1 sm:flex-initial bg-white/5 hover:bg-white/10 text-gray-300 font-sans font-bold text-xs sm:text-sm px-5 py-2.5 rounded-xl transition-all focus:outline-none"
+                  >
+                    Fechar
+                  </button>
+                </div>
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 }
