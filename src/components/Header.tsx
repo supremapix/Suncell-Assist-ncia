@@ -39,29 +39,41 @@ export default function Header() {
             : "bg-suncell-black py-5 border-white/5"
         }`}
       >
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
           
           {/* LOGO */}
           <Link
             id="logo-link"
             to="/"
-            className="flex items-center gap-2 group cursor-pointer focus:outline-none"
+            className="flex items-center justify-center group cursor-pointer focus:outline-none absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0 md:left-auto z-20"
             aria-label="SUNCELL Home"
           >
-            <div className="relative w-10 h-10 bg-gradient-to-tr from-suncell-orange to-suncell-orange-light rounded-xl flex items-center justify-center shadow-[0_0_15px_rgba(255,107,0,0.4)] transition-transform duration-300 group-hover:scale-105">
-              <Smartphone size={22} className="text-white animate-[pulse_3s_infinite]" />
-              <div className="absolute inset-0 rounded-xl bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity" />
-            </div>
-            <div className="flex flex-col">
-              <span className="font-display font-extrabold text-xl tracking-tight text-white flex items-center gap-1">
-                SUNCELL
-                <span className="text-suncell-orange text-xs bg-suncell-orange/15 px-1.5 py-0.5 rounded border border-suncell-orange/20 font-mono">
-                  PRO
-                </span>
-              </span>
-              <span className="text-[10px] font-mono tracking-widest text-suncell-text-muted uppercase">
-                Assistência Técnica
-              </span>
+            <div className="relative flex items-center justify-center">
+              {/* Efeito de fundo laranja premium para sensação de profundidade e brilho neon */}
+              <div className="absolute w-24 h-10 sm:w-28 sm:h-12 bg-suncell-orange/25 rounded-full blur-xl opacity-75 group-hover:bg-suncell-orange/40 group-hover:scale-110 transition-all duration-300 pointer-events-none" />
+              
+              <motion.img
+                src="https://img.suncellassistencia.com.br/logo-suncell-assistencia-de-celulares.webp"
+                alt="SUNCELL Assistência de Celulares"
+                className="h-8 sm:h-10 md:h-11 w-auto object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,107,0,0.5)]"
+                whileHover={{ 
+                  scale: 1.07,
+                  rotateY: 12,
+                  rotateX: -10,
+                  filter: "drop-shadow(0px 0px 18px rgba(255,107,0,0.85))"
+                }}
+                whileTap={{ 
+                  scale: 0.94,
+                  rotateZ: -2.5,
+                  filter: "drop-shadow(0px 0px 10px rgba(255,107,0,0.95))"
+                }}
+                transition={{ 
+                  type: "spring", 
+                  stiffness: 400, 
+                  damping: 14 
+                }}
+                referrerPolicy="no-referrer"
+              />
             </div>
           </Link>
 

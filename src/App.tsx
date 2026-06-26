@@ -12,6 +12,7 @@ import Home from "./components/Home";
 import ProgrammaticPage from "./components/ProgrammaticPage";
 import NotFound from "./components/NotFound";
 import SuncellInteractionWidgets from "./components/SuncellInteractionWidgets";
+import BackToTop from "./components/BackToTop";
 
 // Componente utilitário para garantir scroll-to-top automático em cada mudança de rota
 function ScrollToTop() {
@@ -80,6 +81,9 @@ export default function App() {
 
           {/* Floating Share and WhatsApp Widgets */}
           <SuncellInteractionWidgets />
+
+          {/* Back to Top Widget with premium attention-grabbing animations */}
+          <BackToTop />
         </div>
       </BrowserRouter>
     </HelmetProvider>

@@ -22,15 +22,41 @@ export default function Footer() {
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 pb-16 border-b border-suncell-medium-gray/50">
           
           {/* Apresentação da Marca */}
-          <div className="space-y-6">
-            <div className="flex items-center gap-3">
-              <div className="w-10 h-10 bg-gradient-to-tr from-suncell-orange to-suncell-orange-light rounded-xl flex items-center justify-center shadow-lg">
-                <Smartphone size={22} className="text-white" />
+          <div className="space-y-6 flex flex-col items-center text-center lg:items-start lg:text-left">
+            <Link
+              id="footer-logo-link"
+              to="/"
+              className="group cursor-pointer focus:outline-none flex items-center justify-center"
+              aria-label="SUNCELL Home"
+            >
+              <div className="relative flex items-center justify-center">
+                {/* Efeito de fundo laranja premium para sensação de profundidade e brilho neon */}
+                <div className="absolute w-28 h-12 bg-suncell-orange/20 rounded-full blur-xl opacity-75 group-hover:bg-suncell-orange/35 group-hover:scale-110 transition-all duration-300 pointer-events-none" />
+                
+                <motion.img
+                  src="https://img.suncellassistencia.com.br/logo-suncell-assistencia-de-celulares.webp"
+                  alt="SUNCELL Assistência de Celulares"
+                  className="h-10 sm:h-12 w-auto object-contain relative z-10 drop-shadow-[0_0_8px_rgba(255,107,0,0.5)]"
+                  whileHover={{ 
+                    scale: 1.07,
+                    rotateY: 12,
+                    rotateX: -10,
+                    filter: "drop-shadow(0px 0px 18px rgba(255,107,0,0.85))"
+                  }}
+                  whileTap={{ 
+                    scale: 0.94,
+                    rotateZ: -2.5,
+                    filter: "drop-shadow(0px 0px 10px rgba(255,107,0,0.95))"
+                  }}
+                  transition={{ 
+                    type: "spring", 
+                    stiffness: 400, 
+                    damping: 14 
+                  }}
+                  referrerPolicy="no-referrer"
+                />
               </div>
-              <span className="font-display font-extrabold text-2xl tracking-tight text-white">
-                SUNCELL
-              </span>
-            </div>
+            </Link>
             
             <p className="font-sans text-base sm:text-lg text-slate-300 leading-relaxed max-w-sm">
               Sua assistência técnica definitiva em Curitiba. Especialistas em consertos rápidos de celulares de todas as marcas com honestidade e transparência.
