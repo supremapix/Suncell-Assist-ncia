@@ -1,0 +1,32 @@
+# SUNCELL Assistência Técnica de Celulares
+
+SUNCELL is Curitiba's premier rapid mobile phone repair service, running inside secure local supermarkets (Mercado Goes) with free parking and high physical security.
+
+## Core Services
+- Screen Replacement (Troca de tela)
+- Battery Replacement (Troca de bateria)
+- Logic Board Repair (Reparo de placa-mãe)
+- Charger Port Repair (Conector de carga)
+- Data Recovery (Recuperação de dados)
+
+## Supported Brands
+- Apple iPhone (Video: `https://img.suncellassistencia.com.br/apple.mp4`)
+- Samsung Galaxy (Video: `https://img.suncellassistencia.com.br/sansung.mp4`)
+- Motorola (Video: `https://img.suncellassistencia.com.br/motorola.mp4`)
+- Xiaomi Redmi/Poco (Video: `https://img.suncellassistencia.com.br/idem_Xiaomi_Xiaomi_Redmi_.mp4`)
+- LG (Video: `https://img.suncellassistencia.com.br/lg.mp4`)
+
+## Store Locations
+- **Guaíra (Mercado Goes)**
+  - Address: Rua Maria Moscardi Fanini, 261 - Guaíra, Curitiba - PR
+  - Contact: +55 41 99917-6640
+  - URL: `/loja/guaira`
+- **Alto Boqueirão (Mercado Goes)**
+  - Address: Rua Pastor Antônio Polito, 1805 - Alto Boqueirão, Curitiba - PR
+  - Contact: +55 41 99917-6640
+  - URL: `/loja/boqueirao`
+
+## SEO & Accessibility Structure
+- Over 80 programmatic landing pages for Curitiba neighborhoods, surrounding cities, and targeted brands.
+- Built-in High-Contrast Header and pulsating navigation controls optimized for senior users (60+).
+- Secure, server-side dynamic schema structures.
