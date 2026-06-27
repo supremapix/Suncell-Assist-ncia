@@ -83,74 +83,106 @@ export default function Footer() {
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
             
             {/* Contato Loja Guaíra */}
-            <div className="bg-suncell-dark-gray border border-suncell-medium-gray rounded-2xl flex flex-col justify-between overflow-hidden">
-              <div className="relative h-32 w-full overflow-hidden">
+            <div className="bg-suncell-dark-gray border border-suncell-medium-gray rounded-2xl flex flex-col justify-between overflow-hidden shadow-xl shadow-black/10">
+              <div className="relative h-44 w-full bg-[#121214] flex items-center justify-center overflow-hidden border-b border-suncell-medium-gray/40">
                 <img 
                   src="https://img.suncellassistencia.com.br/loja-suncell.webp" 
                   alt="SUNCELL Unidade Guaíra" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain hover:scale-102 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-suncell-dark-gray via-suncell-dark-gray/40 to-transparent" />
+                <div className="absolute top-2 left-2 z-10 flex items-center gap-1 bg-black/50 border border-white/10 px-2 py-0.5 rounded text-[10px] font-mono text-gray-300 backdrop-blur-sm shadow-sm select-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-suncell-orange animate-pulse" />
+                  <span>Loja Completa</span>
+                </div>
               </div>
               
-              <div className="p-6 pt-3 flex flex-col justify-between flex-grow">
+              <div className="p-6 pt-4 flex flex-col justify-between flex-grow">
                 <div>
                   <p className="font-display font-bold text-lg text-white mb-1 flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-ping" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-ping shrink-0" />
                     Unidade Guaíra
                   </p>
-                  <p className="font-sans text-sm text-slate-300 mb-4">
-                    Dentro do Mercado Goes Guaíra
+                  <p className="font-sans text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
+                    Dentro do Mercado Goes Guaíra • Rua Maria Moscardi Fanini, 261
                   </p>
                 </div>
                 
-                <a
-                  id="footer-call-guaira"
-                  href={getWhatsAppLink("5541999176640", "Rodapé - Unidade Guaíra", typeof window !== "undefined" ? window.location.href : "")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-md transition-all cursor-pointer"
-                >
-                  <Phone size={16} />
-                  <span>WhatsApp Guaíra</span>
-                </a>
+                <div className="flex flex-col gap-2 pt-2 border-t border-suncell-medium-gray/20">
+                  <a
+                    id="footer-call-guaira"
+                    href={getWhatsAppLink("5541999176640", "Rodapé - Unidade Guaíra", typeof window !== "undefined" ? window.location.href : "")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-lg transition-all cursor-pointer focus:outline-none"
+                  >
+                    <Phone size={15} />
+                    <span>WhatsApp Guaíra</span>
+                  </a>
+
+                  <a
+                    id="footer-gps-guaira"
+                    href="https://maps.app.goo.gl/tpwBe6j9J3ubo3xSA"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-slate-200 border border-zinc-700 font-sans font-semibold text-xs flex items-center justify-center gap-1.5 hover:shadow-md transition-all cursor-pointer focus:outline-none"
+                  >
+                    <MapPin size={14} className="text-suncell-orange" />
+                    <span>Como chegar no GPS</span>
+                  </a>
+                </div>
               </div>
             </div>
 
             {/* Contato Loja Alto Boqueirão */}
-            <div className="bg-suncell-dark-gray border border-suncell-medium-gray rounded-2xl flex flex-col justify-between overflow-hidden">
-              <div className="relative h-32 w-full overflow-hidden">
+            <div className="bg-suncell-dark-gray border border-suncell-medium-gray rounded-2xl flex flex-col justify-between overflow-hidden shadow-xl shadow-black/10">
+              <div className="relative h-44 w-full bg-[#121214] flex items-center justify-center overflow-hidden border-b border-suncell-medium-gray/40">
                 <img 
                   src="https://img.suncellassistencia.com.br/loja-suncell-alto-boqueirao-assistencia-tecnica-celulares-curitiba-bairro-altoboqueirao-pt.webp" 
                   alt="SUNCELL Unidade Alto Boqueirão" 
-                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  className="w-full h-full object-contain hover:scale-102 transition-transform duration-500"
                   referrerPolicy="no-referrer"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-suncell-dark-gray via-suncell-dark-gray/40 to-transparent" />
+                <div className="absolute top-2 left-2 z-10 flex items-center gap-1 bg-black/50 border border-white/10 px-2 py-0.5 rounded text-[10px] font-mono text-gray-300 backdrop-blur-sm shadow-sm select-none">
+                  <span className="w-1.5 h-1.5 rounded-full bg-suncell-orange animate-pulse" />
+                  <span>Loja Completa</span>
+                </div>
               </div>
 
-              <div className="p-6 pt-3 flex flex-col justify-between flex-grow">
+              <div className="p-6 pt-4 flex flex-col justify-between flex-grow">
                 <div>
                   <p className="font-display font-bold text-lg text-white mb-1 flex items-center gap-2">
-                    <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-ping" />
+                    <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-ping shrink-0" />
                     Unidade Alto Boqueirão
                   </p>
-                  <p className="font-sans text-sm text-slate-300 mb-4">
-                    Dentro do Mercado Goes Alto Boqueirão
+                  <p className="font-sans text-xs sm:text-sm text-slate-300 mb-4 leading-relaxed">
+                    Dentro do Mercado Goes Alto Boqueirão • R. Pastor Antônio Polito, 1805
                   </p>
                 </div>
 
-                <a
-                  id="footer-call-boqueirao"
-                  href={getWhatsAppLink("5541997501961", "Rodapé - Unidade Alto Boqueirão", typeof window !== "undefined" ? window.location.href : "")}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-md transition-all cursor-pointer"
-                >
-                  <Phone size={16} />
-                  <span>WhatsApp Boqueirão</span>
-                </a>
+                <div className="flex flex-col gap-2 pt-2 border-t border-suncell-medium-gray/20">
+                  <a
+                    id="footer-call-boqueirao"
+                    href={getWhatsAppLink("5541997501961", "Rodapé - Unidade Alto Boqueirão", typeof window !== "undefined" ? window.location.href : "")}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-lg transition-all cursor-pointer focus:outline-none"
+                  >
+                    <Phone size={15} />
+                    <span>WhatsApp Boqueirão</span>
+                  </a>
+
+                  <a
+                    id="footer-gps-boqueirao"
+                    href="https://maps.app.goo.gl/x63RjBAv1b1eJVTV6"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-2.5 px-4 rounded-xl bg-zinc-800 hover:bg-zinc-700 text-slate-200 border border-zinc-700 font-sans font-semibold text-xs flex items-center justify-center gap-1.5 hover:shadow-md transition-all cursor-pointer focus:outline-none"
+                  >
+                    <MapPin size={14} className="text-suncell-orange" />
+                    <span>Como chegar no GPS</span>
+                  </a>
+                </div>
               </div>
             </div>
 

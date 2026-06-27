@@ -11,6 +11,8 @@ import Footer from "./components/Footer";
 import Home from "./components/Home";
 import ProgrammaticPage from "./components/ProgrammaticPage";
 import CompramosIphone from "./components/CompramosIphone";
+import QuemSomos from "./components/QuemSomos";
+import Cobertura from "./components/Cobertura";
 import NotFound from "./components/NotFound";
 import SuncellInteractionWidgets from "./components/SuncellInteractionWidgets";
 import BackToTop from "./components/BackToTop";
@@ -79,6 +81,18 @@ export default function App() {
               <Route 
                 path="/compramos-iphone" 
                 element={<CompramosIphone />} 
+              />
+
+              {/* Quem Somos */}
+              <Route 
+                path="/quem-somos" 
+                element={<QuemSomos />} 
+              />
+
+              {/* Bairros & Cidades (Cobertura Geral) */}
+              <Route 
+                path="/bairros-e-cidades" 
+                element={<Cobertura />} 
               />
               
               {/* Página 404 Customizada */}

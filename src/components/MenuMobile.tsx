@@ -1,6 +1,6 @@
 import { motion } from "motion/react";
 import { Link } from "react-router-dom";
-import { X, Home, MapPin, ShieldAlert, Smartphone, Phone, HelpCircle, Instagram } from "lucide-react";
+import { X, Home, MapPin, ShieldAlert, Smartphone, Phone, HelpCircle, Award, Instagram } from "lucide-react";
 import { LOJAS } from "../siteData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 
@@ -63,6 +63,16 @@ export default function MenuMobile({ onClose }: MenuMobileProps) {
           </Link>
 
           <Link
+            id="mobile-nav-quem-somos"
+            to="/quem-somos"
+            onClick={onClose}
+            className="flex items-center gap-4 p-4 rounded-xl bg-suncell-dark-gray/50 hover:bg-suncell-dark-gray text-white font-sans font-bold text-lg border border-suncell-medium-gray/30 transition-all active:scale-[0.98] cursor-pointer focus:outline-none"
+          >
+            <Award size={24} className="text-suncell-orange shrink-0" />
+            <span>Quem Somos</span>
+          </Link>
+
+          <Link
             id="mobile-nav-vender-iphone"
             to="/compramos-iphone"
             onClick={onClose}
@@ -105,15 +115,15 @@ export default function MenuMobile({ onClose }: MenuMobileProps) {
             <span>Marcas de Celular</span>
           </a>
 
-          <a
+          <Link
             id="mobile-nav-cobertura"
-            href="/#cobertura-section"
+            to="/bairros-e-cidades"
             onClick={onClose}
             className="flex items-center gap-4 p-4 rounded-xl bg-suncell-dark-gray/50 hover:bg-suncell-dark-gray text-white font-sans font-bold text-lg border border-suncell-medium-gray/30 transition-all active:scale-[0.98] cursor-pointer focus:outline-none"
           >
             <HelpCircle size={24} className="text-suncell-orange shrink-0" />
             <span>Bairros & Cidades</span>
-          </a>
+          </Link>
         </div>
 
         {/* Rodapé do Menu com Botões Grandes de Contato Direto das 2 Lojas */}

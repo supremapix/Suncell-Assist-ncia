@@ -55,6 +55,23 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
     { nome: "Recuperação de Celular Molhado", desc: "Desoxidação técnica profissional com alta taxa de sucesso." }
   ];
 
+  // Determinar a imagem e legenda ideais com base no tipo e slug da página
+  let bannerImage = "https://img.suncellassistencia.com.br/assistencia-tecnica-curitiba-cwb-parana-brasil.webp";
+  let bannerImageAlt = `Loja Física SUNCELL Assistência Técnica Celular - Unidades em Curitiba`;
+  let bannerLabel = "Fotos das Lojas SUNCELL em Curitiba";
+
+  if (type === "loja") {
+    if (page.slug === "guaira") {
+      bannerImage = "https://img.suncellassistencia.com.br/loja-suncell.webp";
+      bannerImageAlt = "Sede SUNCELL Assistência Técnica - Unidade Guaíra";
+      bannerLabel = "Foto Real da Loja SUNCELL Unidade Guaíra";
+    } else if (page.slug === "boqueirao") {
+      bannerImage = "https://img.suncellassistencia.com.br/loja-suncell-alto-boqueirao-assistencia-tecnica-celulares-curitiba-bairro-altoboqueirao-pt.webp";
+      bannerImageAlt = "Sede SUNCELL Assistência Técnica - Unidade Alto Boqueirão";
+      bannerLabel = "Foto Real da Loja SUNCELL Unidade Alto Boqueirão";
+    }
+  }
+
   return (
     <>
       {/* Helmet SEO Otimizado para este local/aparelho específico */}
@@ -107,8 +124,8 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
               <div className="lg:col-span-5">
                 <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
                   <img
-                    src="https://img.suncellassistencia.com.br/assistencia-tecnica-curitiba-cwb-parana-brasil.webp"
-                    alt={`Loja Física SUNCELL Assistência Técnica Celular - Unidades em Curitiba`}
+                    src={bannerImage}
+                    alt={bannerImageAlt}
                     className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
                     referrerPolicy="no-referrer"
                   />
@@ -116,7 +133,7 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
                   <div className="absolute bottom-0 left-0 right-0 p-4">
                     <p className="font-sans text-xs text-white font-bold flex items-center gap-1.5">
                       <span className="w-2 h-2 rounded-full bg-suncell-orange animate-pulse" />
-                      <span>Fotos das Lojas SUNCELL em Curitiba</span>
+                      <span>{bannerLabel}</span>
                     </p>
                   </div>
                 </div>

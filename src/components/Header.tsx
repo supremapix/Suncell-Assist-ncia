@@ -98,6 +98,16 @@ export default function Header() {
             >
               Início
             </Link>
+
+            <Link
+              id="nav-quem-somos"
+              to="/quem-somos"
+              className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${
+                location.pathname === "/quem-somos" ? "text-suncell-orange" : "text-slate-200"
+              }`}
+            >
+              Quem Somos
+            </Link>
             
             <a
               id="nav-lojas"
@@ -134,13 +144,15 @@ export default function Header() {
               <span className="text-[9px] bg-suncell-orange/20 text-suncell-orange px-1 py-0.5 rounded font-black animate-pulse">NOVO</span>
             </Link>
 
-            <a
+            <Link
               id="nav-cobertura"
-              href="/#cobertura-section"
-              className="font-sans font-medium text-sm text-slate-200 transition-colors hover:text-suncell-orange focus:outline-none"
+              to="/bairros-e-cidades"
+              className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${
+                location.pathname === "/bairros-e-cidades" ? "text-suncell-orange" : "text-slate-200"
+              }`}
             >
               Bairros & Cidades
-            </a>
+            </Link>
           </nav>
 
           {/* CTA WHATSAPP (DESKTOP) */}
