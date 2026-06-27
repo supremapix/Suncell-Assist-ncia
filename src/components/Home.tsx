@@ -44,7 +44,7 @@ export default function Home() {
         {
           type: "phone",
           label: "Ligar Agora",
-          href: "tel:+5541996889778"
+          href: "tel:+5541999176640"
         },
         {
           type: "scroll",
