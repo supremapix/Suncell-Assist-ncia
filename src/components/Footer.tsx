@@ -39,7 +39,7 @@ export default function Footer() {
                   <div className="absolute w-36 h-16 bg-suncell-orange/20 rounded-full blur-xl opacity-80 group-hover:bg-suncell-orange/35 group-hover:scale-110 transition-all duration-300 pointer-events-none" />
                   
                   <motion.img
-                    src="https://img.suncellassistencia.com.br/logo-suncell-assistencia-de-celulares.webp"
+                    src="https://img.suncellassistencia.com.br/suncell-slider-loja-parana.webp"
                     alt="SUNCELL Assistência de Celulares"
                     className="h-14 sm:h-16 w-auto object-contain relative z-10 drop-shadow-[0_0_12px_rgba(255,107,0,0.7)]"
                     animate={{
@@ -83,51 +83,75 @@ export default function Footer() {
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
             
             {/* Contato Loja Guaíra */}
-            <div className="bg-suncell-dark-gray border border-suncell-medium-gray p-6 rounded-2xl flex flex-col justify-between">
-              <div>
-                <p className="font-display font-bold text-lg text-white mb-1 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-ping" />
-                  Unidade Guaíra
-                </p>
-                <p className="font-sans text-sm text-slate-300 mb-4">
-                  Dentro do Mercado Goes Guaíra
-                </p>
+            <div className="bg-suncell-dark-gray border border-suncell-medium-gray rounded-2xl flex flex-col justify-between overflow-hidden">
+              <div className="relative h-32 w-full overflow-hidden">
+                <img 
+                  src="https://img.suncellassistencia.com.br/loja-suncell.webp" 
+                  alt="SUNCELL Unidade Guaíra" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-suncell-dark-gray via-suncell-dark-gray/40 to-transparent" />
               </div>
               
-              <a
-                id="footer-call-guaira"
-                href={getWhatsAppLink("5541999176640", "Rodapé - Unidade Guaíra", typeof window !== "undefined" ? window.location.href : "")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-md transition-all cursor-pointer"
-              >
-                <Phone size={16} />
-                <span>WhatsApp Guaíra</span>
-              </a>
+              <div className="p-6 pt-3 flex flex-col justify-between flex-grow">
+                <div>
+                  <p className="font-display font-bold text-lg text-white mb-1 flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-ping" />
+                    Unidade Guaíra
+                  </p>
+                  <p className="font-sans text-sm text-slate-300 mb-4">
+                    Dentro do Mercado Goes Guaíra
+                  </p>
+                </div>
+                
+                <a
+                  id="footer-call-guaira"
+                  href={getWhatsAppLink("5541999176640", "Rodapé - Unidade Guaíra", typeof window !== "undefined" ? window.location.href : "")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-md transition-all cursor-pointer"
+                >
+                  <Phone size={16} />
+                  <span>WhatsApp Guaíra</span>
+                </a>
+              </div>
             </div>
 
             {/* Contato Loja Alto Boqueirão */}
-            <div className="bg-suncell-dark-gray border border-suncell-medium-gray p-6 rounded-2xl flex flex-col justify-between">
-              <div>
-                <p className="font-display font-bold text-lg text-white mb-1 flex items-center gap-2">
-                  <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-ping" />
-                  Unidade Alto Boqueirão
-                </p>
-                <p className="font-sans text-sm text-slate-300 mb-4">
-                  Dentro do Mercado Goes Alto Boqueirão
-                </p>
+            <div className="bg-suncell-dark-gray border border-suncell-medium-gray rounded-2xl flex flex-col justify-between overflow-hidden">
+              <div className="relative h-32 w-full overflow-hidden">
+                <img 
+                  src="https://img.suncellassistencia.com.br/loja-suncell-alto-boqueirao-assistencia-tecnica-celulares-curitiba-bairro-altoboqueirao-pt.webp" 
+                  alt="SUNCELL Unidade Alto Boqueirão" 
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-suncell-dark-gray via-suncell-dark-gray/40 to-transparent" />
               </div>
 
-              <a
-                id="footer-call-boqueirao"
-                href={getWhatsAppLink("5541997501961", "Rodapé - Unidade Alto Boqueirão", typeof window !== "undefined" ? window.location.href : "")}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-md transition-all cursor-pointer"
-              >
-                <Phone size={16} />
-                <span>WhatsApp Boqueirão</span>
-              </a>
+              <div className="p-6 pt-3 flex flex-col justify-between flex-grow">
+                <div>
+                  <p className="font-display font-bold text-lg text-white mb-1 flex items-center gap-2">
+                    <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-ping" />
+                    Unidade Alto Boqueirão
+                  </p>
+                  <p className="font-sans text-sm text-slate-300 mb-4">
+                    Dentro do Mercado Goes Alto Boqueirão
+                  </p>
+                </div>
+
+                <a
+                  id="footer-call-boqueirao"
+                  href={getWhatsAppLink("5541997501961", "Rodapé - Unidade Alto Boqueirão", typeof window !== "undefined" ? window.location.href : "")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-full py-2.5 px-4 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center justify-center gap-2 hover:shadow-md transition-all cursor-pointer"
+                >
+                  <Phone size={16} />
+                  <span>WhatsApp Boqueirão</span>
+                </a>
+              </div>
             </div>
 
           </div>

@@ -10,6 +10,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import ProgrammaticPage from "./components/ProgrammaticPage";
+import CompramosIphone from "./components/CompramosIphone";
 import NotFound from "./components/NotFound";
 import SuncellInteractionWidgets from "./components/SuncellInteractionWidgets";
 import BackToTop from "./components/BackToTop";
@@ -72,6 +73,12 @@ export default function App() {
               <Route 
                 path="/loja/:slug" 
                 element={<ProgrammaticPage type="loja" />} 
+              />
+              
+              {/* Compra de iPhones Usados */}
+              <Route 
+                path="/compramos-iphone" 
+                element={<CompramosIphone />} 
               />
               
               {/* Página 404 Customizada */}

@@ -134,7 +134,7 @@ export default function EnhancedSEO({
       "itemListElement": breadcrumbItems
     });
 
-    // Service Schema especializado
+    // Service Schema especializado com Offers, Shipping e Returns para satisfazer o Search Console
     schemas.push({
       "@context": "https://schema.org",
       "@type": "Service",
@@ -154,7 +154,128 @@ export default function EnhancedSEO({
             "name": "Curitiba"
           },
       "name": pageData.h1,
-      "description": pageData.description
+      "description": pageData.description,
+      "offers": {
+        "@type": "Offer",
+        "url": canonicalUrl,
+        "priceCurrency": "BRL",
+        "price": "149.90",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "SUNCELL Assistência Técnica",
+          "image": LOJAS[0].foto
+        },
+        "identifierExists": false,
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0.00",
+            "currency": "BRL"
+          },
+          "shippingDestination": [
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "BR",
+              "addressRegion": ["PR"]
+            }
+          ],
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "BR",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
+          "merchantReturnDays": 90,
+          "returnMethod": "https://schema.org/ReturnInStore",
+          "returnFees": "https://schema.org/FreeReturn",
+          "refundType": "https://schema.org/ExchangeRefund"
+        }
+      }
+    });
+
+    // Product Schema correspondente para habilitar Rich Snippets de Preço e Estrelas no Google Search
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": pageData.h1,
+      "image": LOJAS[0].foto,
+      "description": pageData.description,
+      "brand": {
+        "@type": "Brand",
+        "name": "SUNCELL"
+      },
+      "offers": {
+        "@type": "Offer",
+        "url": canonicalUrl,
+        "priceCurrency": "BRL",
+        "price": "149.90",
+        "priceValidUntil": "2027-12-31",
+        "itemCondition": "https://schema.org/NewCondition",
+        "availability": "https://schema.org/InStock",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "SUNCELL Assistência Técnica",
+          "image": LOJAS[0].foto
+        },
+        "identifierExists": false,
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingRate": {
+            "@type": "MonetaryAmount",
+            "value": "0.00",
+            "currency": "BRL"
+          },
+          "shippingDestination": [
+            {
+              "@type": "DefinedRegion",
+              "addressCountry": "BR",
+              "addressRegion": ["PR"]
+            }
+          ],
+          "deliveryTime": {
+            "@type": "ShippingDeliveryTime",
+            "handlingTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            },
+            "transitTime": {
+              "@type": "QuantitativeValue",
+              "minValue": 0,
+              "maxValue": 1,
+              "unitCode": "DAY"
+            }
+          }
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "BR",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnPeriod",
+          "merchantReturnDays": 90,
+          "returnMethod": "https://schema.org/ReturnInStore",
+          "returnFees": "https://schema.org/FreeReturn",
+          "refundType": "https://schema.org/ExchangeRefund"
+        }
+      }
     });
 
     // FAQPage Schema se houver faq cadastrado
@@ -176,11 +297,60 @@ export default function EnhancedSEO({
 
   return (
     <Helmet>
-      {/* Meta tags básicas */}
+      {/* 1. RESOURCE HINTS (PRECONNECT / DNS-PREFETCH) */}
+      <link rel="preconnect" href="https://fonts.googleapis.com" />
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+      <link rel="dns-prefetch" href="https://fonts.googleapis.com" />
+      <link rel="dns-prefetch" href="https://fonts.gstatic.com" />
+      <link rel="dns-prefetch" href="https://lh3.googleusercontent.com" />
+
+      {/* 2. FONT OPTIMIZATION */}
+      <link 
+        rel="stylesheet" 
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&display=swap" 
+      />
+
+      {/* 3. CRITICAL CSS */}
+      <style>{`
+        /* Critical CSS para carregamento instantâneo e estabilidade visual */
+        body {
+          background-color: #F5F5F7;
+          color: #0D0D0D;
+          font-family: 'Inter', system-ui, -apple-system, sans-serif;
+          margin: 0;
+          padding: 0;
+          -webkit-font-smoothing: antialiased;
+        }
+        .bg-suncell-black {
+          background-color: #0D0D0D !important;
+        }
+        .text-suncell-orange {
+          color: #FF6B00 !important;
+        }
+        .bg-suncell-orange {
+          background-color: #FF6B00 !important;
+        }
+      `}</style>
+
+      {/* 4. SERVICE WORKER REGISTRATION */}
+      <script type="text/javascript">{`
+        if ('serviceWorker' in navigator) {
+          window.addEventListener('load', () => {
+            navigator.serviceWorker.register('/sw.js')
+              .then(reg => console.log('[SUNCELL] Service Worker registrado:', reg.scope))
+              .catch(err => console.log('[SUNCELL] Erro ao registrar Service Worker:', err));
+          });
+        }
+      `}</script>
+
+      {/* 5. META TAGS AVANÇADAS PARA MÁXIMA VISIBILIDADE NO GOOGLE */}
       <title>{finalTitle}</title>
       <meta name="description" content={finalDesc} />
       <link rel="canonical" href={canonicalUrl} />
       <meta name="robots" content={robotsValue} />
+      <meta name="google" content="notranslate" />
+      <meta name="rating" content="general" />
+      <meta name="referrer" content="no-referrer-when-downgrade" />
 
       {/* Tags de Geolocalização e SEO Regional */}
       <meta name="geo.region" content="BR-PR" />
@@ -195,7 +365,7 @@ export default function EnhancedSEO({
       <meta property="og:url" content={canonicalUrl} />
       <meta property="og:site_name" content={siteName} />
       <meta property="og:locale" content="pt_BR" />
-      <meta property="og:image" content={`${appUrl}/og-banner.svg`} />
+      <meta property="og:image" content="https://img.suncellassistencia.com.br/assistencia-tecnica-curitiba-cwb-parana-brasil.webp" />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
 
@@ -203,7 +373,7 @@ export default function EnhancedSEO({
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={finalTitle} />
       <meta name="twitter:description" content={finalDesc} />
-      <meta name="twitter:image" content={`${appUrl}/og-banner.svg`} />
+      <meta name="twitter:image" content="https://img.suncellassistencia.com.br/assistencia-tecnica-curitiba-cwb-parana-brasil.webp" />
 
       {/* JSON-LD Schemas de forma unificada */}
       {schemas.map((schema, index) => (

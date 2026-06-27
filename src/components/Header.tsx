@@ -31,14 +31,32 @@ export default function Header() {
 
   return (
     <>
-      <header
-        id="main-header"
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b ${
-          scrolled
-            ? "bg-suncell-black/95 backdrop-blur-md py-3 shadow-lg border-white/10"
-            : "bg-suncell-black py-5 border-white/5"
-        }`}
-      >
+      <div className="fixed top-0 left-0 right-0 z-50 flex flex-col">
+        {/* COMPRAMOS IPHONE BANNER / ANNOUNCEMENT BAR */}
+        <div className="bg-gradient-to-r from-[#FF4C00] via-suncell-orange to-[#FF4C00] text-white font-sans text-[11px] sm:text-xs font-black py-2 px-4 flex items-center justify-center gap-1.5 sm:gap-3 shadow-md select-none text-center relative z-10 border-b border-white/10">
+          <span className="inline-flex items-center gap-1 bg-white text-[#FF4C00] px-1.5 py-0.5 rounded text-[9px] sm:text-[10px] tracking-wider uppercase font-black shrink-0 shadow-sm animate-pulse">
+            🔥 COMPRA DE IPHONE
+          </span>
+          <span className="text-slate-100 font-bold truncate">
+            Compramos seu iPhone usado ou seminovo abaixo do valor de mercado! Pix no ato.
+          </span>
+          <Link 
+            to="/compramos-iphone" 
+            className="underline hover:text-slate-200 transition-colors font-black shrink-0 whitespace-nowrap ml-1 text-white flex items-center gap-0.5 group"
+          >
+            <span>Avaliar Agora</span>
+            <span className="inline-block transition-transform group-hover:translate-x-1 font-bold">➔</span>
+          </Link>
+        </div>
+
+        <header
+          id="main-header"
+          className={`w-full transition-all duration-300 border-b ${
+            scrolled
+              ? "bg-suncell-black/95 backdrop-blur-md py-3 shadow-lg border-white/10"
+              : "bg-suncell-black py-5 border-white/5"
+          }`}
+        >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between relative">
           
           {/* LOGO */}
@@ -49,23 +67,15 @@ export default function Header() {
             aria-label="SUNCELL Home"
           >
             <div className="relative flex items-center justify-center">
-              {/* Efeito de fundo laranja premium para sensação de profundidade e brilho neon */}
-              <div className="absolute w-24 h-10 sm:w-28 sm:h-12 bg-suncell-orange/25 rounded-full blur-xl opacity-75 group-hover:bg-suncell-orange/40 group-hover:scale-110 transition-all duration-300 pointer-events-none" />
-              
               <motion.img
-                src="https://img.suncellassistencia.com.br/logo-suncell-assistencia-de-celulares.webp"
+                src="https://img.suncellassistencia.com.br/suncell-slider-loja-parana.webp"
                 alt="SUNCELL Assistência de Celulares"
-                className="h-11 sm:h-12 md:h-11 w-auto object-contain relative z-10 drop-shadow-[0_0_10px_rgba(255,107,0,0.6)]"
+                className="h-11 sm:h-12 md:h-11 w-auto object-contain relative z-10"
                 whileHover={{ 
-                  scale: 1.07,
-                  rotateY: 12,
-                  rotateX: -10,
-                  filter: "drop-shadow(0px 0px 18px rgba(255,107,0,0.85))"
+                  scale: 1.05
                 }}
                 whileTap={{ 
-                  scale: 0.94,
-                  rotateZ: -2.5,
-                  filter: "drop-shadow(0px 0px 10px rgba(255,107,0,0.95))"
+                  scale: 0.95
                 }}
                 transition={{ 
                   type: "spring", 
@@ -112,6 +122,17 @@ export default function Header() {
             >
               Aparelhos
             </a>
+
+            <Link
+              id="nav-compramos-iphone"
+              to="/compramos-iphone"
+              className={`font-sans font-extrabold text-sm transition-all hover:text-suncell-orange focus:outline-none flex items-center gap-1 ${
+                location.pathname === "/compramos-iphone" ? "text-suncell-orange" : "text-amber-400 hover:scale-105"
+              }`}
+            >
+              <span>Vender iPhone</span>
+              <span className="text-[9px] bg-suncell-orange/20 text-suncell-orange px-1 py-0.5 rounded font-black animate-pulse">NOVO</span>
+            </Link>
 
             <a
               id="nav-cobertura"
@@ -172,6 +193,7 @@ export default function Header() {
 
         </div>
       </header>
+      </div>
 
       {/* DRAWER MENU MOBILE PARA IDOSOS (ANIMADO COM FRAMER-MOTION) */}
       <AnimatePresence>

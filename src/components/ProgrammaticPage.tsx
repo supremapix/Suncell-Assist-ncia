@@ -77,28 +77,48 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
           <div className="bg-white border border-gray-100 rounded-3xl p-6 sm:p-10 lg:p-12 mb-12 shadow-xl shadow-black/5 relative overflow-hidden">
             <div className="absolute top-0 right-0 w-64 h-64 bg-suncell-orange/5 rounded-full blur-3xl -z-10" />
             
-            <div className="max-w-3xl">
-              <span className="inline-flex items-center gap-1 px-3 py-1 bg-suncell-orange/10 border border-suncell-orange/20 text-suncell-orange font-mono text-xs font-bold uppercase rounded-md mb-4">
-                <MapPin size={12} />
-                <span>Atendimento {type === "bairro" || type === "cidade" ? "Local" : "Especializado"}</span>
-              </span>
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <div className="lg:col-span-7">
+                <span className="inline-flex items-center gap-1 px-3 py-1 bg-suncell-orange/10 border border-suncell-orange/20 text-suncell-orange font-mono text-xs font-bold uppercase rounded-md mb-4">
+                  <MapPin size={12} />
+                  <span>Atendimento {type === "bairro" || type === "cidade" ? "Local" : "Especializado"}</span>
+                </span>
 
-              <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#0D0D0D] tracking-tight leading-tight">
-                {page.h1}
-              </h1>
+                <h1 className="font-display font-extrabold text-3xl sm:text-4xl lg:text-5xl text-[#0D0D0D] tracking-tight leading-tight">
+                  {page.h1}
+                </h1>
 
-              <p className="mt-6 font-sans text-base sm:text-lg text-gray-600 leading-relaxed">
-                {page.intro}
-              </p>
+                <p className="mt-6 font-sans text-base sm:text-lg text-gray-600 leading-relaxed font-normal">
+                  {page.intro}
+                </p>
 
-              <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono text-gray-400">
-                <div className="flex items-center gap-1.5">
-                  <ShieldCheck size={14} className="text-suncell-orange" />
-                  <span>Diagnóstico 100% Gratuito</span>
+                <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono text-gray-400">
+                  <div className="flex items-center gap-1.5">
+                    <ShieldCheck size={14} className="text-suncell-orange" />
+                    <span>Diagnóstico 100% Gratuito</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <CheckCircle size={14} className="text-suncell-orange" />
+                    <span>Serviço com Garantia</span>
+                  </div>
                 </div>
-                <div className="flex items-center gap-1.5">
-                  <CheckCircle size={14} className="text-suncell-orange" />
-                  <span>Serviço com Garantia</span>
+              </div>
+
+              <div className="lg:col-span-5">
+                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
+                  <img
+                    src="https://img.suncellassistencia.com.br/assistencia-tecnica-curitiba-cwb-parana-brasil.webp"
+                    alt={`Loja Física SUNCELL Assistência Técnica Celular - Unidades em Curitiba`}
+                    className="w-full h-48 sm:h-64 object-cover group-hover:scale-105 transition-transform duration-500"
+                    referrerPolicy="no-referrer"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 via-[#0D0D0D]/10 to-transparent" />
+                  <div className="absolute bottom-0 left-0 right-0 p-4">
+                    <p className="font-sans text-xs text-white font-bold flex items-center gap-1.5">
+                      <span className="w-2 h-2 rounded-full bg-suncell-orange animate-pulse" />
+                      <span>Fotos das Lojas SUNCELL em Curitiba</span>
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>

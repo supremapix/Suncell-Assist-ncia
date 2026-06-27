@@ -62,6 +62,19 @@ export default function MenuMobile({ onClose }: MenuMobileProps) {
             <span>Página Inicial</span>
           </Link>
 
+          <Link
+            id="mobile-nav-vender-iphone"
+            to="/compramos-iphone"
+            onClick={onClose}
+            className="flex items-center gap-4 p-4 rounded-xl bg-suncell-orange/20 hover:bg-suncell-orange/30 text-amber-300 font-sans font-extrabold text-lg border border-suncell-orange/40 transition-all active:scale-[0.98] cursor-pointer focus:outline-none"
+          >
+            <Smartphone size={24} className="text-suncell-orange shrink-0 animate-pulse" />
+            <div className="flex flex-col text-left">
+              <span>Compramos iPhone Usado</span>
+              <span className="text-xs font-normal text-slate-300">Venda o seu abaixo do mercado</span>
+            </div>
+          </Link>
+
           <a
             id="mobile-nav-lojas"
             href="/#lojas-section"

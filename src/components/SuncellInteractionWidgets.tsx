@@ -251,26 +251,7 @@ export default function SuncellInteractionWidgets() {
                     <ArrowRight size={14} className="text-gray-300 group-hover:text-emerald-500 transition-colors group-hover:translate-x-0.5" />
                   </a>
 
-                  {/* GERENTE EDUARDO */}
-                  <a
-                    href={getWhatsAppLink("5541996889778", "Widget Flutuante - Eduardo Responsável", currentUrl)}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="flex items-center gap-3.5 p-3 rounded-2xl bg-gray-50 hover:bg-amber-50 border border-gray-100 hover:border-amber-200 transition-all group text-left"
-                  >
-                    <div className="w-10 h-10 rounded-xl bg-white border border-gray-100 flex items-center justify-center shrink-0 group-hover:border-amber-100 text-amber-500 transition-colors">
-                      <User size={20} />
-                    </div>
-                    <div className="flex-grow min-w-0">
-                      <h5 className="font-display font-bold text-sm text-gray-800 group-hover:text-amber-700 transition-colors">
-                        Eduardo (Diretoria)
-                      </h5>
-                      <p className="font-sans text-[11px] text-gray-400 truncate">
-                        Responsável Geral pelas Lojas
-                      </p>
-                    </div>
-                    <ArrowRight size={14} className="text-gray-300 group-hover:text-amber-500 transition-colors group-hover:translate-x-0.5" />
-                  </a>
+
                 </div>
 
                 <div className="pt-2 border-t border-gray-50 flex items-center justify-between text-[10px] font-sans text-gray-400">
