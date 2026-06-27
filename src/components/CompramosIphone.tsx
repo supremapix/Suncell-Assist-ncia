@@ -110,9 +110,20 @@ Entendo que vocês compram abaixo do valor de mercado para revenda, e busco a fa
       <div className="pt-24 pb-16 bg-[#F5F5F7]">
         {/* Banner Hero Superior */}
         <div className="relative overflow-hidden bg-gradient-to-br from-suncell-black via-suncell-dark-gray to-suncell-black py-16 sm:py-20 text-white border-b border-suncell-orange/20">
+          {/* Imagem de Fundo do Header */}
+          <div className="absolute inset-0 z-0">
+            <img 
+              src="https://img.suncellassistencia.com.br/suncell-slider.webp" 
+              alt="Suncell Assistência" 
+              className="w-full h-full object-cover opacity-20 select-none pointer-events-none"
+              referrerPolicy="no-referrer"
+            />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/70 via-black/50 to-black/80" />
+          </div>
+
           {/* Efeitos de Fundo */}
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_120%,rgba(255,107,0,0.15),transparent_45%)]" />
-          <div className="absolute top-0 right-0 w-96 h-96 bg-suncell-orange/5 rounded-full blur-3xl" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_120%,rgba(255,107,0,0.15),transparent_45%)] pointer-events-none" />
+          <div className="absolute top-0 right-0 w-96 h-96 bg-suncell-orange/5 rounded-full blur-3xl pointer-events-none" />
           
           <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10 text-center">
             {/* Tag Alta Visibilidade */}
@@ -143,6 +154,53 @@ Entendo que vocês compram abaixo do valor de mercado para revenda, e busco a fa
               Cansou de anúncios falsos, golpes na internet ou pessoas desmarcando? 
               Na <strong>SUNCELL</strong> você vende seu iPhone com segurança máxima dentro do supermercado Goes e sai com o <strong>PIX na hora</strong>!
             </motion.p>
+          </div>
+        </div>
+
+        {/* Video em Destaque */}
+        <div className="max-w-4xl mx-auto px-4 sm:px-6 mt-10">
+          <div className="bg-white rounded-3xl p-4 sm:p-6 border border-gray-100 shadow-xl overflow-hidden flex flex-col md:flex-row items-center gap-6 relative">
+            <div className="absolute top-0 right-0 w-32 h-32 bg-suncell-orange/5 rounded-full blur-2xl pointer-events-none" />
+            
+            {/* Player de Video */}
+            <div className="w-full md:w-3/5 rounded-2xl overflow-hidden shadow-md bg-black border border-gray-100 aspect-video relative">
+              <video 
+                className="w-full h-full object-cover"
+                controls
+                playsInline
+                preload="metadata"
+                poster="https://img.suncellassistencia.com.br/assistencia-tecnica-curitiba-cwb-parana-brasil.webp"
+              >
+                <source src="https://img.suncellassistencia.com.br/compramos-iphone-usado.mp4" type="video/mp4" />
+                Seu navegador não suporta a exibição de vídeos.
+              </video>
+            </div>
+
+            {/* Texto Descritivo ao Lado do Video */}
+            <div className="w-full md:w-2/5 space-y-3.5">
+              <span className="inline-flex items-center gap-1.5 px-3 py-1 rounded-md bg-suncell-orange/10 border border-suncell-orange/20 text-suncell-orange font-mono text-xs font-bold uppercase tracking-wider">
+                <Sparkles size={12} className="animate-pulse" />
+                <span>Vídeo Explicativo</span>
+              </span>
+              
+              <h3 className="font-display font-extrabold text-xl sm:text-2xl text-[#0D0D0D] leading-tight">
+                Veja Como Funciona Nosso Processo
+              </h3>
+              
+              <p className="font-sans text-xs sm:text-sm text-gray-500 leading-relaxed font-normal">
+                Assista ao vídeo e veja como é rápido, prático e totalmente seguro negociar o seu aparelho usado conosco. Avaliação em poucos minutos com pagamento imediato via Pix ou dinheiro!
+              </p>
+              
+              <div className="pt-2 flex items-center gap-2.5">
+                <div className="flex -space-x-2">
+                  <span className="w-6 h-6 rounded-full bg-suncell-orange flex items-center justify-center text-[10px] font-bold text-white border border-white">S</span>
+                  <span className="w-6 h-6 rounded-full bg-[#0D0D0D] flex items-center justify-center text-[10px] font-bold text-white border border-white">C</span>
+                </div>
+                <span className="text-xs font-sans text-gray-400 font-semibold">
+                  +1.200 iPhones avaliados este ano
+                </span>
+              </div>
+            </div>
           </div>
         </div>
 
