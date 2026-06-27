@@ -85,7 +85,7 @@ export default function NossasLojas() {
                 {/* Horário */}
                 <div className="absolute bottom-4 left-4 flex items-center gap-1.5 text-xs text-white bg-black/60 backdrop-blur-md px-3 py-1 rounded-md">
                   <Clock size={12} className="text-suncell-orange" />
-                  <span>Seg a Sex: 9h às 18h | Sáb: 9h às 13h</span>
+                  <span>Seg a Sex: 10h às 13h e 14h às 20h | Sáb: 10h às 13h</span>
                 </div>
               </div>
 

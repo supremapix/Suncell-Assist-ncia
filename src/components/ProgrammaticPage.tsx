@@ -280,16 +280,16 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
 
               </div>
 
-              {/* Informações de Coleta e Entrega Segura */}
+              {/* Informações de Atendimento Físico e Seguro */}
               <div className="bg-white border border-gray-100 rounded-3xl p-6 shadow-sm">
                 <div className="flex items-start gap-3">
                   <div className="p-2 bg-suncell-orange/10 rounded-lg text-suncell-orange">
                     <ShieldCheck size={20} />
                   </div>
                   <div>
-                    <h4 className="font-display font-bold text-sm sm:text-base text-[#0D0D0D]">Coleta via Motoboy</h4>
+                    <h4 className="font-display font-bold text-sm sm:text-base text-[#0D0D0D]">Atendimento Físico e Seguro</h4>
                     <p className="font-sans text-xs sm:text-sm text-gray-500 mt-1 leading-relaxed">
-                      Não pode ir até a loja? Nós providenciamos a coleta e entrega segura do seu celular via motoboy parceiro com total rastreabilidade. Peça detalhes no WhatsApp!
+                      Visite uma de nossas unidades físicas localizadas dentro do Mercado Goes. Amplo estacionamento gratuito, segurança privada e infraestrutura confortável para você!
                     </p>
                   </div>
                 </div>

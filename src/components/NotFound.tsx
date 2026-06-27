@@ -8,7 +8,7 @@ import FAQAccordion from "./FAQAccordion";
 
 export default function NotFound() {
   const faqResumido = [
-    { q: "Qual o horário de funcionamento das lojas?", a: "Ambas as nossas lojas funcionam de Segunda a Sexta das 9h às 18h, e aos Sábados das 9h às 13h. Traga seu aparelho para um orçamento gratuito!" },
+    { q: "Qual o horário de funcionamento das lojas?", a: "Ambas as nossas lojas funcionam de Segunda a Sexta das 10h às 13h e das 14h às 20h, e aos Sábados das 10h às 13h. Traga seu aparelho para um orçamento gratuito!" },
     { q: "Onde ficam localizadas as lojas da SUNCELL?", a: "Ficamos localizados dentro das unidades do Mercado Goes. Unidade Guaíra: Rua Maria Moscardi Fanini, 261. Unidade Alto Boqueirão: R. Pastor Antônio Polito, 1805. Ambas têm estacionamento amplo e seguro gratuito." }
   ];
 

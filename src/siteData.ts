@@ -241,7 +241,7 @@ export const FAQ_BASE = [
   { q: "Quanto tempo demora o conserto do celular?", a: "Serviços mais frequentes como Troca de Tela e Troca de Bateria costumam ficar prontos de forma expressa, no mesmo dia, geralmente em menos de 2 horas. Reparos avançados de placa exigem análise mais técnica de microsoldagem e podem levar de 24h a 72h." },
   { q: "Quais são as formas de pagamento aceitas?", a: "Facilitamos o pagamento em dinheiro, PIX ou parcelado nos principais cartões de crédito. Consulte nossas condições de parcelamento sem juros direto na loja." },
   { q: "As peças utilizadas são originais?", a: "Trabalhamos com opções de telas e componentes importados de altíssima qualidade (linha premium/primeira linha com especificações idênticas às originais) e também telas originais de fábrica, a depender do modelo e da preferência do cliente. Explicamos com total transparência cada opção antes do conserto." },
-  { q: "Vocês buscam o celular em casa?", a: "Para maior comodidade, atendemos clientes de Curitiba e região metropolitana por meio de agendamento de motoboy parceiro para coleta e entrega segura do aparelho, ou você pode comparecer diretamente nas nossas lojas dentro do Mercado Goes (Guaíra ou Alto Boqueirão) onde há estacionamento gratuito e segurança." },
+  { q: "Preciso agendar horário para ser atendido?", a: "Não é necessário agendamento! Você pode comparecer diretamente em qualquer uma de nossas lojas dentro do Mercado Goes (Guaíra ou Alto Boqueirão), onde temos amplo estacionamento gratuito e segurança privada para você e seu aparelho." },
   { q: "Como funciona a garantia do conserto?", a: "Todos os nossos serviços de assistência técnica contam com garantia legal de 90 dias cobrindo defeitos de fabricação dos componentes substituídos. Nossa garantia é válida mediante apresentação da ordem de serviço nas nossas lojas." }
 ];
 
@@ -319,11 +319,11 @@ export function getBairrosPages(): PageData[] {
     } else if (b.nome === "Fazendinha") {
       title = "Assistência Técnica de Celular no Fazendinha Curitiba | SUNCELL";
       description = "Precisando de conserto de celular no Fazendinha, Curitiba? Troca de tela, bateria e placa na SUNCELL (unidade Guaíra - Mercado Goes). Orçamento grátis e entrega rápida!";
-      intro = `Moradores do bairro Fazendinha que buscam assistência técnica de celular de referência absoluta em Curitiba encontram na SUNCELL a parceria perfeita! Localizado próximo ao Terminal Fazendinha e à Rua da Cidadania, o bairro conta com fácil conexão direta à nossa loja matriz no Guaíra, situada dentro do Mercado Goes (Rua Maria Moscardi Fanini, 261). Somos líderes especializados em reparos rápidos e precisos para celulares Apple iPhones, Samsung Galaxy, Motorola e Xiaomi. Oferecemos diagnóstico gratuito e sem compromisso, além da comodidade de coleta e entrega via motoboy parceiro ou atendimento físico presencial com estacionamento gratuito e segurança monitorada no local.`;
+      intro = `Moradores do bairro Fazendinha que buscam assistência técnica de celular de referência absoluta em Curitiba encontram na SUNCELL a parceria perfeita! Localizado próximo ao Terminal Fazendinha e à Rua da Cidadania, o bairro conta com fácil conexão direta à nossa loja matriz no Guaíra, situada dentro do Mercado Goes (Rua Maria Moscardi Fanini, 261). Somos líderes especializados em reparos rápidos e precisos para celulares Apple iPhones, Samsung Galaxy, Motorola e Xiaomi. Oferecemos diagnóstico gratuito e sem compromisso, com atendimento físico presencial com estacionamento gratuito e segurança monitorada no local.`;
       faq = [
         {
-          q: "Moro no Fazendinha, como faço para enviar meu celular para conserto?",
-          a: "Você pode vir pessoalmente até nossa unidade Guaíra dentro do Mercado Goes (um trajeto rápido de carro ou ônibus) ou pode solicitar nosso serviço exclusivo de coleta por motoboy parceiro, que retira o seu smartphone no Fazendinha de forma extremamente segura."
+          q: "Moro no Fazendinha, qual a unidade mais próxima?",
+          a: "A nossa unidade do Guaíra, localizada dentro do Mercado Goes (Rua Maria Moscardi Fanini, 261), é super próxima ao Fazendinha. O trajeto é muito rápido de carro, Uber ou ônibus, com estacionamento amplo e totalmente gratuito no local."
         },
         {
           q: "Quanto tempo demora o conserto de um aparelho vindo do Fazendinha?",
@@ -357,15 +357,15 @@ export function getCidadesPages(): PageData[] {
 
     const lojaDest = LOJAS.find((l) => l.id === c.loja)!;
     
-    let intro = `Procurando assistência técnica de celular em ${c.nome}? A SUNCELL é a solução ideal para você que reside nesta importante cidade da Região Metropolitana de Curitiba (${c.marcos}). Sabemos que encontrar técnicos de confiança e especializados em iPhone, Samsung, Xiaomi e Motorola pode ser um desafio na região. Por isso, oferecemos um serviço profissional de alta qualidade com transporte rápido via motoboy ou atendimento direto na nossa loja ${lojaDest.nome}, muito bem localizada dentro do Mercado Goes. Diagnóstico gratuito, agilidade expressa com entrega no mesmo dia e garantia total no reparo.`;
+    let intro = `Procurando assistência técnica de celular em ${c.nome}? A SUNCELL é a solução ideal para você que reside nesta importante cidade da Região Metropolitana de Curitiba (${c.marcos}). Sabemos que encontrar técnicos de confiança e especializados em iPhone, Samsung, Xiaomi e Motorola pode ser um desafio na região. Por isso, oferecemos um serviço profissional de alta qualidade com atendimento direto na nossa loja ${lojaDest.nome}, muito bem localizada dentro do Mercado Goes. Diagnóstico gratuito, agilidade expressa com conserto no mesmo dia e garantia total no reparo.`;
 
     let title = `Assistência Técnica de Celular em ${c.nome} - PR | SUNCELL`;
     let description = `Conserto de celular em ${c.nome}. Troca de tela, bateria, placa para iPhone, Samsung, Xiaomi e Motorola. Diagnóstico grátis e garantia na SUNCELL.`;
 
     let faq = [
       {
-        q: `A SUNCELL atende e recolhe aparelhos em ${c.nome}?`,
-        a: `Sim! Temos clientes em toda a região de ${c.nome}. Você pode agendar a coleta do seu celular por motoboy de confiança, ou se preferir, pode visitar nossa loja física que fica a poucos minutos de distância, com toda a infraestrutura e segurança do Mercado Goes.`
+        q: `Como os moradores de ${c.nome} podem consertar seus celulares na SUNCELL?`,
+        a: `Atendemos muitos clientes de ${c.nome} que nos visitam diretamente em nossa loja física, que fica a poucos minutos de distância. Você conta com toda a infraestrutura, estacionamento amplo gratuito e a segurança do Mercado Goes.`
       },
       {
         q: `Qual é o prazo para conserto de celular vindo de ${c.nome}?`,
@@ -396,12 +396,12 @@ export function getCidadesPages(): PageData[] {
       ];
     } else if (c.nome === "Araucária") {
       title = "Assistência Técnica de Celular em Araucária | Conserto de Confiança | SUNCELL";
-      description = "Procurando conserto de celular em Araucária? A SUNCELL oferece troca de tela, bateria e placa com diagnóstico gratuito, garantia e coleta rápida por motoboy. Confira!";
-      intro = `Para quem busca assistência técnica de celular em Araucária de altíssimo nível e segurança, a SUNCELL oferece a melhor cobertura e conveniência metropolitana! Situada na região sul metropolitana, Araucária está a poucos minutos de distância de nossas unidades físicas SUNCELL Alto Boqueirão e Guaíra. Oferecemos um canal direto e super ágil de atendimento ou coleta segura via motoboy parceiro. Esqueça orçamentos demorados e preços abusivos: na SUNCELL, a análise do seu iPhone, Samsung, Xiaomi ou Motorola é feita gratuitamente e sem compromisso, aplicando peças de primeira linha com garantia legal de 3 meses para todos os serviços executados.`;
+      description = "Procurando conserto de celular em Araucária? A SUNCELL oferece troca de tela, bateria e placa com diagnóstico gratuito, atendimento rápido e garantia de 90 dias. Confira!";
+      intro = `Para quem busca assistência técnica de celular em Araucária de altíssimo nível e segurança, a SUNCELL oferece a melhor cobertura e conveniência! Situada na região sul metropolitana, Araucária está a poucos minutos de distância de nossas unidades físicas SUNCELL Alto Boqueirão e Guaíra. Oferecemos um canal direto e super ágil de atendimento físico presencial em nossas lojas. Esqueça orçamentos demorados e preços abusivos: na SUNCELL, a análise do seu iPhone, Samsung, Xiaomi ou Motorola é feita gratuitamente e sem compromisso, aplicando peças de primeira linha com garantia legal de 3 meses para todos os serviços executados.`;
       faq = [
         {
-          q: "Como funciona a coleta de celular em Araucária?",
-          a: "Oferecemos um serviço de motoboy parceiro de alta confiança. Ele retira o seu smartphone diretamente na sua residência ou trabalho em Araucária, traz até o nosso laboratório central e, após a execução do conserto expresso, entrega o aparelho de volta funcionando perfeitamente no mesmo dia."
+          q: "Qual unidade da SUNCELL fica mais próxima de Araucária?",
+          a: "Tanto a unidade do Guaíra quanto a do Alto Boqueirão ficam a poucos minutos de distância de carro ou transporte público a partir de Araucária. Ambas estão localizadas em pontos de fácil acesso dentro do Mercado Goes com estacionamento totalmente gratuito."
         },
         {
           q: "Vocês consertam placa de celular de moradores de Araucária?",
@@ -518,7 +518,7 @@ export function getLojasPages(): PageData[] {
         },
         {
           q: "Quais bairros são atendidos de forma expressa pela unidade Guaíra?",
-          a: "Atendemos diretamente moradores dos bairros Guaíra, Portão, Lindóia, Fanny, Água Verde, Parolin, Prado Velho, Batel, Rebouças e Centro. Oferecemos também coleta via motoboy parceiro caso você não possa vir até a loja."
+          a: "Atendemos diretamente moradores dos bairros Guaíra, Portão, Lindóia, Fanny, Água Verde, Parolin, Prado Velho, Batel, Rebouças e Centro, que podem nos visitar de forma rápida e segura no Mercado Goes."
         },
         {
           q: "O diagnóstico do celular na SUNCELL Guaíra é gratuito?",
@@ -557,8 +557,8 @@ export function getLojasPages(): PageData[] {
           a: "Aceitamos cartões de crédito e débito com parcelamento facilitado em até 12x, PIX, dinheiro e link de pagamento. Facilitamos ao máximo para que você possa reaver seu celular funcionando sem estourar o orçamento."
         },
         {
-          q: "Como funciona o serviço de coleta via motoboy para o Boqueirão?",
-          a: "Caso você esteja ocupado ou no trabalho, basta entrar em contato com nossa equipe no WhatsApp. Nós agendamos a coleta do seu smartphone via motoboy de confiança e, após o reparo na loja, entregamos de volta no mesmo dia!"
+          q: "Vocês realizam o diagnóstico na hora na unidade Alto Boqueirão?",
+          a: "Sim! Na nossa unidade do Alto Boqueirão, realizamos o diagnóstico do seu celular na hora e sem custos. Muitas trocas de tela e bateria ficam prontas no mesmo dia em menos de 1 hora."
         }
       ]
     }

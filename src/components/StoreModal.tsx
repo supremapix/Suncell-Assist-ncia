@@ -177,7 +177,7 @@ export default function StoreModal() {
                     {/* Horários */}
                     <div className="mt-3 flex items-center gap-2.5 text-xs sm:text-sm text-gray-600 font-semibold px-1">
                       <Clock size={16} className="text-suncell-orange shrink-0" />
-                      <span>Segunda a Sexta: 9h às 18h | Sábado: 9h às 13h</span>
+                      <span>Segunda a Sexta: 10h às 13h e 14h às 20h | Sábado: 10h às 13h</span>
                     </div>
                   </div>
 
