@@ -5,6 +5,7 @@ import { findPageBySlug, LOJAS, getBairrosPages, getCidadesPages, getAparelhosPa
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import EnhancedSEO from "./EnhancedSEO";
 import FAQAccordion from "./FAQAccordion";
+import { openStoreDetailsModal } from "./StoreModal";
 
 interface ProgrammaticPageProps {
   type: "bairro" | "cidade" | "aparelho" | "servico" | "loja";
@@ -122,7 +123,10 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
               </div>
 
               <div className="lg:col-span-5">
-                <div className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-100 group">
+                <div 
+                  className="relative rounded-2xl overflow-hidden shadow-lg border border-gray-100 group cursor-pointer"
+                  onClick={() => openStoreDetailsModal(type === "loja" && (page.slug === "guaira" || page.slug === "boqueirao") ? (page.slug as "guaira" | "boqueirao") : "ambas")}
+                >
                   <img
                     src={bannerImage}
                     alt={bannerImageAlt}
@@ -131,9 +135,12 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/70 via-[#0D0D0D]/10 to-transparent" />
                   <div className="absolute bottom-0 left-0 right-0 p-4">
-                    <p className="font-sans text-xs text-white font-bold flex items-center gap-1.5">
-                      <span className="w-2 h-2 rounded-full bg-suncell-orange animate-pulse" />
-                      <span>{bannerLabel}</span>
+                    <p className="font-sans text-xs text-white font-bold flex items-center justify-between gap-1.5 w-full">
+                      <span className="flex items-center gap-1.5">
+                        <span className="w-2 h-2 rounded-full bg-suncell-orange animate-pulse" />
+                        <span>{bannerLabel}</span>
+                      </span>
+                      <span className="text-[9px] bg-suncell-orange/30 text-white border border-suncell-orange/45 px-2 py-0.5 rounded font-black tracking-wider uppercase select-none">CLIQUE PARA VER LOJA</span>
                     </p>
                   </div>
                 </div>

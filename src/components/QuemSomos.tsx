@@ -4,6 +4,7 @@ import { ArrowLeft, ShieldCheck, Heart, Award, MapPin, Phone } from "lucide-reac
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import EnhancedSEO from "./EnhancedSEO";
 import { LOJAS } from "../siteData";
+import { openStoreDetailsModal } from "./StoreModal";
 
 export default function QuemSomos() {
   const pageSEO = {
@@ -47,19 +48,23 @@ export default function QuemSomos() {
           </div>
 
           {/* Imagem das duas lojas em Curitiba */}
-          <div className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 mb-12 relative group">
+          <div 
+            className="rounded-3xl overflow-hidden shadow-xl border border-gray-200 mb-12 relative group cursor-pointer"
+            onClick={() => openStoreDetailsModal("ambas")}
+          >
             <img
               src="https://img.suncellassistencia.com.br/assistencia-tecnica-curitiba-cwb-parana-brasil.webp"
-              alt="Lojas SUNCELL Assistência Técnica Celular em Curitiba Guaíra e Alto Boqueirão"
-              className="w-full h-64 sm:h-96 object-cover group-hover:scale-[1.02] transition-transform duration-500"
+              alt="Lojas SUNCELL Assistência Técnica Celular em Curitiba Guaíra e Alto Boqueirão - Clique para ver detalhes"
+              className="w-full h-64 sm:h-96 object-cover group-hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/75 via-transparent to-transparent" />
-            <div className="absolute bottom-0 left-0 right-0 p-6">
+            <div className="absolute bottom-0 left-0 right-0 p-6 flex items-center justify-between gap-4 flex-wrap">
               <p className="font-sans text-sm text-white font-extrabold flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full bg-suncell-orange animate-pulse" />
                 <span>Unidades SUNCELL Guaíra e Alto Boqueirão - Curitiba, PR</span>
               </p>
+              <span className="text-[9px] bg-suncell-orange/30 text-white border border-suncell-orange/45 px-2.5 py-1 rounded-md font-black tracking-wider uppercase select-none">CLIQUE PARA DETALHES</span>
             </div>
           </div>
 

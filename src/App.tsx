@@ -16,6 +16,7 @@ import Cobertura from "./components/Cobertura";
 import NotFound from "./components/NotFound";
 import SuncellInteractionWidgets from "./components/SuncellInteractionWidgets";
 import BackToTop from "./components/BackToTop";
+import StoreModal from "./components/StoreModal";
 
 // Componente utilitário para garantir scroll-to-top automático em cada mudança de rota
 function ScrollToTop() {
@@ -111,6 +112,9 @@ export default function App() {
 
           {/* Back to Top Widget with premium attention-grabbing animations */}
           <BackToTop />
+          
+          {/* Centralized Store Details Modal */}
+          <StoreModal />
         </div>
       </BrowserRouter>
     </HelmetProvider>

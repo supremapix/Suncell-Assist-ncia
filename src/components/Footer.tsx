@@ -4,6 +4,7 @@ import { Phone, MapPin, Smartphone, ShieldCheck, Mail, ArrowUpRight, HelpCircle 
 import { LOJAS, getBairrosPages, getCidadesPages, getAparelhosPages, getServicosPages, rotaDe } from "../siteData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import { SupremaCredit } from "./SupremaCredit";
+import { openStoreDetailsModal } from "./StoreModal";
 
 export default function Footer() {
   const bairrosDestacados = getBairrosPages().filter(b => 
@@ -84,16 +85,19 @@ export default function Footer() {
             
             {/* Contato Loja Guaíra */}
             <div className="bg-suncell-dark-gray border border-suncell-medium-gray rounded-2xl flex flex-col justify-between overflow-hidden shadow-xl shadow-black/10">
-              <div className="relative h-44 w-full bg-[#121214] flex items-center justify-center overflow-hidden border-b border-suncell-medium-gray/40">
+              <div 
+                className="relative h-44 w-full bg-[#121214] flex items-center justify-center overflow-hidden border-b border-suncell-medium-gray/40 cursor-pointer group"
+                onClick={() => openStoreDetailsModal("guaira")}
+              >
                 <img 
                   src="https://img.suncellassistencia.com.br/loja-suncell.webp" 
-                  alt="SUNCELL Unidade Guaíra" 
-                  className="w-full h-full object-contain hover:scale-102 transition-transform duration-500"
+                  alt="SUNCELL Unidade Guaíra - Clique para ver detalhes" 
+                  className="w-full h-full object-contain hover:scale-102 transition-transform duration-500 cursor-pointer"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-2 left-2 z-10 flex items-center gap-1 bg-black/50 border border-white/10 px-2 py-0.5 rounded text-[10px] font-mono text-gray-300 backdrop-blur-sm shadow-sm select-none">
                   <span className="w-1.5 h-1.5 rounded-full bg-suncell-orange animate-pulse" />
-                  <span>Loja Completa</span>
+                  <span>Ver Detalhes</span>
                 </div>
               </div>
               
@@ -136,16 +140,19 @@ export default function Footer() {
 
             {/* Contato Loja Alto Boqueirão */}
             <div className="bg-suncell-dark-gray border border-suncell-medium-gray rounded-2xl flex flex-col justify-between overflow-hidden shadow-xl shadow-black/10">
-              <div className="relative h-44 w-full bg-[#121214] flex items-center justify-center overflow-hidden border-b border-suncell-medium-gray/40">
+              <div 
+                className="relative h-44 w-full bg-[#121214] flex items-center justify-center overflow-hidden border-b border-suncell-medium-gray/40 cursor-pointer group"
+                onClick={() => openStoreDetailsModal("boqueirao")}
+              >
                 <img 
                   src="https://img.suncellassistencia.com.br/loja-suncell-alto-boqueirao-assistencia-tecnica-celulares-curitiba-bairro-altoboqueirao-pt.webp" 
-                  alt="SUNCELL Unidade Alto Boqueirão" 
-                  className="w-full h-full object-contain hover:scale-102 transition-transform duration-500"
+                  alt="SUNCELL Unidade Alto Boqueirão - Clique para ver detalhes" 
+                  className="w-full h-full object-contain hover:scale-102 transition-transform duration-500 cursor-pointer"
                   referrerPolicy="no-referrer"
                 />
                 <div className="absolute top-2 left-2 z-10 flex items-center gap-1 bg-black/50 border border-white/10 px-2 py-0.5 rounded text-[10px] font-mono text-gray-300 backdrop-blur-sm shadow-sm select-none">
                   <span className="w-1.5 h-1.5 rounded-full bg-suncell-orange animate-pulse" />
-                  <span>Loja Completa</span>
+                  <span>Ver Detalhes</span>
                 </div>
               </div>
 

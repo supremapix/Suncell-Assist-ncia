@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { MapPin, Phone, ExternalLink, Navigation, Clock, ChevronRight } from "lucide-react";
 import { LOJAS } from "../siteData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
+import { openStoreDetailsModal } from "./StoreModal";
 
 export default function NossasLojas() {
   return (
@@ -58,11 +59,14 @@ export default function NossasLojas() {
             >
               
               {/* Foto da Loja com Badge de Destaque */}
-              <div className="relative h-64 sm:h-72 overflow-hidden bg-gray-200">
+              <div 
+                className="relative h-64 sm:h-72 overflow-hidden bg-gray-200 cursor-pointer"
+                onClick={() => openStoreDetailsModal(loja.id)}
+              >
                 <img
                   src={loja.foto}
-                  alt={`Fachada da Loja SUNCELL Unidade ${loja.nome}`}
-                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  alt={`Fachada da Loja SUNCELL Unidade ${loja.nome} - Clique para ver detalhes`}
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105 cursor-pointer"
                   referrerPolicy="no-referrer"
                   loading="lazy"
                 />
@@ -71,6 +75,11 @@ export default function NossasLojas() {
                 {/* Badge da Loja */}
                 <div className="absolute top-4 left-4 bg-[#0D0D0D]/90 backdrop-blur-md px-4 py-1.5 rounded-full border border-suncell-orange/30 text-xs font-display font-bold text-suncell-orange uppercase tracking-wider">
                   Unidade {loja.id === "guaira" ? "Guaíra" : "Alto Boqueirão"}
+                </div>
+
+                {/* Clique para ver mais */}
+                <div className="absolute top-4 right-4 bg-suncell-orange/90 backdrop-blur-md px-3 py-1 rounded-full text-[9px] font-sans font-black text-white uppercase tracking-wider select-none">
+                  Ver Detalhes
                 </div>
 
                 {/* Horário */}
