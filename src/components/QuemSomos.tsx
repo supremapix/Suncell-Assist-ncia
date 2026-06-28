@@ -55,7 +55,7 @@ export default function QuemSomos() {
             <img
               src="https://img.suncellassistencia.com.br/assistencia-tecnica-curitiba-cwb-parana-brasil.webp"
               alt="Lojas SUNCELL Assistência Técnica Celular em Curitiba Guaíra e Alto Boqueirão - Clique para ver detalhes"
-              className="w-full h-64 sm:h-96 object-cover group-hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
+              className="w-full h-auto object-contain block group-hover:scale-[1.02] transition-transform duration-500 cursor-pointer"
               referrerPolicy="no-referrer"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-[#0D0D0D]/75 via-transparent to-transparent" />
