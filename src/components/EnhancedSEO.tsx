@@ -20,7 +20,7 @@ export default function EnhancedSEO({
   const siteName = "SUNCELL Assistência Técnica";
   const defaultTitle = "SUNCELL | Assistência Técnica de Celular em Curitiba";
   const defaultDesc = "Conserto de celular em Curitiba (Guaíra e Alto Boqueirão). Troca de tela, bateria e reparo de placa para iPhone, Samsung, Xiaomi e Motorola.";
-  const appUrl = (import.meta as any).env?.VITE_APP_URL || "https://suncellassistencia.com.br";
+  const appUrl = (import.meta as any).env?.VITE_APP_URL || "https://www.suncellassistencia.com.br";
   
   const finalTitle = title || pageData?.title || defaultTitle;
   const finalDesc = description || pageData?.description || defaultDesc;

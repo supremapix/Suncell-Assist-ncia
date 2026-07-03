@@ -9,7 +9,7 @@ import {
 const DIST_DIR = path.join(process.cwd(), "dist");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
 const TEMPLATE_PATH = path.join(DIST_DIR, "index.html");
-const APP_URL = "https://suncellassistencia.com.br"; // URL absoluta de produção
+const APP_URL = "https://www.suncellassistencia.com.br"; // URL absoluta de produção
 
 interface ExtraPage {
   routePath: string;
