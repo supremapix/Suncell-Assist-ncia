@@ -100,6 +100,16 @@ export default function Header() {
             </Link>
 
             <Link
+              id="nav-assistencia-tecnica-curitiba"
+              to="/assistencia-tecnica-curitiba"
+              className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${
+                location.pathname === "/assistencia-tecnica-curitiba" ? "text-suncell-orange" : "text-slate-200"
+              }`}
+            >
+              Assistência Técnica em Curitiba
+            </Link>
+
+            <Link
               id="nav-quem-somos"
               to="/quem-somos"
               className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${

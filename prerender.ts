@@ -18,9 +18,7 @@ interface ExtraPage {
   h1: string;
   nome: string;
   faq?: { q: string; a: string }[];
-}
-
-const paginasExtras: ExtraPage[] = [
+}const paginasExtras: ExtraPage[] = [
   {
     routePath: "/",
     title: "SUNCELL | Assistência Técnica de Celular em Curitiba (Guaíra e Alto Boqueirão)",
@@ -42,6 +40,36 @@ const paginasExtras: ExtraPage[] = [
       { q: "Quanto tempo demora a avaliação na loja física?", a: "A nossa equipe de técnicos leva cerca de 10 a 15 minutos para rodar todos os testes de hardware e software do seu iPhone. Aprovado, o PIX é realizado na mesma hora!" },
       { q: "Vocês aceitam celulares bloqueados no iCloud ou de origem duvidosa?", a: "Não! Exigimos a assinatura de um termo de procedência com cópia do documento de identidade e CPF, e o aparelho deve ser redefinido para as configurações de fábrica na frente de nossa equipe técnica." },
       { q: "Qualquer pessoa de Curitiba pode vender?", a: "Sim, basta levar seu iPhone até uma de nossas duas unidades em Curitiba (Guaíra ou Alto Boqueirão) acompanhado de um documento oficial com foto." }
+    ]
+  },
+  {
+    routePath: "/quem-somos",
+    title: "Quem Somos | SUNCELL Assistência Técnica Celular Curitiba",
+    description: "Conheça a história e os valores da SUNCELL. Atendimento de excelência em conserto de celular com 2 lojas físicas em Curitiba (Guaíra e Alto Boqueirão).",
+    h1: "História e Compromisso da SUNCELL",
+    nome: "Curitiba",
+    faq: [
+      { q: "Qual o diferencial da SUNCELL?", a: "Nossos pilares são a honestidade, diagnóstico gratuito real, garantia total de 90 dias e peças de alta performance." }
+    ]
+  },
+  {
+    routePath: "/bairros-e-cidades",
+    title: "Áreas de Atendimento de Celular em Curitiba e Região | SUNCELL",
+    description: "Consulte todas as regiões, bairros de Curitiba e cidades metropolitanas atendidas pela SUNCELL. Diagnóstico gratuito e conserto rápido na sua localidade.",
+    h1: "Cobertura de Atendimento de Celulares",
+    nome: "Curitiba",
+    faq: [
+      { q: "Como saber qual a unidade SUNCELL mais próxima de mim?", a: "Atendemos Guaíra, Alto Boqueirão e mais 75 bairros e 15 cidades com nossas duas unidades físicas bem localizadas dentro do Mercado Goes." }
+    ]
+  },
+  {
+    routePath: "/assistencia-tecnica-curitiba",
+    title: "Assistência Técnica de Celular em Curitiba | SUNCELL - Diagnóstico Grátis",
+    description: "Assistência técnica em Curitiba especializada em celulares. Troca de tela, bateria e placa de iPhone, Samsung, Xiaomi e Motorola. Diagnóstico gratuito e garantia. 2 unidades: Guaíra e Alto Boqueirão.",
+    h1: "Assistência Técnica de Celular em Curitiba",
+    nome: "Curitiba",
+    faq: [
+      { q: "Qual o valor para fazer o orçamento do celular na SUNCELL?", a: "O diagnóstico e o orçamento na SUNCELL são 100% gratuitos e sem compromisso em nossas duas unidades." }
     ]
   }
 ];
@@ -302,12 +330,33 @@ async function runPrerender() {
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
+  <!-- Página Pilar: Assistência Técnica em Curitiba -->
+  <url>
+    <loc>${APP_URL}/assistencia-tecnica-curitiba</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+  </url>
   <!-- Canal de Compra de iPhones Usados -->
   <url>
     <loc>${APP_URL}/compramos-iphone</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+  </url>
+  <!-- Quem Somos -->
+  <url>
+    <loc>${APP_URL}/quem-somos</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <!-- Bairros e Cidades de Cobertura -->
+  <url>
+    <loc>${APP_URL}/bairros-e-cidades</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
   </url>
 `;
 

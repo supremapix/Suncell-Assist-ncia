@@ -9,6 +9,7 @@ import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
+import AssistenciaTecnicaCuritiba from "./components/AssistenciaTecnicaCuritiba";
 import ProgrammaticPage from "./components/ProgrammaticPage";
 import CompramosIphone from "./components/CompramosIphone";
 import QuemSomos from "./components/QuemSomos";
@@ -47,6 +48,12 @@ export default function App() {
             <Routes>
               {/* Home Page Principal */}
               <Route path="/" element={<Home />} />
+              
+              {/* Página Pilar: Assistência Técnica Curitiba */}
+              <Route 
+                path="/assistencia-tecnica-curitiba" 
+                element={<AssistenciaTecnicaCuritiba />} 
+              />
               
               {/* Programmatic SEO: Bairros de Curitiba */}
               <Route 

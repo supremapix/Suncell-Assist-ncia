@@ -584,6 +584,7 @@ export function findPageBySlug(type: "bairro" | "cidade" | "aparelho" | "servico
 
 // Retorna o caminho de URL absoluto para cada tipo de página
 export function rotaDe(p: PageData): string {
+  if (p.slug === "assistencia-tecnica-curitiba") return "/assistencia-tecnica-curitiba";
   switch (p.type) {
     case "bairro":   return `/assistencia-tecnica/${p.slug}`;
     case "cidade":   return `/assistencia-tecnica-cidade/${p.slug}`;

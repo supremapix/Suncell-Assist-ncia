@@ -63,6 +63,16 @@ export default function MenuMobile({ onClose }: MenuMobileProps) {
           </Link>
 
           <Link
+            id="mobile-nav-assistencia-tecnica-curitiba"
+            to="/assistencia-tecnica-curitiba"
+            onClick={onClose}
+            className="flex items-center gap-4 p-4 rounded-xl bg-suncell-dark-gray/50 hover:bg-suncell-dark-gray text-white font-sans font-bold text-lg border border-suncell-medium-gray/30 transition-all active:scale-[0.98] cursor-pointer focus:outline-none"
+          >
+            <MapPin size={24} className="text-suncell-orange shrink-0" />
+            <span>Assistência Técnica em Curitiba</span>
+          </Link>
+
+          <Link
             id="mobile-nav-quem-somos"
             to="/quem-somos"
             onClick={onClose}

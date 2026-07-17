@@ -126,10 +126,11 @@ export default function EnhancedSEO({
         "item": `${appUrl}${rotaDe(pageData)}`
       });
     } else if (pageData.type === "loja") {
+      const isPillar = pageData.slug === "assistencia-tecnica-curitiba";
       breadcrumbItems.push({
         "@type": "ListItem",
         "position": 2,
-        "name": `Loja ${pageData.nome}`,
+        "name": isPillar ? "Assistência Técnica em Curitiba" : `Loja ${pageData.nome}`,
         "item": `${appUrl}${rotaDe(pageData)}`
       });
     }

@@ -207,6 +207,11 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 font-sans text-base">
               <li>
+                <Link id="footer-curitiba-pillar-link" to="/assistencia-tecnica-curitiba" className="text-suncell-orange hover:text-suncell-orange-light font-bold transition-colors block">
+                  Assistência Técnica em Curitiba
+                </Link>
+              </li>
+              <li>
                 <a href="/#lojas-section" className="hover:text-suncell-orange transition-colors flex items-center gap-1.5 focus:outline-none">
                   Unidade Guaíra <ArrowUpRight size={14} className="opacity-40" />
                 </a>
