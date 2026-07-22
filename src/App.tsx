@@ -110,6 +110,12 @@ export default function App() {
                 element={<ProductPage />} 
               />
 
+              {/* Produto Xiaomi POCO M7 NFC 256GB 8GB RAM */}
+              <Route 
+                path="/celular-xiaomi-poco-m7-nfc-dual-sim-256gb-8gb-ram" 
+                element={<ProductPage />} 
+              />
+
               {/* Redirecionamentos 301 (Redmi A5 antigo -> Redmi A7 Pro novo) */}
               <Route 
                 path="/celular-xiaomi-redmi-a5-dual-sim-128gb-4gb-ram" 

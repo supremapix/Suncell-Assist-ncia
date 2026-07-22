@@ -217,6 +217,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link id="footer-poco-m7-nfc-link" to="/celular-xiaomi-poco-m7-nfc-dual-sim-256gb-8gb-ram" className="text-suncell-orange hover:text-suncell-orange-light font-bold transition-colors block">
+                  Xiaomi POCO M7 NFC 256GB
+                </Link>
+              </li>
+              <li>
                 <a href="/#lojas-section" className="hover:text-suncell-orange transition-colors flex items-center gap-1.5 focus:outline-none">
                   Unidade Guaíra <ArrowUpRight size={14} className="opacity-40" />
                 </a>

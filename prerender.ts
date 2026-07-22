@@ -81,6 +81,16 @@ interface ExtraPage {
     faq: [
       { q: "O Xiaomi Redmi A7 Pro é novo e lacrado?", a: "Sim, todos os celulares vendidos pela Shopcell / SUNCELL são novos, originais, homologados pela Anatel e acompanham garantia de 6 meses fornecida pela nossa loja física em Curitiba." }
     ]
+  },
+  {
+    routePath: "/celular-xiaomi-poco-m7-nfc-dual-sim-256gb-8gb-ram",
+    title: "Xiaomi POCO M7 NFC 256GB 8GB RAM em Curitiba | Shopcell",
+    description: "POCO M7 NFC 256GB 8GB RAM por R$ 1.199,99 à vista ou 12x de R$ 115,73. Tela 6,88\" 120 Hz, câmera 50 MP, bateria 5160 mAh, HyperOS. Loja física em Curitiba com garantia de 6 meses.",
+    h1: "Celular Xiaomi POCO M7 NFC 256GB 8GB RAM",
+    nome: "Curitiba",
+    faq: [
+      { q: "O Xiaomi POCO M7 NFC é novo e lacrado?", a: "Sim, todos os celulares vendidos pela Shopcell / SUNCELL são novos, originais, homologados pela Anatel e acompanham garantia de 6 meses fornecida pela nossa loja física em Curitiba." }
+    ]
   }
 ];
 
@@ -371,6 +381,13 @@ async function runPrerender() {
   <!-- Produto: Xiaomi Redmi A7 Pro 128GB 4GB RAM -->
   <url>
     <loc>${APP_URL}/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <!-- Produto: Xiaomi POCO M7 NFC 256GB 8GB RAM -->
+  <url>
+    <loc>${APP_URL}/celular-xiaomi-poco-m7-nfc-dual-sim-256gb-8gb-ram</loc>
     <lastmod>${currentDate}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link } from "react-router-dom";
+import { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
 import { 
   CheckCircle, 
@@ -12,33 +12,38 @@ import {
   ChevronDown, 
   ChevronUp, 
   ArrowRight, 
-  Zap, 
-  Cpu, 
-  BatteryCharging, 
-  Camera, 
-  Monitor, 
-  HardDrive, 
-  Wifi 
+  Zap
 } from "lucide-react";
-import { redmiA7Pro } from "../products/productsData";
+import { Product, redmiA7Pro, todosProdutos } from "../products/productsData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import FAQAccordion from "./FAQAccordion";
 import NossasLojas from "./NossasLojas";
 
-export default function ProductPage() {
-  const product = redmiA7Pro;
+interface ProductPageProps {
+  product?: Product;
+}
+
+export default function ProductPage({ product: productProp }: ProductPageProps) {
+  const location = useLocation();
+  const product = productProp || todosProdutos.find(p => p.slug === location.pathname) || redmiA7Pro;
+
   const [selectedImg, setSelectedImg] = useState(product.imagemPrincipal);
   const [showParcelas, setShowParcelas] = useState(false);
+
+  useEffect(() => {
+    setSelectedImg(product.imagemPrincipal);
+    setShowParcelas(false);
+  }, [product]);
 
   // FAQ items específicos da página do produto
   const faqItems = [
     {
-      q: "O Xiaomi Redmi A7 Pro é novo e lacrado?",
+      q: `O ${product.nome} é novo e lacrado?`,
       a: "Sim, todos os celulares vendidos pela Shopcell / SUNCELL são novos, originais, homologados pela Anatel e acompanham garantia de 6 meses fornecida pela nossa loja física em Curitiba."
     },
     {
       q: "Quais as formas de pagamento aceitas?",
-      a: "Oferecemos o valor especial à vista de R$ 849,99 via Pix ou dinheiro. Também parcelamos em até 12x de R$ 81,98 no cartão de crédito diretamente em nossas lojas físicas."
+      a: `Oferecemos o valor especial à vista de ${product.precoVistaFormatado} via Pix ou dinheiro. Também parcelamos em ${product.precoParceladoInfo} no cartão de crédito diretamente em nossas lojas físicas.`
     },
     {
       q: "O produto vem com carregador e capinha na caixa?",
@@ -59,7 +64,7 @@ export default function ProductPage() {
     "description": product.seoDescription,
     "brand": {
       "@type": "Brand",
-      "name": "Xiaomi"
+      "name": product.marca
     },
     "sku": product.codigo,
     "mpn": product.codigo,
@@ -116,7 +121,7 @@ export default function ProductPage() {
             <span>/</span>
             <span className="text-gray-400">Smartphones</span>
             <span>/</span>
-            <span className="text-gray-400">Xiaomi</span>
+            <span className="text-gray-400">{product.marca}</span>
             <span>/</span>
             <span className="text-gray-900 font-semibold">{product.nome}</span>
           </nav>
@@ -130,7 +135,7 @@ export default function ProductPage() {
               <div className="relative w-full aspect-square max-w-md bg-gray-50 rounded-2xl border border-gray-100 p-6 flex items-center justify-center overflow-hidden group">
                 <img
                   src={selectedImg}
-                  alt="Celular Xiaomi Redmi A7 Pro 128GB em Curitiba - Shopcell"
+                  alt={`${product.nome} em Curitiba - Shopcell`}
                   className="w-full h-full object-contain transition-transform duration-300 group-hover:scale-105"
                   referrerPolicy="no-referrer"
                 />
@@ -152,7 +157,7 @@ export default function ProductPage() {
                   >
                     <img 
                       src={img} 
-                      alt="Celular Xiaomi Redmi A7 Pro 128GB em Curitiba - Shopcell" 
+                      alt={`${product.nome} em Curitiba - Shopcell`} 
                       className="w-full h-full object-contain"
                       referrerPolicy="no-referrer"
                     />
@@ -276,7 +281,7 @@ export default function ProductPage() {
           {/* BULLETS DE DESTAQUE */}
           <section className="mt-10 bg-white rounded-3xl border border-gray-200/80 p-6 sm:p-10 shadow-sm">
             <h2 className="font-display font-bold text-xl sm:text-2xl text-[#0D0D0D] mb-6 flex items-center gap-2 border-l-4 border-suncell-orange pl-3">
-              <span>Destaques do Celular Xiaomi Redmi A7 Pro</span>
+              <span>Destaques do {product.nome}</span>
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
               {product.bullets.map((bullet, idx) => (
@@ -300,7 +305,7 @@ export default function ProductPage() {
               </p>
             </div>
 
-            {/* 7 BLOCOS ALTERNADOS */}
+            {/* BLOCOS ALTERNADOS */}
             <div className="space-y-12 pt-6 border-t border-gray-100">
               {product.blocos.map((bloco, idx) => {
                 const isEven = idx % 2 === 1;
@@ -326,7 +331,7 @@ export default function ProductPage() {
                     {/* Texto do bloco */}
                     <div className={`lg:col-span-7 space-y-3 ${isEven ? "lg:order-1" : "lg:order-2"}`}>
                       <span className="text-xs font-mono font-bold text-suncell-orange uppercase tracking-wider bg-suncell-orange/10 px-2.5 py-1 rounded-md">
-                        Destaque 0{idx + 1}
+                        Destaque {idx + 1 < 10 ? `0${idx + 1}` : idx + 1}
                       </span>
                       <h3 className="font-display font-bold text-xl text-[#0D0D0D]">
                         {bloco.titulo}
@@ -406,3 +411,4 @@ export default function ProductPage() {
     </>
   );
 }
+

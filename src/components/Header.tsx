@@ -120,6 +120,16 @@ export default function Header() {
             </Link>
 
             <Link
+              id="nav-poco-m7-nfc"
+              to="/celular-xiaomi-poco-m7-nfc-dual-sim-256gb-8gb-ram"
+              className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${
+                location.pathname === "/celular-xiaomi-poco-m7-nfc-dual-sim-256gb-8gb-ram" ? "text-suncell-orange" : "text-slate-200"
+              }`}
+            >
+              Xiaomi POCO M7
+            </Link>
+
+            <Link
               id="nav-quem-somos"
               to="/quem-somos"
               className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${
