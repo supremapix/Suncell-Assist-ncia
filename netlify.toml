@@ -1,4 +1,16 @@
 [[redirects]]
+  from = "/celular-xiaomi-redmi-a5-dual-sim-128gb-4gb-ram"
+  to = "/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram"
+  status = 301
+  force = true
+
+[[redirects]]
+  from = "/celular-xiaomi-redmi-a5"
+  to = "/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram"
+  status = 301
+  force = true
+
+[[redirects]]
   from = "/*"
   to = "/index.html"
   status = 200

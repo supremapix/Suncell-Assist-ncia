@@ -1,4 +1,16 @@
 {
+  "redirects": [
+    {
+      "source": "/celular-xiaomi-redmi-a5-dual-sim-128gb-4gb-ram",
+      "destination": "/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram",
+      "permanent": true
+    },
+    {
+      "source": "/celular-xiaomi-redmi-a5",
+      "destination": "/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     { "source": "/(.*)", "destination": "/index.html" }
   ]

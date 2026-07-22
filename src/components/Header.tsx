@@ -110,6 +110,16 @@ export default function Header() {
             </Link>
 
             <Link
+              id="nav-redmi-a7-pro"
+              to="/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram"
+              className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${
+                location.pathname === "/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram" ? "text-suncell-orange" : "text-slate-200"
+              }`}
+            >
+              Xiaomi Redmi A7 Pro
+            </Link>
+
+            <Link
               id="nav-quem-somos"
               to="/quem-somos"
               className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${

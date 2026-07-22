@@ -36,6 +36,7 @@ SUNCELL operates two physical stores located inside the "Mercado Goes" supermark
 All pages are fully pre-rendered and indexable:
 - **Home:** https://www.suncellassistencia.com.br/
 - **Pillar Page (Curitiba):** https://www.suncellassistencia.com.br/assistencia-tecnica-curitiba
+- **Product Page (Xiaomi Redmi A7 Pro):** https://www.celularescuritibashopcell.com.br/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram
 - **Sell iPhone (Compramos iPhone):** https://www.suncellassistencia.com.br/compramos-iphone
 - **Who We Are (Quem Somos):** https://www.suncellassistencia.com.br/quem-somos
 - **Coverage Map (Bairros & Cidades):** https://www.suncellassistencia.com.br/bairros-e-cidades

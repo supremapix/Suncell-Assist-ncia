@@ -12,6 +12,7 @@ import {
   rotaDe, 
   PageData 
 } from "../siteData";
+import { redmiA7Pro } from "../products/productsData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import NossasLojas from "./NossasLojas";
 import InstagramFeed from "./InstagramFeed";
@@ -409,6 +410,81 @@ export default function Home() {
                 </div>
               </motion.div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* 2.5 SMARTPHONE EM DESTAQUE NA LOJA */}
+      <section className="py-16 bg-[#0D0D0D] text-white border-y border-suncell-orange/20 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-8 bg-zinc-900/80 border border-zinc-800 rounded-3xl p-6 sm:p-10 shadow-2xl relative">
+            
+            <div className="w-full md:w-1/3 flex justify-center">
+              <div className="relative w-56 h-56 sm:w-64 sm:h-64 bg-white/5 rounded-2xl p-4 border border-white/10 flex items-center justify-center overflow-hidden group">
+                <img 
+                  src={redmiA7Pro.imagemPrincipal} 
+                  alt={redmiA7Pro.nome} 
+                  className="w-full h-full object-contain group-hover:scale-105 transition-transform duration-300"
+                  referrerPolicy="no-referrer"
+                />
+                <span className="absolute top-3 left-3 bg-suncell-orange text-white text-[10px] font-mono font-bold px-2.5 py-1 rounded-full uppercase tracking-wider">
+                  Destaque
+                </span>
+              </div>
+            </div>
+
+            <div className="w-full md:w-2/3 space-y-4 text-left">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="bg-suncell-orange/20 text-suncell-orange text-xs font-mono font-bold px-2.5 py-1 rounded-md uppercase">
+                  {redmiA7Pro.marca}
+                </span>
+                <span className="text-xs text-emerald-400 font-mono font-bold">
+                  • {redmiA7Pro.disponibilidade}
+                </span>
+              </div>
+
+              <h3 className="font-display font-extrabold text-2xl sm:text-3xl text-white tracking-tight">
+                {redmiA7Pro.nome}
+              </h3>
+
+              <p className="font-sans text-xs sm:text-sm text-gray-300 line-clamp-2">
+                {redmiA7Pro.introDesc}
+              </p>
+
+              <div className="pt-2 flex flex-wrap items-baseline gap-4">
+                <div>
+                  <span className="text-[10px] text-gray-400 uppercase font-mono block">Preço à vista:</span>
+                  <span className="font-display font-extrabold text-2xl sm:text-3xl text-suncell-orange">
+                    {redmiA7Pro.precoVistaFormatado}
+                  </span>
+                </div>
+                <div className="text-xs text-gray-300 border-l border-white/10 pl-4">
+                  <span>Ou em <strong>{redmiA7Pro.precoParceladoInfo}</strong></span>
+                </div>
+              </div>
+
+              <div className="pt-4 flex flex-wrap items-center gap-4">
+                <Link
+                  id="home-redmi-a7-pro-link"
+                  to={redmiA7Pro.slug}
+                  className="px-6 py-3 rounded-xl bg-gradient-to-r from-suncell-orange to-suncell-orange-light text-white font-sans font-bold text-sm flex items-center gap-2 shadow-lg hover:shadow-suncell-orange/20 active:scale-[0.98] transition-all"
+                >
+                  <span>Ver Detalhes do Redmi A7 Pro</span>
+                  <ArrowRight size={16} />
+                </Link>
+
+                <a
+                  href={getWhatsAppLink("5541999176640", `Olá! Vi na Home o ${redmiA7Pro.nome} por ${redmiA7Pro.precoVistaFormatado} à vista e gostaria de mais informações!`, typeof window !== "undefined" ? window.location.href : "")}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-6 py-3 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-sans font-bold text-sm flex items-center gap-2 transition-all"
+                >
+                  <Phone size={16} className="text-suncell-orange" />
+                  <span>Comprar pelo WhatsApp</span>
+                </a>
+              </div>
+            </div>
+
           </div>
         </div>
       </section>

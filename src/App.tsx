@@ -4,7 +4,7 @@
  */
 
 import { useEffect } from "react";
-import { BrowserRouter, Routes, Route, useLocation } from "react-router-dom";
+import { BrowserRouter, Routes, Route, useLocation, Navigate } from "react-router-dom";
 import { HelmetProvider } from "react-helmet-async";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -14,6 +14,7 @@ import ProgrammaticPage from "./components/ProgrammaticPage";
 import CompramosIphone from "./components/CompramosIphone";
 import QuemSomos from "./components/QuemSomos";
 import Cobertura from "./components/Cobertura";
+import ProductPage from "./components/ProductPage";
 import NotFound from "./components/NotFound";
 import SuncellInteractionWidgets from "./components/SuncellInteractionWidgets";
 import BackToTop from "./components/BackToTop";
@@ -101,6 +102,22 @@ export default function App() {
               <Route 
                 path="/bairros-e-cidades" 
                 element={<Cobertura />} 
+              />
+              
+              {/* Produto Xiaomi Redmi A7 Pro 128GB 4GB RAM */}
+              <Route 
+                path="/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram" 
+                element={<ProductPage />} 
+              />
+
+              {/* Redirecionamentos 301 (Redmi A5 antigo -> Redmi A7 Pro novo) */}
+              <Route 
+                path="/celular-xiaomi-redmi-a5-dual-sim-128gb-4gb-ram" 
+                element={<Navigate to="/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram" replace />} 
+              />
+              <Route 
+                path="/celular-xiaomi-redmi-a5" 
+                element={<Navigate to="/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram" replace />} 
               />
               
               {/* Página 404 Customizada */}

@@ -212,6 +212,11 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
+                <Link id="footer-redmi-a7-pro-link" to="/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram" className="text-suncell-orange hover:text-suncell-orange-light font-bold transition-colors block">
+                  Xiaomi Redmi A7 Pro 128GB
+                </Link>
+              </li>
+              <li>
                 <a href="/#lojas-section" className="hover:text-suncell-orange transition-colors flex items-center gap-1.5 focus:outline-none">
                   Unidade Guaíra <ArrowUpRight size={14} className="opacity-40" />
                 </a>

@@ -71,6 +71,16 @@ interface ExtraPage {
     faq: [
       { q: "Qual o valor para fazer o orçamento do celular na SUNCELL?", a: "O diagnóstico e o orçamento na SUNCELL são 100% gratuitos e sem compromisso em nossas duas unidades." }
     ]
+  },
+  {
+    routePath: "/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram",
+    title: "Xiaomi Redmi A7 Pro 128GB 4GB RAM em Curitiba | Shopcell",
+    description: "Redmi A7 Pro 128GB 4GB RAM por R$ 849,99 à vista ou 12x de R$ 81,98. Tela 6,9\" 120 Hz, bateria 6.000 mAh, Android 15. Loja física no Centro de Curitiba, garantia de 6 meses.",
+    h1: "Celular Xiaomi Redmi A7 Pro 128GB 4GB RAM",
+    nome: "Curitiba",
+    faq: [
+      { q: "O Xiaomi Redmi A7 Pro é novo e lacrado?", a: "Sim, todos os celulares vendidos pela Shopcell / SUNCELL são novos, originais, homologados pela Anatel e acompanham garantia de 6 meses fornecida pela nossa loja física em Curitiba." }
+    ]
   }
 ];
 
@@ -357,6 +367,13 @@ async function runPrerender() {
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+  </url>
+  <!-- Produto: Xiaomi Redmi A7 Pro 128GB 4GB RAM -->
+  <url>
+    <loc>${APP_URL}/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
   </url>
 `;
 
