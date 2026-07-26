@@ -36,7 +36,7 @@ export const LOJAS: Loja[] = [
     whatsapp: "(41) 99917-6640",
     linkWhats: "https://api.whatsapp.com/send?phone=5541999176640",
     maps: "https://share.google/BvgD7geMqSmv4Cc98",
-    foto: "https://img.suncellassistencia.com.br/loja-suncell.webp",
+    foto: "https://img.suncellassistencia.com.br/suncell-slider-loja-guaira.webp",
   },
   {
     id: "boqueirao",
@@ -46,7 +46,7 @@ export const LOJAS: Loja[] = [
     whatsapp: "(41) 99750-1961",
     linkWhats: "https://api.whatsapp.com/send?phone=5541997501961&text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20google.%20Preciso%20de%20um%20or%C3%A7amento!",
     maps: "https://share.google/ZzOtA47yW8m6T9fBr",
-    foto: "https://img.suncellassistencia.com.br/loja-suncell-alto-boqueirao-assistencia-tecnica-celulares-curitiba-bairro-altoboqueirao-pt.webp",
+    foto: "https://img.suncellassistencia.com.br/suncell-slider-loja-boqueirao.webp",
   },
 ];
 
