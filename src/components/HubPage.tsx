@@ -161,12 +161,12 @@ export default function HubPage() {
           )}
 
           {/* FAQ do Hub */}
-          {hub.faqs.length > 0 && (
+          {hub.faqs && hub.faqs.length > 0 && (
             <div className="bg-white border border-gray-200/80 rounded-3xl p-6 sm:p-10 shadow-sm">
               <h2 className="font-display font-bold text-2xl text-gray-900 mb-6">
                 Dúvidas Frequentes sobre {hub.categoria}
               </h2>
-              <FAQAccordion faqs={hub.faqs} />
+              <FAQAccordion items={hub.faqs} />
             </div>
           )}
 

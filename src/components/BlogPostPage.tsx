@@ -102,12 +102,12 @@ export default function BlogPostPage() {
             </div>
 
             {/* FAQ do Artigo */}
-            {post.faqs.length > 0 && (
+            {post.faqs && post.faqs.length > 0 && (
               <div className="mt-12 pt-8 border-t border-gray-100">
                 <h3 className="font-display font-bold text-xl text-gray-900 mb-6">
                   Perguntas Frequentes Sobre Este Tema
                 </h3>
-                <FAQAccordion faqs={post.faqs} />
+                <FAQAccordion items={post.faqs} />
               </div>
             )}
 

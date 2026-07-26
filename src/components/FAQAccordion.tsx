@@ -8,11 +8,13 @@ interface FAQItem {
 }
 
 interface FAQAccordionProps {
-  items: FAQItem[];
+  items?: FAQItem[];
+  faqs?: FAQItem[];
 }
 
-export default function FAQAccordion({ items }: FAQAccordionProps) {
+export default function FAQAccordion({ items, faqs }: FAQAccordionProps) {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
+  const faqList = items || faqs || [];
 
   const toggleItem = (index: number) => {
     setOpenIndex(openIndex === index ? null : index);
@@ -20,7 +22,7 @@ export default function FAQAccordion({ items }: FAQAccordionProps) {
 
   return (
     <div className="space-y-4">
-      {items.map((item, idx) => {
+      {faqList.map((item, idx) => {
         const isOpen = openIndex === idx;
         return (
           <div
