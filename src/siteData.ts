@@ -36,7 +36,7 @@ export const LOJAS: Loja[] = [
     whatsapp: "(41) 99917-6640",
     linkWhats: "https://api.whatsapp.com/send?phone=5541999176640",
     maps: "https://share.google/BvgD7geMqSmv4Cc98",
-    foto: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAGGfV1tHO1xGD0Oh3N6FqOe5bmKKrWwLY1tA1yMJQxpVc7fSmUyIxRbCVFLmCyc4zH0pGZ-2yYVaMEEBNlI0Q8XiN-TmkP1T9xQ0PAgWv91mT_GBMNpCjX5_3zBudA5wrvyQTwQ=s680-w680-h510-rw",
+    foto: "https://img.suncellassistencia.com.br/loja-suncell.webp",
   },
   {
     id: "boqueirao",
@@ -46,7 +46,7 @@ export const LOJAS: Loja[] = [
     whatsapp: "(41) 99750-1961",
     linkWhats: "https://api.whatsapp.com/send?phone=5541997501961&text=Ol%C3%A1%2C%20vim%20atrav%C3%A9s%20do%20google.%20Preciso%20de%20um%20or%C3%A7amento!",
     maps: "https://share.google/ZzOtA47yW8m6T9fBr",
-    foto: "https://lh3.googleusercontent.com/gps-cs-s/APNQkAHfh5TvshlqrQpYobBwMOSSLa9gvkhHGVJnUnVViCohXcfwzPm9izvyLaxK70_zaTgmlIqtSd6EYTPz-UH7C8e7pwlH1zswurFMP13FSxI7b8dzwxUqAiJl_9t0E5jqN_lUgpI=s680-w680-h510-rw",
+    foto: "https://img.suncellassistencia.com.br/loja-suncell-alto-boqueirao-assistencia-tecnica-celulares-curitiba-bairro-altoboqueirao-pt.webp",
   },
 ];
 
