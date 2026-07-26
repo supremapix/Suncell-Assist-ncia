@@ -159,8 +159,8 @@ export const APARELHOS_RAW = [
     nome: "iPhone (Apple)",
     marca: "Apple",
     loja: "guaira",
-    servicos: ["Troca de Tela", "Troca de Bateria", "Conector de Carga (Lightning/USB-C)", "Câmeras e Face ID", "Vidro Traseiro Laser"],
-    modeloDestaque: "iPhone 11, 12, 13, 14, 15, Pro Max"
+    servicos: ["Troca de Tela", "Troca de Bateria", "Conector de Carga", "Câmeras e Face ID", "Vidro Traseiro Laser"],
+    modeloDestaque: "iPhone 11, 12, 13, 14, 15, 16, Pro Max, Plus"
   },
   {
     slug: "samsung-galaxy",
@@ -168,7 +168,7 @@ export const APARELHOS_RAW = [
     marca: "Samsung",
     loja: "boqueirao",
     servicos: ["Troca de Tela Super AMOLED", "Substituição de Bateria", "Reparo Avançado de Placa", "Conector de Carga tipo C"],
-    modeloDestaque: "Linha Galaxy S (S20, S21, S22, S23, S24), Galaxy A e Note"
+    modeloDestaque: "Linha Galaxy S (S20, S21, S22, S23, S24), Galaxy A, M e Z Fold/Flip"
   },
   {
     slug: "xiaomi-redmi-poco",
@@ -176,7 +176,7 @@ export const APARELHOS_RAW = [
     marca: "Xiaomi",
     loja: "guaira",
     servicos: ["Troca de Display Touch", "Troca de Bateria de Alta Capacidade", "Troca de Conector de Carga", "Reparo do Botão Power/Biometria"],
-    modeloDestaque: "Redmi Note, Poco X3/X4/X5/X6, Xiaomi Mi"
+    modeloDestaque: "Redmi Note 10/11/12/13, Poco X3/X4/X5/X6/M7, Xiaomi 12/13/14"
   },
   {
     slug: "motorola",
@@ -184,7 +184,55 @@ export const APARELHOS_RAW = [
     marca: "Motorola",
     loja: "boqueirao",
     servicos: ["Troca de Tela Frontal", "Troca de Bateria Viciada", "Reparo de Entrada de Carga", "Recuperação pós-contato com água"],
-    modeloDestaque: "Moto G (G9, G20, G30, G52, G54, G84) e Linha Motorola Edge"
+    modeloDestaque: "Moto G (G9, G20, G30, G52, G54, G84, G85) e Linha Motorola Edge"
+  },
+  {
+    slug: "realme",
+    nome: "Realme",
+    marca: "Realme",
+    loja: "guaira",
+    servicos: ["Troca de Tela", "Troca de Bateria", "Conector Carga USB-C", "Desoxidação de Placa"],
+    modeloDestaque: "Realme C, Realme GT e Number Series"
+  },
+  {
+    slug: "asus",
+    nome: "Asus Zenfone / ROG Phone",
+    marca: "Asus",
+    loja: "guaira",
+    servicos: ["Troca de Tela", "Troca de Bateria", "Reparo de Conector", "Reparo de Placa Gamer"],
+    modeloDestaque: "Zenfone 8, 9, 10 e ROG Phone 5, 6, 7"
+  },
+  {
+    slug: "dell",
+    nome: "Dell (Notebooks e PCs)",
+    marca: "Dell",
+    loja: "guaira",
+    servicos: ["Troca de Bateria e Fonte", "Upgrade SSD NVMe", "Troca de Tela LCD/LED", "Limpeza Interna e Pasta Térmica"],
+    modeloDestaque: "Dell Inspiron, Vostro, Latitude, G15 e Alienware"
+  },
+  {
+    slug: "lenovo",
+    nome: "Lenovo (Notebooks e PCs)",
+    marca: "Lenovo",
+    loja: "boqueirao",
+    servicos: ["Troca de Teclado", "Reparo de Dobradiça", "Upgrade de Memória RAM", "Formatação e Backup"],
+    modeloDestaque: "Lenovo Ideapad, ThinkPad, Yoga e Legion"
+  },
+  {
+    slug: "hp",
+    nome: "HP (Notebooks e Desktops)",
+    marca: "HP",
+    loja: "guaira",
+    servicos: ["Troca de Bateria", "Formatação com Windows 11", "Troca de HD por SSD", "Reparo de Placa Mãe"],
+    modeloDestaque: "HP Pavilion, ProBook, EliteBook e Victus"
+  },
+  {
+    slug: "acer",
+    nome: "Acer (Notebooks e Gamer)",
+    marca: "Acer",
+    loja: "boqueirao",
+    servicos: ["Conserto de Placa de Vídeo/Placa Mãe", "Troca de Tela Gamer 144Hz", "Limpeza Preventiva", "Upgrade SSD"],
+    modeloDestaque: "Acer Nitro 5, Predator, Aspire 3 e Aspire 5"
   },
   {
     slug: "lg",
@@ -192,46 +240,275 @@ export const APARELHOS_RAW = [
     marca: "LG",
     loja: "guaira",
     servicos: ["Reparo de Placa Principal", "Troca de Conector de Carga", "Troca de Tela Quebrada", "Troca de Bateria"],
-    modeloDestaque: "LG K41S, K51S, K61, K62, Velvet"
+    modeloDestaque: "LG K41S, K51S, K61, K62, Velvet e Gram"
+  },
+  {
+    slug: "positivo",
+    nome: "Positivo",
+    marca: "Positivo",
+    loja: "boqueirao",
+    servicos: ["Troca de Tela", "Troca de Bateria", "Formatacao e Otimização", "Troca de Conector"],
+    modeloDestaque: "Positivo Motion, Vision e Twist"
+  },
+  {
+    slug: "multilaser",
+    nome: "Multilaser / Ultra",
+    marca: "Multilaser",
+    loja: "guaira",
+    servicos: ["Troca de Tela e Touch", "Troca de Bateria", "Otimizacao de Sistema"],
+    modeloDestaque: "Multilaser M7, Ultra e MS Series"
+  },
+  {
+    slug: "vaio",
+    nome: "Vaio",
+    marca: "Vaio",
+    loja: "guaira",
+    servicos: ["Troca de Bateria", "Upgrade SSD", "Troca de Teclado", "Reparo de Placa"],
+    modeloDestaque: "Vaio FE14, FE15 e SX"
+  },
+  {
+    slug: "avell",
+    nome: "Avell High Performance",
+    marca: "Avell",
+    loja: "boqueirao",
+    servicos: ["Manutenção Notebook Gamer", "Troca de Pasta Térmica Prata/Metal Líquido", "Reparo GPU/CPU"],
+    modeloDestaque: "Avell A65, B155, Storm e Mob"
+  },
+  {
+    slug: "alienware",
+    nome: "Alienware (Dell)",
+    marca: "Alienware",
+    loja: "guaira",
+    servicos: ["Reparo Avançado Gamer", "Limpeza e Desoxidação", "Troca de Tela High-Hz", "Upgrade RAM/NVMe"],
+    modeloDestaque: "Alienware m15, m16, x14, x16"
   }
 ];
 
-// Serviços principais transversais
+// Serviços principais completos e abrangentes
 export const SERVICOS_RAW = [
   {
-    slug: "troca-de-tela",
-    nome: "Troca de Tela",
-    h1: "Substituição de Tela de Celular Curitiba",
-    detalhes: "Troca rápida de displays quebrados, trincados ou sem toque. Usamos telas de alta qualidade, brilho e fidelidade de cores, com garantia total.",
-    beneficio: "Serviço expresso: tela nova no mesmo dia para a maioria dos modelos!"
+    slug: "assistencia-tecnica-celular-curitiba",
+    nome: "Assistência Técnica de Celular Curitiba",
+    h1: "Assistência Técnica Especializada de Celular em Curitiba",
+    detalhes: "Conserto profissional multimarcas em Curitiba para iPhone, Samsung, Xiaomi, Motorola e Realme. Diagnóstico 100% gratuito e troca de peças em menos de 1 hora.",
+    beneficio: "Atendimento expresso com garantia de 6 meses no Mercado Goes."
   },
   {
-    slug: "troca-de-bateria",
-    nome: "Troca de Bateria",
-    h1: "Troca de Bateria de Smartphone Curitiba",
-    detalhes: "Bateria descarregando rápido, celular desligando sozinho ou estufado? Substituímos por baterias novas homologadas que restauram 100% da autonomia.",
-    beneficio: "Garantia de segurança contra sobrecarga e aquecimento."
+    slug: "assistencia-tecnica-iphone-curitiba",
+    nome: "Assistência Técnica iPhone Curitiba",
+    h1: "Assistência Técnica Especializada Apple iPhone em Curitiba",
+    detalhes: "Especialistas em conserto de iPhone em Curitiba. Troca de tela original e primeira linha, bateria com saúde 100%, troca de tampa traseira a laser, Face ID e placa.",
+    beneficio: "Técnicos certificados Apple com ferramental de alta precisão."
   },
   {
-    slug: "reparo-de-placa",
-    nome: "Reparo de Placa",
-    h1: "Reparo de Placa Mãe de Celular em Curitiba",
-    detalhes: "Especialistas em microsoldagem! Solucionamos problemas complexos de placa que outras assistências dizem não ter conserto. Aparelhos molhados, sem sinal ou que não ligam.",
-    beneficio: "Maquinário de precisão de última geração."
+    slug: "assistencia-tecnica-samsung-curitiba",
+    nome: "Assistência Técnica Samsung Curitiba",
+    h1: "Assistência Técnica Especializada Samsung Galaxy em Curitiba",
+    detalhes: "Reparo rápido para smartphones e tablets Samsung Galaxy Linha S, A, Note e Z Fold. Troca de display Super AMOLED original, bateria e entrada de carga.",
+    beneficio: "Peças originais homologadas com teste de retenção de carga."
   },
   {
-    slug: "conector-de-carga",
-    nome: "Reparo de Conector de Carga",
-    h1: "Troca de Conector de Carga de Celular Curitiba",
-    detalhes: "Mau contato ao carregar, cabo solto ou não reconhece o carregador? Trocamos a entrada de carga (USB-C, Lightning ou Micro-USB) com soldagem perfeita.",
-    beneficio: "Carga rápida restabelecida imediatamente."
+    slug: "assistencia-tecnica-xiaomi-curitiba",
+    nome: "Assistência Técnica Xiaomi Curitiba",
+    h1: "Assistência Técnica Especializada Xiaomi, Redmi e Poco em Curitiba",
+    detalhes: "Assistência especializada em Xiaomi, Redmi e Poco em Curitiba. Troca de tela touch, bateria de alta densidade, botão power e conector de carga.",
+    beneficio: "Estoque próprio de peças para pronta entrega no mesmo dia."
+  },
+  {
+    slug: "assistencia-tecnica-motorola-curitiba",
+    nome: "Assistência Técnica Motorola Curitiba",
+    h1: "Assistência Técnica Especializada Motorola Moto G e Edge em Curitiba",
+    detalhes: "Conserto urgente de celulares Motorola Moto G e Moto Edge em Curitiba. Substituição de telas com brilho impecável, baterias e recuperação de sistema.",
+    beneficio: "Diagnóstico gratuito e sem taxa de orçamento."
+  },
+  {
+    slug: "assistencia-tecnica-notebook-curitiba",
+    nome: "Assistência Técnica Notebook Curitiba",
+    h1: "Assistência Técnica Especializada em Notebooks em Curitiba",
+    detalhes: "Manutenção e conserto de notebooks Dell, Lenovo, Acer, HP, ASUS e Vaio em Curitiba. Formatação, upgrade de SSD NVMe, limpeza técnica e reparo de placa-mãe.",
+    beneficio: "Aumente a velocidade do seu notebook em até 10x com SSD."
+  },
+  {
+    slug: "assistencia-tecnica-computador-curitiba",
+    nome: "Assistência Técnica Computador Curitiba",
+    h1: "Assistência Técnica de Computadores e Desktops em Curitiba",
+    detalhes: "Conserto de computadores de mesa, PCs gamers e workstations em Curitiba. Diagnóstico de fontes, placas de vídeo, memória RAM e formatação com backup.",
+    beneficio: "Montagem, organizacao de cabos e teste de estresse de estabilidade."
+  },
+  {
+    slug: "assistencia-tecnica-tablet-curitiba",
+    nome: "Assistência Técnica Tablet Curitiba",
+    h1: "Assistência Técnica de Tablets e iPads em Curitiba",
+    detalhes: "Conserto de iPads e tablets Android (Samsung, Lenovo, Xiaomi). Troca de vidro touch, bateria estufada, conector de carga e restauração de sistema.",
+    beneficio: "Conserto de telas grandes com calibração de toque precisa."
+  },
+  {
+    slug: "troca-de-tela-curitiba",
+    nome: "Troca de Tela Curitiba",
+    h1: "Troca de Tela de Celular e Smartphone em Curitiba",
+    detalhes: "Substituição expressa de tela quebrada, trincada ou sem imagem. Telas OLED, AMOLED, LCD e Incell de máxima definição com garantia de 6 meses.",
+    beneficio: "Instalação na hora em menos de 45 minutos."
+  },
+  {
+    slug: "troca-de-bateria-curitiba",
+    nome: "Troca de Bateria Curitiba",
+    h1: "Troca de Bateria de Celular e Smartphone em Curitiba",
+    detalhes: "Celular descarregando rápido, estufado ou desligando com 30%? Trocamos a bateria do seu iPhone, Samsung, Xiaomi ou Motorola por uma nova certificada.",
+    beneficio: "Saúde 100% restabelecida sem riscos de sobreaquecimento."
+  },
+  {
+    slug: "troca-de-conector-de-carga",
+    nome: "Troca de Conector de Carga",
+    h1: "Reparo e Troca de Conector de Carga de Celular em Curitiba",
+    detalhes: "Mau contato ao carregar, cabo que solta ou entrada queimada? Trocamos o conector USB-C, Lightning ou Micro-USB com solda industrial perfeita.",
+    beneficio: "Restabelecimento de carregamento rápido em poucos minutos."
+  },
+  {
+    slug: "troca-de-vidro",
+    nome: "Troca de Vidro",
+    h1: "Troca de Vidro Frontal de Celular Mantendo Display Original",
+    detalhes: "Seu touch e imagem funcionam perfeitamente mas o vidro trincou? Trocamos apenas o vidro externo laminado mantendo a sua tela original de fábrica com economia de até 50%.",
+    beneficio: "Conserve o display original e pague mais barato."
+  },
+  {
+    slug: "troca-de-display",
+    nome: "Troca de Display",
+    h1: "Troca de Display Completo de Celular e Notebook",
+    detalhes: "Tela com manchas pretas, linhas coloridas ou completamente apagada? Trocamos o conjunto de display completo com ajuste de brilho e True Tone.",
+    beneficio: "Imagem 100% nova e sem imperfeições visuais."
+  },
+  {
+    slug: "recuperacao-de-celular-molhado",
+    nome: "Recuperação de Celular Molhado",
+    h1: "Desoxidação e Recuperação de Celular que Caiu na Água em Curitiba",
+    detalhes: "Aparelho caiu no vaso, piscina ou tomou chuva? Realizamos banho ultrassônico de desoxidação de emergência em placa-mãe para salvar o celular e seus arquivos.",
+    beneficio: "Alta taxa de sucesso na recuperação técnica de circuitos."
+  },
+  {
+    slug: "desoxidacao",
+    nome: "Desoxidação",
+    h1: "Desoxidação Química Profissional de Placa de Celular e Notebook",
+    detalhes: "Tratamento em cuba química ultrassônica para remover oxidação, sujeira e corrosão de componentes eletrônicos sensíveis.",
+    beneficio: "Evita curtos-circuitos irreversíveis na placa."
+  },
+  {
+    slug: "atualizacao-de-software",
+    nome: "Atualização de Software",
+    h1: "Atualização e Reinstalação de Software para Android e iOS",
+    detalhes: "Celular travando na logo, lento, dando erro de aplicativos ou com loop infinito? Reinstalamos o sistema oficial com limpeza de erros e segurança.",
+    beneficio: "Aparelho rodando fluido como novo de fábrica."
+  },
+  {
+    slug: "formatacao",
+    nome: "Formatação",
+    h1: "Formatação Profissional de Celular, Notebook e PC em Curitiba",
+    detalhes: "Formatação completa com remoção de vírus, instalação de drivers atualizados, pacote de programas essenciais e otimização de inicialização.",
+    beneficio: "Eliminação total de malwares, vírus e lentidões."
+  },
+  {
+    slug: "backup",
+    nome: "Backup de Arquivos",
+    h1: "Serviço de Backup Seguro de Dados e Fotos de Celular",
+    detalhes: "Cópia de segurança completa de fotos, vídeos, contatos, conversas de WhatsApp e arquivos pessoais para nuvem, pendrive ou computador.",
+    beneficio: "Segurança total contra perda acidental de memórias valiosas."
   },
   {
     slug: "recuperacao-de-dados",
     nome: "Recuperação de Dados",
-    h1: "Recuperação de Dados e Arquivos de Celular",
-    detalhes: "Celular quebrou por completo ou caiu na água e você precisa das suas fotos, contatos e conversas? Extraímos seus dados de forma segura e profissional.",
-    beneficio: "Sigilo absoluto e alta taxa de sucesso na recuperação."
+    h1: "Recuperação de Dados de Celulares e Notebooks Danificados",
+    detalhes: "Recuperação avançada de arquivos em celulares quebrados, queimados ou com tela destruída. Sigilo profissional e extrator de memória de hardware.",
+    beneficio: "Recupere suas fotos e documentos importantes mesmo em aparelhos inoperantes."
+  },
+  {
+    slug: "configuracao-android",
+    nome: "Configuração Android",
+    h1: "Configuração, Migração e Otimização de Celular Android",
+    detalhes: "Transferência de dados do aparelho antigo para o novo, configuração de Conta Google, e-mail, biometria e aplicativos bancários.",
+    beneficio: "Seu celular pronto para uso sem complicações."
+  },
+  {
+    slug: "configuracao-iphone",
+    nome: "Configuração iPhone",
+    h1: "Configuração de Apple ID, iCloud e Transferência de Dados iPhone",
+    detalhes: "Migração rápida pelo Quick Start Apple, configuração de backup do iCloud, senhas, chaveiros e contas bancárias com total privacidade.",
+    beneficio: "Migração completa em poucos minutos sem perder nenhum dado."
+  },
+  {
+    slug: "limpeza-interna",
+    nome: "Limpeza Interna e Troca de Pasta Térmica",
+    h1: "Limpeza Interna Preventiva para Celular, Notebook e PC Gamer",
+    detalhes: "Remoção de poeira e sujeiras internas, desobstrução de coolers e aplicação de pasta térmica de alta condutividade (prata/massa térmica).",
+    beneficio: "Reduz a temperatura em até 20°C e evita desligamentos."
+  },
+  {
+    slug: "troca-alto-falante",
+    nome: "Troca de Alto Falante",
+    h1: "Troca de Alto Falante Auricular e Viva-Voz de Celular",
+    detalhes: "Som baixo, ruidoso, chiando ou mudo durante ligações e músicas? Trocamos o módulo de alto falante por um novo de alta fidelidade sonora.",
+    beneficio: "Áudio nítido e potente restabelecido."
+  },
+  {
+    slug: "troca-microfone",
+    nome: "Troca de Microfone",
+    h1: "Troca de Microfone de Chamada e Áudio de WhatsApp",
+    detalhes: "Pessoas não te escutam em ligações ou nos áudios do WhatsApp? Trocamos o microfone SMDs da placa com alinhamento perfeito.",
+    beneficio: "Sua voz ouvida com total clareza."
+  },
+  {
+    slug: "troca-camera",
+    nome: "Troca de Câmera e Lente Traseira/Frontal",
+    h1: "Substituição de Módulo de Câmera e Troca de Vidro de Lente",
+    detalhes: "Câmera embaçada, tremendo, foca errado ou vidro da lente quebrou? Trocamos a lente trincada ou o módulo de sensor completo.",
+    beneficio: "Fotos e vídeos nitidíssimos em 4K/FHD novamente."
+  },
+  {
+    slug: "troca-tampa-traseira",
+    nome: "Troca de Tampa Traseira",
+    h1: "Troca de Tampa Traseira de Vidro e Alumínio em Curitiba",
+    detalhes: "Traseira do iPhone ou Samsung trincada? Trocamos a tampa de vidro usando tecnologia de remoção de cola a laser sem abrir o aparelho desnecessariamente.",
+    beneficio: "Acabamento impecável idêntico ao novo de fábrica."
+  },
+  {
+    slug: "face-id",
+    nome: "Reparo de Face ID",
+    h1: "Conserto de Face ID Desativado em iPhone em Curitiba",
+    detalhes: "Mensagem de 'Face ID Indisponível' ou erro de altura? Realizamos o alinhamento de fita dot projector e sensor infravermelho de precisão.",
+    beneficio: "Reconhecimento facial rápido restaurado com segurança."
+  },
+  {
+    slug: "touch-id",
+    nome: "Reparo de Touch ID e Botão Home",
+    h1: "Reparo de Leitor de Biometria e Touch ID de Celular",
+    detalhes: "Biometria parou de ler a digital ou botão home não responde? Substituição e calibração de sensor biométrico.",
+    beneficio: "Desbloqueio seguro por digital reativado."
+  },
+  {
+    slug: "conserto-ipad",
+    nome: "Conserto de iPad",
+    h1: "Assistência Técnica Especializada em Apple iPad em Curitiba",
+    detalhes: "Conserto de iPad Air, iPad Pro, iPad Mini e iPad padrão. Troca de vidro touch, display, bateria, conector de carga e reparo de placa.",
+    beneficio: "Ferramental exclusivo para abertura e vedação de tablets Apple."
+  },
+  {
+    slug: "conserto-apple-watch",
+    nome: "Conserto de Apple Watch",
+    h1: "Assistência Técnica de Apple Watch em Curitiba",
+    detalhes: "Troca de vidro trincado, display touch, bateria estufada e vedação contra água para Apple Watch Series 3 a Ultra 2.",
+    beneficio: "Reparo delicado de smartwatch com precisão milimétrica."
+  },
+  {
+    slug: "conserto-notebook-gamer",
+    nome: "Conserto de Notebook Gamer",
+    h1: "Assistência Técnica de Notebook Gamer em Curitiba",
+    detalhes: "Manutenção de alta performance para Acer Nitro, Dell G15, Lenovo Legion, ASUS ROG, Avell e MSI. Reballing BGA, recondicionamento de placa de vídeo e repaste.",
+    beneficio: "Performance máxima de FPS mantida sem thermal throttling."
+  },
+  {
+    slug: "conserto-macbook",
+    nome: "Conserto de MacBook",
+    h1: "Assistência Técnica Especializada em Apple MacBook em Curitiba",
+    detalhes: "Conserto de MacBook Air e MacBook Pro M1, M2, M3 e Intel. Reparo de placa lógica, troca de tela Retina, teclado, trackpad e bateria.",
+    beneficio: "Orçamento até 60% mais acessível que a autorizada."
   }
 ];
 

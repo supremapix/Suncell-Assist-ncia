@@ -5,6 +5,8 @@ import {
   LOJAS, 
   rotaDe 
 } from "./src/siteData";
+import { HUBS_DATA } from "./src/hubData";
+import { BLOG_POSTS } from "./src/blogData";
 
 const DIST_DIR = path.join(process.cwd(), "dist");
 const PUBLIC_DIR = path.join(process.cwd(), "public");
@@ -403,6 +405,33 @@ async function runPrerender() {
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
+  </url>\n`;
+  });
+
+  // Hubs Temáticos
+  HUBS_DATA.forEach((h) => {
+    sitemapXml += `  <url>
+    <loc>${APP_URL}/hub/${h.slug}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>\n`;
+  });
+
+  // Blog Hub e Artigos
+  sitemapXml += `  <url>
+    <loc>${APP_URL}/blog</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.9</priority>
+  </url>\n`;
+
+  BLOG_POSTS.forEach((b) => {
+    sitemapXml += `  <url>
+    <loc>${APP_URL}/blog/${b.slug}</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>\n`;
   });
 

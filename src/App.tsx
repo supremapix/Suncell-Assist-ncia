@@ -15,6 +15,9 @@ import CompramosIphone from "./components/CompramosIphone";
 import QuemSomos from "./components/QuemSomos";
 import Cobertura from "./components/Cobertura";
 import ProductPage from "./components/ProductPage";
+import BlogHub from "./components/BlogHub";
+import BlogPostPage from "./components/BlogPostPage";
+import HubPage from "./components/HubPage";
 import NotFound from "./components/NotFound";
 import SuncellInteractionWidgets from "./components/SuncellInteractionWidgets";
 import BackToTop from "./components/BackToTop";
@@ -86,6 +89,13 @@ export default function App() {
                 element={<ProgrammaticPage type="loja" />} 
               />
               
+              {/* Hubs Temáticos */}
+              <Route path="/hub/:slug" element={<HubPage />} />
+
+              {/* Blog e Central de Guias */}
+              <Route path="/blog" element={<BlogHub />} />
+              <Route path="/blog/:slug" element={<BlogPostPage />} />
+
               {/* Compra de iPhones Usados */}
               <Route 
                 path="/compramos-iphone" 

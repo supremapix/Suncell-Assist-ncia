@@ -181,6 +181,91 @@ export default function Header() {
               </AnimatePresence>
             </div>
 
+            {/* LINK BLOG */}
+            <Link
+              id="nav-blog"
+              to="/blog"
+              className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange focus:outline-none ${
+                location.pathname.startsWith("/blog") ? "text-suncell-orange font-bold" : "text-slate-200"
+              }`}
+            >
+              Blog & Guias
+            </Link>
+
+            {/* DROPDOWN HUBS TEMÁTICOS */}
+            <div 
+              className="relative"
+              onMouseEnter={() => setActiveDropdown("hubs")}
+              onMouseLeave={() => setActiveDropdown(null)}
+            >
+              <button
+                type="button"
+                className={`font-sans font-medium text-sm transition-colors hover:text-suncell-orange flex items-center gap-1.5 focus:outline-none cursor-pointer ${
+                  location.pathname.startsWith("/hub") || activeDropdown === "hubs"
+                    ? "text-suncell-orange font-bold"
+                    : "text-slate-200"
+                }`}
+              >
+                <span>Categorias Hub</span>
+                <ChevronDown size={14} className={`transition-transform duration-200 ${activeDropdown === "hubs" ? "rotate-180 text-suncell-orange" : ""}`} />
+              </button>
+
+              <AnimatePresence>
+                {activeDropdown === "hubs" && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                    animate={{ opacity: 1, y: 0, scale: 1 }}
+                    exit={{ opacity: 0, y: 6, scale: 0.96 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-zinc-900 border border-zinc-800 rounded-2xl shadow-2xl p-2 z-50 overflow-hidden"
+                  >
+                    <Link
+                      to="/hub/celulares"
+                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-zinc-800 text-slate-200 hover:text-suncell-orange transition-all text-xs font-semibold"
+                    >
+                      <Smartphone size={16} className="text-suncell-orange" />
+                      <span>Hub Celulares & Smartphones</span>
+                    </Link>
+                    <Link
+                      to="/hub/iphone"
+                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-zinc-800 text-slate-200 hover:text-suncell-orange transition-all text-xs font-semibold"
+                    >
+                      <Smartphone size={16} className="text-suncell-orange" />
+                      <span>Hub Apple iPhone</span>
+                    </Link>
+                    <Link
+                      to="/hub/samsung"
+                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-zinc-800 text-slate-200 hover:text-suncell-orange transition-all text-xs font-semibold"
+                    >
+                      <Smartphone size={16} className="text-suncell-orange" />
+                      <span>Hub Samsung Galaxy</span>
+                    </Link>
+                    <Link
+                      to="/hub/xiaomi"
+                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-zinc-800 text-slate-200 hover:text-suncell-orange transition-all text-xs font-semibold"
+                    >
+                      <Smartphone size={16} className="text-suncell-orange" />
+                      <span>Hub Xiaomi & Poco</span>
+                    </Link>
+                    <Link
+                      to="/hub/notebook"
+                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-zinc-800 text-slate-200 hover:text-suncell-orange transition-all text-xs font-semibold"
+                    >
+                      <Wrench size={16} className="text-suncell-orange" />
+                      <span>Hub Notebooks & Laptops</span>
+                    </Link>
+                    <Link
+                      to="/hub/recuperacao"
+                      className="flex items-center gap-3 p-2 rounded-xl hover:bg-zinc-800 text-slate-200 hover:text-suncell-orange transition-all text-xs font-semibold"
+                    >
+                      <Wrench size={16} className="text-suncell-orange" />
+                      <span>Hub Celulares Molhados & Dados</span>
+                    </Link>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+
             <Link
               id="nav-compramos-iphone"
               to="/compramos-iphone"
