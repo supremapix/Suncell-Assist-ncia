@@ -1,6 +1,6 @@
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
-import { MapPin, Phone, ChevronRight, CheckCircle, Navigation, ShieldCheck, Heart, ArrowLeft, AlertCircle } from "lucide-react";
+import { MapPin, Phone, ChevronRight, CheckCircle, Navigation, ShieldCheck, Heart, ArrowLeft, AlertCircle, Clock } from "lucide-react";
 import { findPageBySlug, LOJAS, getBairrosPages, getCidadesPages, getAparelhosPages, getServicosPages, rotaDe, PageData, getLojasPages } from "../siteData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
 import EnhancedSEO from "./EnhancedSEO";
@@ -119,7 +119,36 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
                     <CheckCircle size={14} className="text-suncell-orange" />
                     <span>Serviço com Garantia</span>
                   </div>
+                  <div className="flex items-center gap-1.5">
+                    <Clock size={14} className="text-suncell-orange" />
+                    <span>Conserto no Mesmo Dia</span>
+                  </div>
                 </div>
+
+                {/* Dados Geográficos: Vias de Acesso e Bairros Vizinhos */}
+                {page.type === "bairro" && (page.principaisVias || (page.vizinhos && page.vizinhos.length > 0)) && (
+                  <div className="mt-6 pt-6 border-t border-gray-100 flex flex-col gap-2.5 font-sans text-xs text-gray-600">
+                    {page.principaisVias && (
+                      <div className="flex items-start gap-2">
+                        <Navigation size={14} className="text-suncell-orange shrink-0 mt-0.5" />
+                        <span><strong>Principais Vias de Acesso:</strong> {page.principaisVias}</span>
+                      </div>
+                    )}
+                    {page.vizinhos && page.vizinhos.length > 0 && (
+                      <div className="flex items-start gap-2">
+                        <MapPin size={14} className="text-suncell-orange shrink-0 mt-0.5" />
+                        <span><strong>Bairros Próximos na Região:</strong> {page.vizinhos.join(", ")}</span>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {page.type === "cidade" && page.principaisVias && (
+                  <div className="mt-6 pt-6 border-t border-gray-100 flex items-start gap-2 font-sans text-xs text-gray-600">
+                    <Navigation size={14} className="text-suncell-orange shrink-0 mt-0.5" />
+                    <span><strong>Acesso Rodoviário para Curitiba:</strong> {page.principaisVias}</span>
+                  </div>
+                )}
               </div>
 
               <div className="lg:col-span-5">
@@ -190,25 +219,42 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
               )}
 
               {/* Lateral Linking: Links recomendados para outras páginas (Essencial para Rastreamento SEO) */}
-              {linkSugestoes.length > 0 && (
-                <div className="border-t border-gray-200 pt-8">
-                  <h3 className="font-display font-bold text-base text-[#0D0D0D] mb-4 uppercase tracking-wider">
-                    Outras áreas e atendimentos de interesse:
-                  </h3>
-                  <div className="flex flex-wrap gap-2.5">
-                    {linkSugestoes.map((sug) => (
-                      <Link
-                        id={`sug-link-${sug.slug}`}
-                        key={sug.slug}
-                        to={rotaDe(sug)}
-                        className="px-4 py-2 rounded-lg bg-white hover:bg-suncell-orange/5 border border-gray-100 hover:border-suncell-orange/20 text-gray-700 hover:text-suncell-orange font-sans text-xs sm:text-sm font-semibold transition-all shadow-sm"
-                      >
-                        {type === "bairro" ? `Celular no ${sug.nome}` : type === "cidade" ? `Celular em ${sug.nome}` : sug.nome}
-                      </Link>
-                    ))}
+              <div className="border-t border-gray-200 pt-8 space-y-4">
+                <div className="p-4 bg-orange-50/60 border border-suncell-orange/20 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                  <div>
+                    <h4 className="font-display font-bold text-sm text-[#0D0D0D]">Guia Completo da Assistência em Curitiba</h4>
+                    <p className="font-sans text-xs text-gray-600 mt-0.5">Veja todas as informações sobre consertos de celulares, prazos, garantias e lojas físicas na capital.</p>
                   </div>
+                  <Link
+                    id="link-pillar-curitiba"
+                    to="/assistencia-tecnica-curitiba"
+                    className="inline-flex items-center gap-1.5 px-4 py-2 bg-suncell-orange text-white font-sans font-bold text-xs rounded-xl hover:bg-suncell-orange-light transition-colors shrink-0"
+                  >
+                    <span>Assistência Curitiba</span>
+                    <ChevronRight size={14} />
+                  </Link>
                 </div>
-              )}
+
+                {linkSugestoes.length > 0 && (
+                  <div>
+                    <h3 className="font-display font-bold text-xs text-gray-500 mb-3 uppercase tracking-wider">
+                      Outras áreas e atendimentos de interesse:
+                    </h3>
+                    <div className="flex flex-wrap gap-2">
+                      {linkSugestoes.map((sug) => (
+                        <Link
+                          id={`sug-link-${sug.slug}`}
+                          key={sug.slug}
+                          to={rotaDe(sug)}
+                          className="px-3 py-1.5 rounded-lg bg-white hover:bg-suncell-orange/5 border border-gray-100 hover:border-suncell-orange/20 text-gray-700 hover:text-suncell-orange font-sans text-xs font-semibold transition-all shadow-sm"
+                        >
+                          {type === "bairro" ? `Celular no ${sug.nome}` : type === "cidade" ? `Celular em ${sug.nome}` : sug.nome}
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                )}
+              </div>
 
             </div>
 
