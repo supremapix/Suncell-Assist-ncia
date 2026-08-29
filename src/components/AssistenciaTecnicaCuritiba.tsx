@@ -80,20 +80,20 @@ export default function AssistenciaTecnicaCuritiba() {
   // Objeto PageData completo para passar para o EnhancedSEO
   const pageDataSEO = {
     type: "loja" as const,
-    slug: "assistencia-tecnica-curitiba",
+    slug: "conserto-de-celular-curitiba",
     nome: "Curitiba",
     lojaMaisProxima: "guaira" as const,
-    h1: "Assistência Técnica de Celular em Curitiba",
-    title: "Assistência Técnica de Celular em Curitiba | SUNCELL - Diagnóstico Grátis",
-    description: "Assistência técnica em Curitiba especializada em celulares. Troca de tela, bateria e placa de iPhone, Samsung, Xiaomi e Motorola. Diagnóstico gratuito e garantia. 2 unidades: Guaíra e Alto Boqueirão.",
-    intro: "Seja muito bem-vindo à SUNCELL, a sua assistência técnica de celular de alta performance e referência definitiva em Curitiba, Paraná! Atendemos com excelência técnica e máxima agilidade todas as regiões da capital paranaense através de nossas duas modernas lojas físicas de fácil acesso, situadas estrategicamente dentro das unidades do Mercado Goes no Guaíra e no Alto Boqueirão.",
+    h1: "Conserto de Celular em Curitiba",
+    title: "Conserto de Celular em Curitiba | SUNCELL",
+    description: "Conserto de celular em Curitiba com diagnóstico gratuito e garantia de 90 dias. Troca de tela, bateria, conector de carga e reparo de placa em 2 lojas físicas.",
+    intro: "Seja muito bem-vindo à SUNCELL, a sua assistência técnica e centro especializado em conserto de celular em Curitiba, Paraná! Atendemos com excelência técnica e máxima agilidade todas as regiões da capital paranaense através de nossas duas modernas lojas físicas no Mercado Goes (Guaíra e Alto Boqueirão).",
     faq: faqCuritiba
   };
 
   return (
     <>
       {/* SEO Dinâmico e Unificado com schemas LocalBusiness, FAQPage e Breadcrumb */}
-      <EnhancedSEO pageData={pageDataSEO} canonicalPath="/assistencia-tecnica-curitiba" />
+      <EnhancedSEO pageData={pageDataSEO} canonicalPath="/conserto-de-celular-curitiba" />
 
       <main className="pt-28 pb-20 bg-[#F5F5F7] text-[#0D0D0D]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -116,15 +116,15 @@ export default function AssistenciaTecnicaCuritiba() {
             <div className="max-w-3xl">
               <span className="inline-flex items-center gap-1.5 px-3.5 py-1.5 bg-suncell-orange/20 border border-suncell-orange/30 text-suncell-orange font-mono text-xs font-bold uppercase rounded-md mb-6 tracking-wider">
                 <MapPin size={12} className="animate-bounce" />
-                <span>Especialistas em SEO Local & Conserto Express</span>
+                <span>Página Pilar Principal • Conserto Express Curitiba</span>
               </span>
 
               <h1 className="font-display font-extrabold text-4xl sm:text-5xl lg:text-6xl text-white tracking-tight leading-tight">
-                Assistência Técnica de Celular em Curitiba
+                Conserto de Celular em Curitiba
               </h1>
 
               <p className="mt-6 font-sans text-lg sm:text-xl text-slate-300 leading-relaxed font-normal">
-                Seja muito bem-vindo à SUNCELL, a sua assistência técnica de celular de alta performance e referência definitiva em Curitiba, Paraná! Atendemos com excelência técnica e máxima agilidade todas as regiões da capital paranaense através de nossas duas modernas lojas físicas de fácil acesso, situadas estrategicamente dentro das unidades do Mercado Goes no Guaíra e no Alto Boqueirão.
+                Seja muito bem-vindo à SUNCELL, a sua referência absoluta para <strong className="text-white">conserto de celular em Curitiba</strong>! Atendemos com excelência técnica, peças de qualidade comprovada e orçamento 100% gratuito todas as regiões da capital através de nossas duas lojas físicas no Mercado Goes (Guaíra e Alto Boqueirão).
               </p>
 
               <div className="mt-8 flex flex-wrap gap-4 text-xs font-mono text-slate-400">
@@ -161,6 +161,42 @@ export default function AssistenciaTecnicaCuritiba() {
               </div>
             </div>
           </div>
+
+          {/* SECTION: ACESSO RÁPIDO POR INTENÇÃO DE BUSCA E SERVIÇOS/REGIÕES DESTAQUE */}
+          <section className="mb-12 bg-white border border-gray-200/80 rounded-3xl p-6 sm:p-8 shadow-sm">
+            <h2 className="font-display font-extrabold text-xl sm:text-2xl text-gray-900 mb-2">
+              Pesquisas Frequentes e Atendimentos Diretos
+            </h2>
+            <p className="text-sm text-gray-600 mb-6">
+              Acesse diretamente os canais especializados por tipo de conserto, marca ou localização em Curitiba:
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-3">
+              <Link to="/conserto-de-tela-de-celular-curitiba" className="p-3 bg-gray-50 hover:bg-suncell-orange hover:text-white rounded-xl border border-gray-200 text-center transition-all group">
+                <span className="block text-xs font-bold text-gray-900 group-hover:text-white">Troca de Tela</span>
+                <span className="text-[10px] text-gray-500 group-hover:text-white/80">Curitiba Express</span>
+              </Link>
+              <Link to="/conserto-celular-samsung-curitiba" className="p-3 bg-gray-50 hover:bg-suncell-orange hover:text-white rounded-xl border border-gray-200 text-center transition-all group">
+                <span className="block text-xs font-bold text-gray-900 group-hover:text-white">Samsung Galaxy</span>
+                <span className="text-[10px] text-gray-500 group-hover:text-white/80">Especializada</span>
+              </Link>
+              <Link to="/conserto-de-celular-curitiba-centro" className="p-3 bg-gray-50 hover:bg-suncell-orange hover:text-white rounded-xl border border-gray-200 text-center transition-all group">
+                <span className="block text-xs font-bold text-gray-900 group-hover:text-white">Centro de Curitiba</span>
+                <span className="text-[10px] text-gray-500 group-hover:text-white/80">Como Chegar</span>
+              </Link>
+              <Link to="/conserto-de-celular-perto-de-mim" className="p-3 bg-gray-50 hover:bg-suncell-orange hover:text-white rounded-xl border border-gray-200 text-center transition-all group">
+                <span className="block text-xs font-bold text-gray-900 group-hover:text-white">Perto de Mim</span>
+                <span className="text-[10px] text-gray-500 group-hover:text-white/80">Lojas Físicas</span>
+              </Link>
+              <Link to="/conserto-de-celular-santa-felicidade" className="p-3 bg-gray-50 hover:bg-suncell-orange hover:text-white rounded-xl border border-gray-200 text-center transition-all group">
+                <span className="block text-xs font-bold text-gray-900 group-hover:text-white">Santa Felicidade</span>
+                <span className="text-[10px] text-gray-500 group-hover:text-white/80">Região Atendida</span>
+              </Link>
+              <Link to="/conserto-de-celular-sitio-cercado" className="p-3 bg-gray-50 hover:bg-suncell-orange hover:text-white rounded-xl border border-gray-200 text-center transition-all group">
+                <span className="block text-xs font-bold text-gray-900 group-hover:text-white">Sítio Cercado</span>
+                <span className="text-[10px] text-gray-500 group-hover:text-white/80">Alto Boqueirão</span>
+              </Link>
+            </div>
+          </section>
 
           {/* SECTION: POR QUE ESCOLHER A SUNCELL (MÍNIMO DE PALAVRAS E QUALIDADE) */}
           <section className="mb-16 bg-white border border-gray-100 rounded-3xl p-8 sm:p-12 shadow-sm">

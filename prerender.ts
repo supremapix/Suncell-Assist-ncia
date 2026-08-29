@@ -75,6 +75,76 @@ interface ExtraPage {
     ]
   },
   {
+    routePath: "/conserto-de-celular-curitiba",
+    title: "Conserto de Celular em Curitiba | SUNCELL",
+    description: "Conserto de celular em Curitiba com diagnóstico gratuito e garantia de 90 dias. Troca de tela, bateria, conector de carga e reparo de placa em 2 lojas físicas.",
+    h1: "Conserto de Celular em Curitiba",
+    nome: "Curitiba",
+    faq: [
+      { q: "Qual o valor para fazer o orçamento do celular na SUNCELL?", a: "O diagnóstico e o orçamento na SUNCELL são 100% gratuitos e sem compromisso em nossas duas unidades no Mercado Goes (Guaíra e Alto Boqueirão)." }
+    ]
+  },
+  {
+    routePath: "/conserto-de-tela-de-celular-curitiba",
+    title: "Troca de Tela de Celular em Curitiba | SUNCELL",
+    description: "Troca de tela de celular em Curitiba rápida e garantida. Telas de alta qualidade para iPhone, Samsung, Xiaomi e Motorola com garantia de 90 dias. Orçamento grátis!",
+    h1: "Troca de Tela de Celular em Curitiba",
+    nome: "Curitiba",
+    faq: [
+      { q: "Quanto tempo demora para trocar a tela do celular?", a: "Em média 1 hora de atendimento expresso em nossas lojas físicas." }
+    ]
+  },
+  {
+    routePath: "/conserto-celular-samsung-curitiba",
+    title: "Conserto de Celular Samsung em Curitiba | SUNCELL",
+    description: "Conserto de celular Samsung Galaxy em Curitiba. Troca de tela AMOLED, bateria, conector de carga e reparo de placa. Diagnóstico grátis e garantia!",
+    h1: "Conserto de Celular Samsung em Curitiba",
+    nome: "Curitiba",
+    faq: [
+      { q: "Vocês trocam tela Super AMOLED do Samsung Galaxy em Curitiba?", a: "Sim! Troca de tela e baterias para Galaxy S, A, M e Z com garantia de 90 dias." }
+    ]
+  },
+  {
+    routePath: "/conserto-de-celular-curitiba-centro",
+    title: "Conserto de Celular para o Centro de Curitiba | SUNCELL",
+    description: "Assistência técnica de celular para moradores e trabalhadores do Centro de Curitiba. Atendimento expresso nas unidades Guaíra e Alto Boqueirão com orçamento grátis!",
+    h1: "Conserto de Celular para Clientes do Centro de Curitiba",
+    nome: "Centro, Curitiba",
+    faq: [
+      { q: "A SUNCELL possui loja física no bairro Centro em Curitiba?", a: "Nossa unidade mais próxima do Centro fica a 8 min no bairro Guaíra (Mercado Goes) com estacionamento gratuito." }
+    ]
+  },
+  {
+    routePath: "/conserto-de-celular-perto-de-mim",
+    title: "Conserto de Celular Perto de Mim em Curitiba | SUNCELL",
+    description: "Encontre a assistência técnica de celular SUNCELL mais próxima de você em Curitiba. Duas unidades físicas completas no Mercado Goes (Guaíra e Alto Boqueirão).",
+    h1: "Conserto de Celular Perto de Mim em Curitiba",
+    nome: "Curitiba",
+    faq: [
+      { q: "Onde ficam as lojas da SUNCELL?", a: "Temos 2 lojas no Mercado Goes: Guaíra e Alto Boqueirão." }
+    ]
+  },
+  {
+    routePath: "/conserto-de-celular-santa-felicidade",
+    title: "Conserto de Celular para Santa Felicidade Curitiba | SUNCELL",
+    description: "Assistência técnica de celular para moradores de Santa Felicidade, Curitiba. Troca de tela, bateria e reparo de placa com diagnóstico grátis e garantia de 90 dias.",
+    h1: "Conserto de Celular para Santa Felicidade, Curitiba",
+    nome: "Santa Felicidade, Curitiba",
+    faq: [
+      { q: "Atendem moradores de Santa Felicidade?", a: "Sim! Atendemos moradores de Santa Felicidade com facilidade de acesso à nossa loja no Guaíra com estacionamento grátis." }
+    ]
+  },
+  {
+    routePath: "/conserto-de-celular-sitio-cercado",
+    title: "Conserto de Celular para Sítio Cercado Curitiba | SUNCELL",
+    description: "Conserto de celular para moradores do Sítio Cercado, Curitiba. Atendimento expresso na unidade vizinha do Alto Boqueirão no Mercado Goes. Diagnóstico grátis!",
+    h1: "Conserto de Celular para Sítio Cercado, Curitiba",
+    nome: "Sítio Cercado, Curitiba",
+    faq: [
+      { q: "Qual a loja mais próxima do Sítio Cercado?", a: "A unidade SUNCELL Alto Boqueirão fica a 5 minutos do Sítio Cercado, no Mercado Goes." }
+    ]
+  },
+  {
     routePath: "/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram",
     title: "Xiaomi Redmi A7 Pro 128GB 4GB RAM em Curitiba | Shopcell",
     description: "Redmi A7 Pro 128GB 4GB RAM por R$ 849,99 à vista ou 12x de R$ 81,98. Tela 6,9\" 120 Hz, bateria 6.000 mAh, Android 15. Loja física no Centro de Curitiba, garantia de 6 meses.",
@@ -358,6 +428,55 @@ async function runPrerender() {
     <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+  </url>
+  <!-- Página Pilar Principal: Conserto de Celular Curitiba -->
+  <url>
+    <loc>${APP_URL}/conserto-de-celular-curitiba</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.0</priority>
+  </url>
+  <!-- Troca de Tela de Celular Curitiba -->
+  <url>
+    <loc>${APP_URL}/conserto-de-tela-de-celular-curitiba</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <!-- Conserto Celular Samsung Curitiba -->
+  <url>
+    <loc>${APP_URL}/conserto-celular-samsung-curitiba</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <!-- Conserto Celular Centro Curitiba -->
+  <url>
+    <loc>${APP_URL}/conserto-de-celular-curitiba-centro</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+  <!-- Conserto Celular Perto de Mim -->
+  <url>
+    <loc>${APP_URL}/conserto-de-celular-perto-de-mim</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+  </url>
+  <!-- Conserto Celular Santa Felicidade -->
+  <url>
+    <loc>${APP_URL}/conserto-de-celular-santa-felicidade</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <!-- Conserto Celular Sítio Cercado -->
+  <url>
+    <loc>${APP_URL}/conserto-de-celular-sitio-cercado</loc>
+    <lastmod>${currentDate}</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
   </url>
   <!-- Canal de Compra de iPhones Usados -->
   <url>

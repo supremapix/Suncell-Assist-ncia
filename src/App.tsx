@@ -10,6 +10,12 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import AssistenciaTecnicaCuritiba from "./components/AssistenciaTecnicaCuritiba";
+import ConsertoTelaCuritiba from "./components/ConsertoTelaCuritiba";
+import ConsertoSamsungCuritiba from "./components/ConsertoSamsungCuritiba";
+import ConsertoCentroCuritiba from "./components/ConsertoCentroCuritiba";
+import ConsertoPertoDeMim from "./components/ConsertoPertoDeMim";
+import ConsertoSantaFelicidade from "./components/ConsertoSantaFelicidade";
+import ConsertoSitioCercado from "./components/ConsertoSitioCercado";
 import ProgrammaticPage from "./components/ProgrammaticPage";
 import CompramosIphone from "./components/CompramosIphone";
 import QuemSomos from "./components/QuemSomos";
@@ -53,10 +59,40 @@ export default function App() {
               {/* Home Page Principal */}
               <Route path="/" element={<Home />} />
               
-              {/* Página Pilar: Assistência Técnica Curitiba */}
+              {/* Página Pilar Principal: Conserto de Celular Curitiba */}
+              <Route 
+                path="/conserto-de-celular-curitiba" 
+                element={<AssistenciaTecnicaCuritiba />} 
+              />
               <Route 
                 path="/assistencia-tecnica-curitiba" 
                 element={<AssistenciaTecnicaCuritiba />} 
+              />
+
+              {/* Páginas de Alta Intenção de Busca (SEO Local Dedicadas) */}
+              <Route 
+                path="/conserto-de-tela-de-celular-curitiba" 
+                element={<ConsertoTelaCuritiba />} 
+              />
+              <Route 
+                path="/conserto-celular-samsung-curitiba" 
+                element={<ConsertoSamsungCuritiba />} 
+              />
+              <Route 
+                path="/conserto-de-celular-curitiba-centro" 
+                element={<ConsertoCentroCuritiba />} 
+              />
+              <Route 
+                path="/conserto-de-celular-perto-de-mim" 
+                element={<ConsertoPertoDeMim />} 
+              />
+              <Route 
+                path="/conserto-de-celular-santa-felicidade" 
+                element={<ConsertoSantaFelicidade />} 
+              />
+              <Route 
+                path="/conserto-de-celular-sitio-cercado" 
+                element={<ConsertoSitioCercado />} 
               />
               
               {/* Programmatic SEO: Bairros de Curitiba */}

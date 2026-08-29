@@ -207,8 +207,28 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3 font-sans text-base">
               <li>
-                <Link id="footer-curitiba-pillar-link" to="/assistencia-tecnica-curitiba" className="text-suncell-orange hover:text-suncell-orange-light font-bold transition-colors block">
-                  Assistência Técnica em Curitiba
+                <Link id="footer-curitiba-pillar-link" to="/conserto-de-celular-curitiba" className="text-suncell-orange hover:text-suncell-orange-light font-bold transition-colors block">
+                  Conserto de Celular Curitiba
+                </Link>
+              </li>
+              <li>
+                <Link id="footer-tela-curitiba-link" to="/conserto-de-tela-de-celular-curitiba" className="hover:text-suncell-orange transition-colors block">
+                  Troca de Tela Curitiba
+                </Link>
+              </li>
+              <li>
+                <Link id="footer-samsung-curitiba-link" to="/conserto-celular-samsung-curitiba" className="hover:text-suncell-orange transition-colors block">
+                  Conserto Samsung Curitiba
+                </Link>
+              </li>
+              <li>
+                <Link id="footer-centro-curitiba-link" to="/conserto-de-celular-curitiba-centro" className="hover:text-suncell-orange transition-colors block">
+                  Atendimento Centro Curitiba
+                </Link>
+              </li>
+              <li>
+                <Link id="footer-perto-de-mim-link" to="/conserto-de-celular-perto-de-mim" className="hover:text-suncell-orange transition-colors block">
+                  Assistência Perto de Mim
                 </Link>
               </li>
               <li>
