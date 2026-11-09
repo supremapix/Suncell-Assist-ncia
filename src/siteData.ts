@@ -528,170 +528,38 @@ export const FAQ_BASE = [
 ];
 
 // GERADOR DE CONTEÚDO DINÂMICO EXCLUSIVO PARA GARANTIR 100% SEO EXCLUSIVO (SEM DUPLICIDADE)
+function localSlug(nome: string) {
+  return nome.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9 ]/g, "").replace(/\s+/g, "-");
+}
+
+function localPage(nome: string, type: "bairro" | "cidade", loja: string, regiao?: string): PageData {
+  const inStore = type === "bairro" && ["Guaíra", "Alto Boqueirão"].includes(nome);
+  const place = type === "bairro" ? `${nome}, em Curitiba` : nome;
+  const intro = inStore
+    ? `A SUNCELL atende no próprio bairro ${nome}, dentro do Mercado Goes. Antes de deixar o aparelho, descreva o defeito e combine a avaliação com a equipe. Esta página explica como acompanhar o orçamento, autorizar o serviço e conferir o celular na retirada.`
+    : `Quem está em ${place} pode procurar a SUNCELL nas unidades Guaíra e Alto Boqueirão, ambas em Curitiba. O atendimento técnico ocorre nessas lojas, não em uma filial em cada localidade. Organize a avaliação, o orçamento e a retirada antes de sair de ${nome}.`;
+  return {
+    type, nome, slug: localSlug(nome), regiao, lojaMaisProxima: loja as "guaira" | "boqueirao",
+    h1: `Assistência técnica de celular para ${place}`,
+    title: `Conserto de celular para ${nome} | SUNCELL Curitiba`,
+    description: `Saiba como organizar o conserto de celular saindo de ${nome}: avaliação, orçamento, autorização e retirada nas duas lojas SUNCELL em Curitiba.`,
+    intro,
+    faq: [
+      { q: `Existe uma loja SUNCELL em ${nome}?`, a: inStore ? `Sim. A unidade fica em ${LOJAS.find(l => l.id === loja)!.endereco}. Confirme o horário antes de ir.` : nome === "Curitiba" ? "Sim. As duas unidades ficam no Mercado Goes: Rua Maria Moscardi Fanini, 261, Guaíra; e Rua Pastor Antônio Polito, 1805, Alto Boqueirão." : `As unidades apresentadas neste site ficam em Curitiba, nos bairros Guaíra e Alto Boqueirão. Esta página orienta quem vem de ${nome}; não indica uma filial nessa localidade.` },
+      { q: `Posso resolver tudo em uma viagem saindo de ${nome}?`, a: "Depende da avaliação, da peça compatível e da disponibilidade de atendimento. Confirme essas condições com a loja. Não considere o reparo no mesmo dia garantido antes do diagnóstico." },
+      { q: "O que preciso conferir antes de autorizar o reparo?", a: "Peça a descrição do defeito identificado, a solução proposta, o tipo de peça, o valor total, a previsão de conclusão e as condições de garantia por escrito. Se houver alteração no orçamento, combine como será solicitada nova autorização." },
+      { q: "Como acompanhar e retirar o celular?", a: "Guarde a ordem de serviço e use o contato da unidade onde entregou o aparelho. Aguarde a confirmação de conclusão e combine os testes de retirada, como toque da tela, carga, áudio, câmeras e conexão." },
+      { q: "A avaliação preserva meus dados?", a: "Não há garantia de recuperação ou preservação de dados em todo defeito. Faça backup se o aparelho permitir. Avise quando os arquivos forem prioridade e pergunte antes de autorizar restauração, atualização ou qualquer procedimento que possa apagá-los. Não envie senhas por WhatsApp." }
+    ]
+  };
+}
+
 export function getBairrosPages(): PageData[] {
-  return BAIRROS_RAW.map((b) => {
-    const slug = b.nome.toLowerCase()
-      .normalize("NFD").replace(/[\u0300-\u036f]/g, "") // remove acentos
-      .replace(/[^a-z0-9 ]/g, "")
-      .replace(/\s+/g, "-");
-
-    const lojaDest = LOJAS.find((l) => l.id === b.loja)!;
-    const vizinhosStr = b.vizinhos && b.vizinhos.length > 0 ? b.vizinhos.join(", ") : "bairros vizinhos da região";
-    const viasStr = b.principaisVias || "principais vias de acesso";
-    const isLojaFisica = b.nome === "Alto Boqueirão" || b.nome === "Guaíra";
-    
-    // Parágrafos únicos combinando localização, marcos de referência, rotas e proximidade com as lojas SUNCELL
-    let intro = isLojaFisica
-      ? `Procurando assistência técnica de celular no bairro ${b.nome} em Curitiba? A SUNCELL possui loja física própria instalada confortavelmente dentro do Mercado Goes (${lojaDest.endereco.split(",")[0]}), com estacionamento gratuito e segurança. Atendemos moradores do ${b.nome} e de toda a região ${b.regiao} de Curitiba com conserto expresso no mesmo dia para iPhone, Samsung Galaxy, Xiaomi, Motorola e LG. O diagnóstico é 100% gratuito e o orçamento é passado na hora, sem compromisso.`
-      : `Moradores do bairro ${b.nome} que procuram assistência técnica de celulares em Curitiba contam com o atendimento especializado da SUNCELL. Localizado na região ${b.regiao} da capital (${b.marcos}), o ${b.nome} tem conexão rápida com a unidade SUNCELL ${lojaDest.nome}, sediada no Mercado Goes (${lojaDest.endereco.split(",")[0]}), com fácil deslocamento via ${viasStr}. Oferecemos conserto expresso no mesmo dia, diagnóstico gratuito e peças de alta qualidade para iPhone, Samsung, Xiaomi, Motorola e LG. Atendemos também toda a vizinhança local, incluindo ${vizinhosStr}.`;
-
-    let title = `Assistência Técnica de Celular no ${b.nome} Curitiba | SUNCELL`;
-    let description = `Procurando assistência técnica de celular no ${b.nome}, Curitiba? Troca de tela, bateria e placa de iPhone, Samsung, Xiaomi e Motorola na SUNCELL. Orçamento grátis!`;
-
-    let faq = [
-      {
-        q: isLojaFisica 
-          ? `Onde fica a loja SUNCELL no ${b.nome}?` 
-          : `Como moradores do ${b.nome} realizam o conserto de celular na SUNCELL?`,
-        a: isLojaFisica
-          ? `Nossa loja no ${b.nome} fica dentro do Mercado Goes (${lojaDest.endereco}). Contamos com amplo estacionamento gratuito, ambiente seguro e atendimento técnico presencial de segunda a sábado.`
-          : `Moradores do ${b.nome} contam com fácil acesso à unidade física SUNCELL ${lojaDest.nome}, localizada no Mercado Goes (${lojaDest.endereco}), com trajeto rápido via ${viasStr}. O local conta com estacionamento gratuito e você também pode solicitar uma pré-avaliação gratuita pelo WhatsApp.`
-      },
-      {
-        q: `Quanto tempo demora o conserto de um celular vindo do ${b.nome}?`,
-        a: `Serviços frequentes como troca de tela frontal trincada, troca de bateria viciada e reparo de conector de carga são efetuados no mesmo dia, geralmente em menos de 1 a 2 horas. Reparos avançados de placa-mãe (microssoldagem) são avaliados em nosso laboratório especializado.`
-      },
-      {
-        q: `Qual é o valor do orçamento para moradores do ${b.nome}?`,
-        a: `Na SUNCELL, a análise técnica e o diagnóstico são 100% gratuitos e sem compromisso. Nossos técnicos desmontam e realizam testes elétricos sem qualquer cobrança. Você só paga se aprovar o orçamento e o serviço for executado com sucesso.`
-      },
-      {
-        q: `Quais marcas de smartphones são atendidas para o ${b.nome}?`,
-        a: `Atendemos a linha completa de Apple iPhone (do 7 ao 16 Pro Max), Samsung Galaxy (linhas S, Z Fold/Flip, A, M), Xiaomi (Redmi e Poco), Motorola (Moto G e Edge) e LG. Temos grande estoque de telas, baterias e periféricos para entrega rápida.`
-      },
-      ...FAQ_BASE.slice(1, 3)
-    ];
-
-    // OVERRIDES ESPECÍFICOS DE ALTO DESEMPENHO SEO / SEMÂNTICA
-    if (b.nome === "Parolin") {
-      title = "Assistência Técnica de Celular no Parolin Curitiba | SUNCELL Guaíra";
-      description = "Conserto de celular para moradores do Parolin, Curitiba. Troca de tela, bateria e placa de iPhone, Samsung e Xiaomi na SUNCELL Guaíra (Mercado Goes). Diagnóstico grátis!";
-      intro = `Moradores e profissionais que atuam no bairro Parolin e necessitam de assistência técnica de celulares de alta confiança contam com a conveniência da SUNCELL em Curitiba. Vizinho direto ao Prado Velho, Rebouças e Água Verde, o Parolin está a apenas 3 minutos da nossa matriz física SUNCELL Guaíra, localizada com total conforto e segurança dentro do Mercado Goes (Rua Maria Moscardi Fanini, 261). Oferecemos diagnósticos 100% gratuitos e reparos expressos no mesmo dia para iPhone, Samsung Galaxy, Xiaomi Redmi, Poco, Motorola e mais. Conte com a facilidade de estacionar gratuitamente no Mercado Goes enquanto nossos técnicos certificados cuidam do seu aparelho.`;
-      faq = [
-        {
-          q: "Como chegar à SUNCELL a partir do Parolin?",
-          a: "A nossa unidade do Guaíra fica a menos de 5 minutos do Parolin, dentro do Mercado Goes da Rua Maria Moscardi Fanini, 261. O acesso é direto pela Av. Presidente Wenceslau Braz ou Linha Verde, com estacionamento amplo e gratuito."
-        },
-        {
-          q: "Vocês realizam troca de tela de celular na hora para o Parolin?",
-          a: "Sim! Trocas de telas, baterias e conectores de carga são finalizadas em até 1 a 2 horas de forma expressa. Enquanto você faz suas compras no Mercado Goes, nosso time conclui o reparo."
-        },
-        ...FAQ_BASE.slice(0, 3)
-      ];
-    } else if (b.nome === "Alto Boqueirão") {
-      title = "Assistência Técnica de Celular no Alto Boqueirão Curitiba | SUNCELL";
-      description = "Conserto de celular no Alto Boqueirão, Curitiba. Loja física SUNCELL no Mercado Goes da Rua Pastor Antônio Polito, 1805. Troca de tela, bateria e placa. Orçamento grátis!";
-      intro = `A SUNCELL possui loja física de assistência técnica de celular no Alto Boqueirão, em Curitiba, instalada confortavelmente dentro do Mercado Goes na Rua Pastor Antônio Polito, 1805 (próximo ao Zoológico e divisas com Sítio Cercado, Boqueirão e Ganchinho). Especializada em reparos de iPhone, Samsung, Xiaomi e Motorola, nossa unidade oferece troca de tela no mesmo dia, substituição de bateria, conectores e microssoldagem de placa. Com estacionamento gratuito e segurança privada no Mercado Goes, você faz o diagnóstico sem custo algum e recebe seu aparelho funcionando com garantia legal de 90 dias.`;
-      faq = [
-        {
-          q: "Onde fica exatamente a loja SUNCELL no Alto Boqueirão?",
-          a: "Nossa loja física fica dentro do Supermercado Goes da Rua Pastor Antônio Polito, 1805, no Alto Boqueirão. Você pode estacionar gratuitamente no pátio do mercado com total comodidade e segurança."
-        },
-        {
-          q: "Quais serviços de celular são feitos na hora no Alto Boqueirão?",
-          a: "Troca de tela frontal quebrada, troca de bateria estufada ou descarregando rápido e substituição de conector de carga tipo C / Lightning são realizados de forma expressa no mesmo dia."
-        },
-        ...FAQ_BASE.slice(0, 3)
-      ];
-    } else if (b.nome === "Guaíra") {
-      title = "Assistência Técnica de Celular no Guaíra Curitiba | Loja Matriz SUNCELL";
-      description = "Assistência técnica de celular no Guaíra, Curitiba. Loja física SUNCELL no Mercado Goes da Rua Maria Moscardi Fanini, 261. Troca de tela, bateria e placa com garantia!";
-      intro = `A unidade matriz da SUNCELL Assistência Técnica de Celulares está localizada no bairro Guaíra, em Curitiba, dentro do tradicional Mercado Goes na Rua Maria Moscardi Fanini, 261. Atendemos moradores do Guaíra, Portão, Água Verde, Parolin, Lindóia e toda Curitiba com infraestrutura técnica completa. Realizamos diagnóstico 100% gratuito, troca de tela expressa, substituição de bateria homologada, conserto de conectores de carga e recuperação de placas com microssoldagem avançada. Aproveite o estacionamento gratuito e a segurança do Mercado Goes.`;
-      faq = [
-        {
-          q: "Como encontrar a SUNCELL Guaíra?",
-          a: "Estamos dentro do Mercado Goes da Rua Maria Moscardi Fanini, 261, no bairro Guaíra, com acesso muito rápido pelas avenidas Presidente Kennedy, Wenceslau Braz e Linha Verde."
-        },
-        {
-          q: "O diagnóstico no Guaíra é gratuito?",
-          a: "Sim, 100% gratuito e sem compromisso. Nossos técnicos examinam seu celular na hora e informam o orçamento detalhado antes de iniciar qualquer reparo."
-        },
-        ...FAQ_BASE.slice(0, 3)
-      ];
-    }
-
-    return {
-      type: "bairro",
-      slug,
-      nome: b.nome,
-      regiao: b.regiao,
-      lojaMaisProxima: b.loja as "guaira" | "boqueirao",
-      h1: `Assistência Técnica de Celular no ${b.nome}`,
-      title,
-      description,
-      intro,
-      faq,
-      vizinhos: b.vizinhos,
-      principaisVias: b.principaisVias
-    };
-  });
+  return BAIRROS_RAW.map(b => localPage(b.nome, "bairro", b.loja, b.regiao));
 }
 
 export function getCidadesPages(): PageData[] {
-  return CIDADES_RAW.map((c) => {
-    const slug = c.nome.toLowerCase()
-      .normalize("NFD").replace(/[\u0300-\u036f]/g, "")
-      .replace(/[^a-z0-9 ]/g, "")
-      .replace(/\s+/g, "-");
-
-    const lojaDest = LOJAS.find((l) => l.id === c.loja)!;
-    const viaAcesso = c.viaAcesso || "principais rodovias e avenidas metropolitanas";
-    const isCuritiba = c.nome === "Curitiba";
-    
-    let intro = isCuritiba
-      ? `A SUNCELL é referência em assistência técnica de celulares em Curitiba, capital do Paraná. Com duas lojas físicas próprias instaladas no Mercado Goes (unidade Guaíra e unidade Alto Boqueirão), prestamos atendimento especializado para mais de 75 bairros e municípios metropolitanos. Especialistas em Apple iPhone, Samsung Galaxy, Xiaomi, Motorola e LG, realizamos diagnósticos 100% gratuitos, trocas de tela e bateria no mesmo dia com garantia legal de 90 dias.`
-      : `Moradores e empresas de ${c.nome} que necessitam de assistência técnica especializada de celular contam com o atendimento da SUNCELL em Curitiba. A SUNCELL atende a população de ${c.nome} (${c.marcos}) através de suas lojas físicas de referência em Curitiba, sendo a unidade SUNCELL ${lojaDest.nome} a mais conveniente, situada no Mercado Goes (${lojaDest.endereco.split(",")[0]}), com acesso direto via ${viaAcesso}. Oferecemos orçamento gratuito, conserto expresso no mesmo dia e garantia de 90 dias em peças e mão de obra.`;
-
-    let title = isCuritiba
-      ? `Assistência Técnica de Celulares em Curitiba | SUNCELL`
-      : `Assistência Técnica de Celular para ${c.nome} | SUNCELL Curitiba`;
-    let description = isCuritiba
-      ? `Assistência técnica de celulares em Curitiba com diagnóstico gratuito e conserto no mesmo dia. Lojas no Guaíra e Alto Boqueirão (Mercado Goes). iPhone, Samsung, Xiaomi e Motorola.`
-      : `Assistência técnica de celular para moradores de ${c.nome}. Troca de tela, bateria e placa de iPhone, Samsung, Xiaomi e Motorola na SUNCELL Curitiba. Orçamento grátis!`;
-
-    let faq = [
-      {
-        q: isCuritiba
-          ? `Onde ficam as lojas da SUNCELL em Curitiba?`
-          : `Como os moradores de ${c.nome} utilizam o atendimento da SUNCELL?`,
-        a: isCuritiba
-          ? `Temos 2 lojas físicas em Curitiba dentro do Mercado Goes: Unidade Guaíra (Rua Maria Moscardi Fanini, 261) e Unidade Alto Boqueirão (Rua Pastor Antônio Polito, 1805). Ambas contam com estacionamento gratuito e segurança privada.`
-          : `A SUNCELL atende moradores de ${c.nome} em suas lojas físicas em Curitiba. A unidade de referência mais próxima é a SUNCELL ${lojaDest.nome}, no Mercado Goes, com trajeto facilitado via ${viaAcesso}. Você também pode solicitar uma estimativa prévia pelo WhatsApp antes de levar o aparelho.`
-      },
-      {
-        q: `Qual é o prazo de conserto para quem vem de ${c.nome}?`,
-        a: `A maioria dos consertos frequentes (troca de tela touch/display, substituição de bateria e conector de carga) fica pronta de forma expressa no mesmo dia, geralmente em menos de 2 horas. Dessa forma, você pode aguardar no local ou aproveitar o Mercado Goes enquanto o celular é restaurado.`
-      },
-      {
-        q: `O diagnóstico é cobrado para clientes de ${c.nome}?`,
-        a: `Não! O diagnóstico é 100% gratuito e sem compromisso. Nossos técnicos realizam a análise detalhada e informam o valor exato antes de qualquer intervenção.`
-      },
-      ...FAQ_BASE.slice(0, 3)
-    ];
-
-    return {
-      type: "cidade",
-      slug,
-      nome: c.nome,
-      lojaMaisProxima: c.loja as "guaira" | "boqueirao",
-      h1: isCuritiba ? "Assistência Técnica de Celulares em Curitiba" : `Assistência Técnica de Celular para ${c.nome}`,
-      title,
-      description,
-      intro,
-      faq,
-      principaisVias: viaAcesso
-    };
-  });
+  return CIDADES_RAW.map(c => localPage(c.nome, "cidade", c.loja));
 }
 
 export function getAparelhosPages(): PageData[] {

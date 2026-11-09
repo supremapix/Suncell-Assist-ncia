@@ -12,6 +12,29 @@
     }
   ],
   "rewrites": [
-    { "source": "/(.*)", "destination": "/index.html" }
+    {
+      "source": "/conserto-de-celular-curitiba-centro",
+      "destination": "/conserto-de-celular-curitiba-centro/index.html"
+    },
+    {
+      "source": "/conserto-de-celular-santa-felicidade",
+      "destination": "/conserto-de-celular-santa-felicidade/index.html"
+    },
+    {
+      "source": "/conserto-de-celular-sitio-cercado",
+      "destination": "/conserto-de-celular-sitio-cercado/index.html"
+    },
+    {
+      "source": "/assistencia-tecnica/:slug",
+      "destination": "/assistencia-tecnica/:slug/index.html"
+    },
+    {
+      "source": "/assistencia-tecnica-cidade/:slug",
+      "destination": "/assistencia-tecnica-cidade/:slug/index.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
   ]
 }

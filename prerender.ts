@@ -1,9 +1,13 @@
+import React from "react";
+import { renderToStaticMarkup } from "react-dom/server";
+import LocalRepairGuide from "./src/components/LocalRepairGuide";
+import { localSchemas } from "./src/localSeo";
 import * as fs from "fs";
 import * as path from "path";
 import { 
   getTodasPaginas, 
   LOJAS, 
-  rotaDe 
+  rotaDe, findPageBySlug
 } from "./src/siteData";
 import { HUBS_DATA } from "./src/hubData";
 import { BLOG_POSTS } from "./src/blogData";
@@ -294,6 +298,12 @@ async function runPrerender() {
     // Injetar antes do fechamento do head </head>
     html = html.replace("</head>", `${headInjections}${schemaScripts}\n</head>`);
 
+    if (pagina.type === "bairro" || pagina.type === "cidade") {
+      html = html.replace(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g, "");
+      html = html.replace("</head>", localSchemas(pagina).map(schema => `<script data-rh="true" type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`).join("\n") + "</head>");
+      html = html.replace('<div id="root"></div>', `<div id="root">${renderToStaticMarkup(React.createElement(LocalRepairGuide, { page: pagina }))}</div>`);
+    }
+
     // Escrever arquivo index.html no subdiretório correspondente
     fs.writeFileSync(targetFile, html, "utf-8");
   }
@@ -402,6 +412,16 @@ async function runPrerender() {
 
     html = html.replace("</head>", `${headInjections}${schemaScripts}\n</head>`);
 
+    const localAlias: Record<string, string> = { '/conserto-de-celular-curitiba-centro':'centro', '/conserto-de-celular-santa-felicidade':'santa-felicidade', '/conserto-de-celular-sitio-cercado':'sitio-cercado' };
+    if (localAlias[extra.routePath]) {
+      const page = findPageBySlug('bairro', localAlias[extra.routePath])!;
+      html = html.replace(/<title>.*?<\/title>/i, `<title>${page.title}</title>`)
+        .replace(/<meta name="description" content="[^"]*" \/>/g, `<meta name="description" content="${page.description}" />`)
+        .replace(/<link rel="canonical" href="[^"]*" \/>/g, `<link rel="canonical" href="${APP_URL}${rotaDe(page)}" />`)
+        .replace(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g, "")
+        .replace("</head>", localSchemas(page).map(schema => `<script type="application/ld+json">${JSON.stringify(schema)}</script>`).join("\n") + "</head>")
+        .replace('<div id="root"></div>', `<div id="root">${renderToStaticMarkup(React.createElement(LocalRepairGuide, { page }))}</div>`);
+    }
     fs.writeFileSync(targetFile, html, "utf-8");
   }
 
@@ -418,98 +438,84 @@ async function runPrerender() {
   <!-- URL Home Principal -->
   <url>
     <loc>${APP_URL}/</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Página Pilar: Assistência Técnica em Curitiba -->
   <url>
     <loc>${APP_URL}/assistencia-tecnica-curitiba</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Página Pilar Principal: Conserto de Celular Curitiba -->
   <url>
     <loc>${APP_URL}/conserto-de-celular-curitiba</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <!-- Troca de Tela de Celular Curitiba -->
   <url>
     <loc>${APP_URL}/conserto-de-tela-de-celular-curitiba</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <!-- Conserto Celular Samsung Curitiba -->
   <url>
     <loc>${APP_URL}/conserto-celular-samsung-curitiba</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <!-- Conserto Celular Centro Curitiba -->
   <url>
     <loc>${APP_URL}/conserto-de-celular-curitiba-centro</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Conserto Celular Perto de Mim -->
   <url>
     <loc>${APP_URL}/conserto-de-celular-perto-de-mim</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <!-- Conserto Celular Santa Felicidade -->
   <url>
     <loc>${APP_URL}/conserto-de-celular-santa-felicidade</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <!-- Conserto Celular Sítio Cercado -->
   <url>
     <loc>${APP_URL}/conserto-de-celular-sitio-cercado</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <!-- Canal de Compra de iPhones Usados -->
   <url>
     <loc>${APP_URL}/compramos-iphone</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <!-- Quem Somos -->
   <url>
     <loc>${APP_URL}/quem-somos</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <!-- Bairros e Cidades de Cobertura -->
   <url>
     <loc>${APP_URL}/bairros-e-cidades</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <!-- Produto: Xiaomi Redmi A7 Pro 128GB 4GB RAM -->
   <url>
     <loc>${APP_URL}/celular-xiaomi-redmi-a7-pro-dual-sim-128gb-4gb-ram</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
   <!-- Produto: Xiaomi POCO M7 NFC 256GB 8GB RAM -->
   <url>
     <loc>${APP_URL}/celular-xiaomi-poco-m7-nfc-dual-sim-256gb-8gb-ram</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
   </url>
@@ -521,7 +527,6 @@ async function runPrerender() {
     const priority = p.type === "servico" || p.type === "aparelho" ? "0.9" : "0.8";
     sitemapXml += `  <url>
     <loc>${APP_URL}${route}</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>${priority}</priority>
   </url>\n`;
@@ -531,7 +536,6 @@ async function runPrerender() {
   HUBS_DATA.forEach((h) => {
     sitemapXml += `  <url>
     <loc>${APP_URL}/hub/${h.slug}</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>\n`;
@@ -540,7 +544,6 @@ async function runPrerender() {
   // Blog Hub e Artigos
   sitemapXml += `  <url>
     <loc>${APP_URL}/blog</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>\n`;
@@ -548,7 +551,6 @@ async function runPrerender() {
   BLOG_POSTS.forEach((b) => {
     sitemapXml += `  <url>
     <loc>${APP_URL}/blog/${b.slug}</loc>
-    <lastmod>${currentDate}</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>\n`;
@@ -571,6 +573,13 @@ Disallow: /404
 
 Sitemap: ${APP_URL}/sitemap.xml
 `;
+
+  const locals = paginas.filter(p => p.type === 'bairro' || p.type === 'cidade');
+  const summary = `# SUNCELL Assistência Técnica\n\nSite: ${APP_URL}\nIdioma: pt-BR\n\nDuas unidades físicas em Curitiba, dentro do Mercado Goes. As páginas de bairros e cidades orientam o deslocamento até essas lojas; não representam filiais adicionais. Valores, horários, peças e prazos devem ser confirmados com a unidade. Diagnóstico gratuito informado pela empresa. Nenhuma garantia de resultado de reparo, recuperação de dados ou posição em buscadores.\n\n${LOJAS.map(l => `## ${l.nome}\n${l.endereco}\nTelefone e WhatsApp: ${l.telefone}\n${l.linkWhats}`).join('\n\n')}\n\n## Diretório local\n${locals.map(p => `- [${p.nome}](${APP_URL}${rotaDe(p)}): ${p.description}`).join('\n')}\n`;
+  for (const dir of [PUBLIC_DIR, DIST_DIR]) {
+    fs.writeFileSync(path.join(dir, 'llms.txt'), summary);
+    fs.writeFileSync(path.join(dir, 'llms-full.txt'), summary + '\n\n' + locals.map(p => `## ${p.h1}\n${APP_URL}${rotaDe(p)}\n${p.intro}\n${p.faq.map(f => `${f.q}\n${f.a}`).join('\n\n')}`).join('\n\n'));
+  }
 
   fs.writeFileSync(path.join(PUBLIC_DIR, "robots.txt"), robotsTxt, "utf-8");
   fs.writeFileSync(path.join(DIST_DIR, "robots.txt"), robotsTxt, "utf-8");

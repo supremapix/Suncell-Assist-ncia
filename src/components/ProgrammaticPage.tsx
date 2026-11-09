@@ -3,6 +3,7 @@ import { motion } from "motion/react";
 import { MapPin, Phone, ChevronRight, CheckCircle, Navigation, ShieldCheck, Heart, ArrowLeft, AlertCircle, Clock } from "lucide-react";
 import { findPageBySlug, LOJAS, getBairrosPages, getCidadesPages, getAparelhosPages, getServicosPages, rotaDe, PageData, getLojasPages } from "../siteData";
 import { getWhatsAppLink } from "./SuncellInteractionWidgets";
+import LocalRepairGuide from "./LocalRepairGuide";
 import EnhancedSEO from "./EnhancedSEO";
 import FAQAccordion from "./FAQAccordion";
 import { openStoreDetailsModal } from "./StoreModal";
@@ -19,6 +20,8 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
   if (!page) {
     return <Navigate to="/404" replace />;
   }
+
+  if (["bairro", "cidade"].includes(type)) return <><EnhancedSEO pageData={page} canonicalPath={rotaDe(page)} /><LocalRepairGuide page={page} /></>;
 
   // Obter loja prioritária recomendada e secundária
   const lojaProxima = LOJAS.find((l) => l.id === page.lojaMaisProxima) || LOJAS[0];
