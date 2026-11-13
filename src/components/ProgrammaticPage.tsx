@@ -1,3 +1,4 @@
+import StoreRepairGuide from "./StoreRepairGuide";
 import { useParams, Link, Navigate } from "react-router-dom";
 import { motion } from "motion/react";
 import { MapPin, Phone, ChevronRight, CheckCircle, Navigation, ShieldCheck, Heart, ArrowLeft, AlertCircle, Clock } from "lucide-react";
@@ -22,6 +23,8 @@ export default function ProgrammaticPage({ type }: ProgrammaticPageProps) {
   }
 
   if (["bairro", "cidade"].includes(type)) return <><EnhancedSEO pageData={page} canonicalPath={rotaDe(page)} /><LocalRepairGuide page={page} /></>;
+
+  if (type === "loja" && page.slug === "boqueirao") return <><EnhancedSEO pageData={page} canonicalPath={rotaDe(page)} /><StoreRepairGuide page={page} /></>;
 
   // Obter loja prioritária recomendada e secundária
   const lojaProxima = LOJAS.find((l) => l.id === page.lojaMaisProxima) || LOJAS[0];

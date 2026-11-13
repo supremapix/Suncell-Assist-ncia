@@ -1,3 +1,4 @@
+import StoreRepairGuide from "./src/components/StoreRepairGuide";
 import React from "react";
 import { renderToStaticMarkup } from "react-dom/server";
 import LocalRepairGuide from "./src/components/LocalRepairGuide";
@@ -302,6 +303,10 @@ async function runPrerender() {
       html = html.replace(/<script[^>]*type="application\/ld\+json"[^>]*>[\s\S]*?<\/script>/g, "");
       html = html.replace("</head>", localSchemas(pagina).map(schema => `<script data-rh="true" type="application/ld+json">${JSON.stringify(schema).replace(/</g, "\\u003c")}</script>`).join("\n") + "</head>");
       html = html.replace('<div id="root"></div>', `<div id="root">${renderToStaticMarkup(React.createElement(LocalRepairGuide, { page: pagina }))}</div>`);
+    }
+
+    if (pagina.type === "loja" && pagina.slug === "boqueirao") {
+      html = html.replace('<div id="root"></div>', `<div id="root">${renderToStaticMarkup(React.createElement(StoreRepairGuide, { page: pagina }))}</div>`);
     }
 
     // Escrever arquivo index.html no subdiretório correspondente

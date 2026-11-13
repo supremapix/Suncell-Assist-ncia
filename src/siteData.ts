@@ -677,32 +677,11 @@ export function getLojasPages(): PageData[] {
       slug: "boqueirao",
       nome: "Alto Boqueirão (Mercado Goes)",
       lojaMaisProxima: "boqueirao",
-      h1: "Assistência Técnica de Celular no Alto Boqueirão | SUNCELL Curitiba",
-      title: "Conserto de Celular no Alto Boqueirão (Mercado Goes) - SUNCELL PRO",
-      description: "Procurando assistência de celular no Alto Boqueirão, Sítio Cercado ou Boqueirão? Troca de tela, bateria e reparo de placa expresso dentro do Mercado Goes!",
-      intro: "A unidade SUNCELL Alto Boqueirão está sediada de forma segura e confortável dentro do Mercado Goes (Rua Pastor Antônio Polito, 1805), sendo o ponto de referência definitivo em conserto e manutenção de celulares para moradores do Alto Boqueirão, Sítio Cercado, Boqueirão, Pinheirinho, Xaxim, Ganchinho, Umbará e também para a cidade vizinha de São José dos Pinhais. Usufrua de toda a infraestrutura com estacionamento coberto e vigilância integrada do supermercado para deixar seu celular em mãos altamente qualificadas. Realizamos diagnósticos minuciosos e consertos em tempo recorde para marcas consagradas como Samsung, Motorola, Xiaomi, LG e Apple iPhones. Traga seu aparelho e tenha um atendimento humano e especializado!",
-      faq: [
-        {
-          q: "Como encontrar a SUNCELL no Alto Boqueirão?",
-          a: "Nossa assistência técnica de celulares está instalada dentro do Mercado Goes da Rua Pastor Antônio Polito, 1805, no Alto Boqueirão. Você pode estacionar gratuitamente no pátio do supermercado e nos visitar com toda a segurança."
-        },
-        {
-          q: "Vocês fazem reparo de placa-mãe na unidade Alto Boqueirão?",
-          a: "Sim! Somos especialistas em microssoldagem e reparo avançado de placas para celulares que não ligam, não carregam ou sofreram contato com água. Dispomos de laboratório próprio de última geração para esses procedimentos."
-        },
-        {
-          q: "A loja do Alto Boqueirão atende moradores do Sítio Cercado e Xaxim?",
-          a: "Com certeza! Por estarmos em uma avenida de grande circulação na divisa de bairros, somos a opção mais rápida e cômoda para quem mora no Sítio Cercado, Xaxim, Boqueirão, Pinheirinho e Uberaba."
-        },
-        {
-          q: "Quais são as formas de pagamento aceitas no Alto Boqueirão?",
-          a: "Aceitamos cartões de crédito e débito com parcelamento facilitado em até 12x, PIX, dinheiro e link de pagamento. Facilitamos ao máximo para que você possa reaver seu celular funcionando sem estourar o orçamento."
-        },
-        {
-          q: "Vocês realizam o diagnóstico na hora na unidade Alto Boqueirão?",
-          a: "Sim! Na nossa unidade do Alto Boqueirão, realizamos o diagnóstico do seu celular na hora e sem custos. Muitas trocas de tela e bateria ficam prontas no mesmo dia em menos de 1 hora."
-        }
-      ]
+      h1: "Conserto de celular no Alto Boqueirão, Curitiba",
+      title: "Conserto de celular no Alto Boqueirão, Curitiba | SUNCELL",
+      description: "Conserto de celular no Alto Boqueirão, Curitiba. SUNCELL no Mercado Goes: avaliação de tela, bateria e carregamento. Consulte orçamento e como chegar.",
+      intro: "Precisa consertar seu celular em Curitiba? A SUNCELL Alto Boqueirão atende dentro do Mercado Goes, na Rua Pastor Antônio Polito, 1805. Consulte a unidade para avaliar problemas de tela, bateria, carregamento e placa. O orçamento e o prazo dependem do modelo, do diagnóstico e da disponibilidade da peça.",
+      faq: [{"q":"Onde fica a assistência técnica SUNCELL no Alto Boqueirão?","a":"A loja fica dentro do Mercado Goes, na Rua Pastor Antônio Polito, 1805, Alto Boqueirão, Curitiba. Use o botão Como chegar e confirme o horário com a unidade antes da visita."},{"q":"Quanto custa o conserto de celular?","a":"O valor depende do modelo, do defeito e da peça necessária. Informe esses detalhes pelo WhatsApp (41) 99750-1961 e combine a avaliação. Confira o orçamento completo antes de autorizar o serviço."},{"q":"O celular fica pronto no mesmo dia?","a":"O prazo depende da avaliação, da disponibilidade de peças e do serviço necessário. Confirme a previsão diretamente com a equipe; não considere o reparo no mesmo dia garantido antes do diagnóstico."},{"q":"A unidade atende quem vem do Boqueirão e Sítio Cercado?","a":"Sim. O atendimento ocorre na loja do Alto Boqueirão. Consulte o endereço e a rota antes de sair do seu bairro; esta página não indica outras filiais nessas localidades."},{"q":"O que devo perguntar antes de aprovar o reparo?","a":"Pergunte qual defeito foi identificado, qual peça será utilizada, o valor total, a previsão de entrega e as condições de garantia. Combine também como será solicitada sua autorização se o orçamento precisar mudar."}]
     }
   ];
 }
